@@ -35,12 +35,25 @@ One row is one domain-scoped inspection of an exact page. The same page may have
 | `strengths` | Reusable decisions observed on the page |
 | `limitations` | A caution, exception, or unresolved weakness |
 
+## `source_manifest.csv`
+
+One row records the official machine-readable award-results snapshot used for a competition year. The manifest makes bulk imports auditable without treating an API response as a page review.
+
+| Field | Meaning |
+|---|---|
+| `year` | Competition year represented by the snapshot |
+| `competition_uuid` | Competition identifier returned by the official iGEM API |
+| `awards_endpoint` | Exact official API endpoint used for award results |
+| `retrieved_on` | Date on which the response was retrieved |
+| `sha256` | SHA-256 digest of the raw response bytes |
+
 ## Maintenance contract
 
-1. Verify award rows against the official Results page before adding or changing them.
+1. Verify award rows against the official Results page or its official API before adding or changing them.
 2. Do not create a page-review row unless the exact page was opened and inspected.
 3. Record a limitation for every review; winner status is not a quality guarantee.
-4. Run `python3 scripts/build_corpus.py` after editing either CSV.
-5. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
+4. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Use `--source-dir` with preserved JSON snapshots when an auditable offline import is required.
+5. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
+6. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
 
 The corpus is a research seed, not an exhaustive leaderboard. Recheck unstable current-season requirements separately.

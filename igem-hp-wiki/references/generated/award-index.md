@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **93 award records** (18 winners, 75 nominees) and **8 reviewed pages**.
+Coverage: **257 award records** (54 winners, 203 nominees) and **14 reviewed pages**.
 
 ## Award records
 
@@ -57,6 +57,170 @@ Coverage: **93 award records** (18 winners, 75 nominees) and **8 reviewed pages*
 | 2025 | undergrad | best-sustainable-development-impact | nominee | [IISc-Bengaluru](https://2025.igem.wiki/iisc-bengaluru/) | 2026-09-08 |
 | 2025 | undergrad | best-sustainable-development-impact | nominee | [Patras-Med](https://2025.igem.wiki/patras-med/) | 2026-09-08 |
 | 2025 | undergrad | best-sustainable-development-impact | nominee | [Tsinghua](https://2025.igem.wiki/tsinghua/) | 2026-09-08 |
+| 2024 | high-school | best-education | winner | [Keystone](https://2024.igem.wiki/keystone/) | 2026-09-08 |
+| 2024 | high-school | best-education | nominee | [Boston-BOSLab](https://2024.igem.wiki/boston-boslab/) | 2026-09-08 |
+| 2024 | high-school | best-education | nominee | [GEMS-Taiwan](https://2024.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2024 | high-school | best-education | nominee | [HK-Joint-School](https://2024.igem.wiki/hk-joint-school/) | 2026-09-08 |
+| 2024 | high-school | best-education | nominee | [HongKong-UCCKE](https://2024.igem.wiki/hongkong-uccke/) | 2026-09-08 |
+| 2024 | overgrad | best-education | winner | [Aachen](https://2024.igem.wiki/aachen/) | 2026-09-08 |
+| 2024 | overgrad | best-education | nominee | [ABOA](https://2024.igem.wiki/aboa/) | 2026-09-08 |
+| 2024 | overgrad | best-education | nominee | [IOANNINA](https://2024.igem.wiki/ioannina/) | 2026-09-08 |
+| 2024 | overgrad | best-education | nominee | [SDU-Denmark](https://2024.igem.wiki/sdu-denmark/) | 2026-09-08 |
+| 2024 | overgrad | best-education | nominee | [Thessaly](https://2024.igem.wiki/thessaly/) | 2026-09-08 |
+| 2024 | undergrad | best-education | winner | [CityU-HongKong](https://2024.igem.wiki/cityu-hongkong/) | 2026-09-08 |
+| 2024 | undergrad | best-education | nominee | [CJUH-JLU-China](https://2024.igem.wiki/cjuh-jlu-china/) | 2026-09-08 |
+| 2024 | undergrad | best-education | nominee | [Heidelberg](https://2024.igem.wiki/heidelberg/) | 2026-09-08 |
+| 2024 | undergrad | best-education | nominee | [HongKong-CUHK](https://2024.igem.wiki/hongkong-cuhk/) | 2026-09-08 |
+| 2024 | undergrad | best-education | nominee | [Stanford](https://2024.igem.wiki/stanford/) | 2026-09-08 |
+| 2024 | high-school | best-inclusivity | winner | [Thailand-RIS](https://2024.igem.wiki/thailand-ris/) | 2026-09-08 |
+| 2024 | high-school | best-inclusivity | nominee | [JIASHU-Shanghai](https://2024.igem.wiki/jiashu-shanghai/) | 2026-09-08 |
+| 2024 | overgrad | best-inclusivity | winner | [KULeuven](https://2024.igem.wiki/kuleuven/) | 2026-09-08 |
+| 2024 | overgrad | best-inclusivity | nominee | [IOANNINA](https://2024.igem.wiki/ioannina/) | 2026-09-08 |
+| 2024 | undergrad | best-inclusivity | winner | [Patras-Med](https://2024.igem.wiki/patras-med/) | 2026-09-08 |
+| 2024 | undergrad | best-inclusivity | nominee | [Fudan](https://2024.igem.wiki/fudan/) | 2026-09-08 |
+| 2024 | undergrad | best-inclusivity | nominee | [Tsinghua](https://2024.igem.wiki/tsinghua/) | 2026-09-08 |
+| 2024 | high-school | best-integrated-human-practices | winner | [GreatBay-SCIE](https://2024.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2024 | high-school | best-integrated-human-practices | nominee | [IEA](https://2024.igem.wiki/iea/) | 2026-09-08 |
+| 2024 | high-school | best-integrated-human-practices | nominee | [Keystone](https://2024.igem.wiki/keystone/) | 2026-09-08 |
+| 2024 | high-school | best-integrated-human-practices | nominee | [LCG-Global](https://2024.igem.wiki/lcg-global/) | 2026-09-08 |
+| 2024 | high-school | best-integrated-human-practices | nominee | [NYC-Empire-State](https://2024.igem.wiki/nyc-empire-state/) | 2026-09-08 |
+| 2024 | overgrad | best-integrated-human-practices | winner | [Bielefeld-CeBiTec](https://2024.igem.wiki/bielefeld-cebitec/) | 2026-09-08 |
+| 2024 | overgrad | best-integrated-human-practices | nominee | [EPFL](https://2024.igem.wiki/epfl/) | 2026-09-08 |
+| 2024 | overgrad | best-integrated-human-practices | nominee | [Freiburg](https://2024.igem.wiki/freiburg/) | 2026-09-08 |
+| 2024 | overgrad | best-integrated-human-practices | nominee | [GU-Frankfurt](https://2024.igem.wiki/gu-frankfurt/) | 2026-09-08 |
+| 2024 | overgrad | best-integrated-human-practices | nominee | [Marburg](https://2024.igem.wiki/marburg/) | 2026-09-08 |
+| 2024 | undergrad | best-integrated-human-practices | winner | [JU-Krakow](https://2024.igem.wiki/ju-krakow/) | 2026-09-08 |
+| 2024 | undergrad | best-integrated-human-practices | nominee | [BNUZH-China](https://2024.igem.wiki/bnuzh-china/) | 2026-09-08 |
+| 2024 | undergrad | best-integrated-human-practices | nominee | [CJUH-JLU-China](https://2024.igem.wiki/cjuh-jlu-china/) | 2026-09-08 |
+| 2024 | undergrad | best-integrated-human-practices | nominee | [Stanford](https://2024.igem.wiki/stanford/) | 2026-09-08 |
+| 2024 | undergrad | best-integrated-human-practices | nominee | [TecCEM](https://2024.igem.wiki/teccem/) | 2026-09-08 |
+| 2024 | high-school | best-sustainable-development-impact | winner | [Hangzhou-BioX](https://2024.igem.wiki/hangzhou-biox/) | 2026-09-08 |
+| 2024 | high-school | best-sustainable-development-impact | nominee | [GEC-Beijing](https://2024.igem.wiki/gec-beijing/) | 2026-09-08 |
+| 2024 | high-school | best-sustainable-development-impact | nominee | [Hangzhou-SDG](https://2024.igem.wiki/hangzhou-sdg/) | 2026-09-08 |
+| 2024 | high-school | best-sustainable-development-impact | nominee | [RDFZ-CHINA](https://2024.igem.wiki/rdfz-china/) | 2026-09-08 |
+| 2024 | high-school | best-sustainable-development-impact | nominee | [Ulink-SZ](https://2024.igem.wiki/ulink-sz/) | 2026-09-08 |
+| 2024 | overgrad | best-sustainable-development-impact | winner | [UZurich](https://2024.igem.wiki/uzurich/) | 2026-09-08 |
+| 2024 | overgrad | best-sustainable-development-impact | nominee | [GU-Frankfurt](https://2024.igem.wiki/gu-frankfurt/) | 2026-09-08 |
+| 2024 | overgrad | best-sustainable-development-impact | nominee | [KULeuven](https://2024.igem.wiki/kuleuven/) | 2026-09-08 |
+| 2024 | overgrad | best-sustainable-development-impact | nominee | [NEFU-China](https://2024.igem.wiki/nefu-china/) | 2026-09-08 |
+| 2024 | undergrad | best-sustainable-development-impact | winner | [UBC-Vancouver](https://2024.igem.wiki/ubc-vancouver/) | 2026-09-08 |
+| 2024 | undergrad | best-sustainable-development-impact | nominee | [AFCM-Egypt](https://2024.igem.wiki/afcm-egypt/) | 2026-09-08 |
+| 2024 | undergrad | best-sustainable-development-impact | nominee | [CAU-China](https://2024.igem.wiki/cau-china/) | 2026-09-08 |
+| 2024 | undergrad | best-sustainable-development-impact | nominee | [Michigan](https://2024.igem.wiki/michigan/) | 2026-09-08 |
+| 2024 | undergrad | best-sustainable-development-impact | nominee | [NNU-CHINA](https://2024.igem.wiki/nnu-china/) | 2026-09-08 |
+| 2023 | high-school | best-education | winner | [Japan-United](https://2023.igem.wiki/japan-united/) | 2026-09-08 |
+| 2023 | high-school | best-education | nominee | [ASIJ-Tokyo](https://2023.igem.wiki/asij-tokyo/) | 2026-09-08 |
+| 2023 | high-school | best-education | nominee | [HK-Joint-School](https://2023.igem.wiki/hk-joint-school/) | 2026-09-08 |
+| 2023 | high-school | best-education | nominee | [NIS-Kazakhstan](https://2023.igem.wiki/nis-kazakhstan/) | 2026-09-08 |
+| 2023 | high-school | best-education | nominee | [WIST](https://2023.igem.wiki/wist/) | 2026-09-08 |
+| 2023 | overgrad | best-education | winner | [EPFL](https://2023.igem.wiki/epfl/) | 2026-09-08 |
+| 2023 | overgrad | best-education | nominee | [Aalto-Helsinki](https://2023.igem.wiki/aalto-helsinki/) | 2026-09-08 |
+| 2023 | overgrad | best-education | nominee | [Estonia-TUIT](https://2023.igem.wiki/estonia-tuit/) | 2026-09-08 |
+| 2023 | overgrad | best-education | nominee | [Thessaly](https://2023.igem.wiki/thessaly/) | 2026-09-08 |
+| 2023 | overgrad | best-education | nominee | [TU-Dresden](https://2023.igem.wiki/tu-dresden/) | 2026-09-08 |
+| 2023 | undergrad | best-education | winner | [IISER-Pune-India](https://2023.igem.wiki/iiser-pune-india/) | 2026-09-08 |
+| 2023 | undergrad | best-education | nominee | [BNUZH-China](https://2023.igem.wiki/bnuzh-china/) | 2026-09-08 |
+| 2023 | undergrad | best-education | nominee | [Stanford](https://2023.igem.wiki/stanford/) | 2026-09-08 |
+| 2023 | undergrad | best-education | nominee | [Vilnius-Lithuania](https://2023.igem.wiki/vilnius-lithuania/) | 2026-09-08 |
+| 2023 | undergrad | best-education | nominee | [WHU-China](https://2023.igem.wiki/whu-china/) | 2026-09-08 |
+| 2023 | high-school | best-inclusivity | winner | [NIS-Kazakhstan](https://2023.igem.wiki/nis-kazakhstan/) | 2026-09-08 |
+| 2023 | high-school | best-inclusivity | nominee | [BJEA-China](https://2023.igem.wiki/bjea-china/) | 2026-09-08 |
+| 2023 | high-school | best-inclusivity | nominee | [Lambert-GA](https://2023.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2023 | overgrad | best-inclusivity | winner | [UniMuenster](https://2023.igem.wiki/unimuenster/) | 2026-09-08 |
+| 2023 | undergrad | best-inclusivity | winner | [UGM-Indonesia](https://2023.igem.wiki/ugm-indonesia/) | 2026-09-08 |
+| 2023 | undergrad | best-inclusivity | nominee | [TecMonterreyGDL](https://2023.igem.wiki/tecmonterreygdl/) | 2026-09-08 |
+| 2023 | undergrad | best-inclusivity | nominee | [Vilnius-Lithuania](https://2023.igem.wiki/vilnius-lithuania/) | 2026-09-08 |
+| 2023 | high-school | best-integrated-human-practices | winner | [GreatBay-SCIE](https://2023.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2023 | high-school | best-integrated-human-practices | nominee | [AIS-China](https://2023.igem.wiki/ais-china/) | 2026-09-08 |
+| 2023 | high-school | best-integrated-human-practices | nominee | [BASIS-China](https://2023.igem.wiki/basis-china/) | 2026-09-08 |
+| 2023 | high-school | best-integrated-human-practices | nominee | [HongKong-JSS](https://2023.igem.wiki/hongkong-jss/) | 2026-09-08 |
+| 2023 | high-school | best-integrated-human-practices | nominee | [Korea-HS](https://2023.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2023 | overgrad | best-integrated-human-practices | winner | [SDU-Denmark](https://2023.igem.wiki/sdu-denmark/) | 2026-09-08 |
+| 2023 | overgrad | best-integrated-human-practices | nominee | [Aalto-Helsinki](https://2023.igem.wiki/aalto-helsinki/) | 2026-09-08 |
+| 2023 | overgrad | best-integrated-human-practices | nominee | [INSAENSLyon1](https://2023.igem.wiki/insaenslyon1/) | 2026-09-08 |
+| 2023 | overgrad | best-integrated-human-practices | nominee | [Technion-Israel](https://2023.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2023 | overgrad | best-integrated-human-practices | nominee | [Toronto](https://2023.igem.wiki/toronto/) | 2026-09-08 |
+| 2023 | undergrad | best-integrated-human-practices | winner | [HUST-China](https://2023.igem.wiki/hust-china/) | 2026-09-08 |
+| 2023 | undergrad | best-integrated-human-practices | nominee | [IISER-Pune-India](https://2023.igem.wiki/iiser-pune-india/) | 2026-09-08 |
+| 2023 | undergrad | best-integrated-human-practices | nominee | [IISER-TVM](https://2023.igem.wiki/iiser-tvm/) | 2026-09-08 |
+| 2023 | undergrad | best-integrated-human-practices | nominee | [Tec-Chihuahua](https://2023.igem.wiki/tec-chihuahua/) | 2026-09-08 |
+| 2023 | undergrad | best-integrated-human-practices | nominee | [UTokyo](https://2023.igem.wiki/utokyo/) | 2026-09-08 |
+| 2023 | high-school | best-sustainable-development-impact | winner | [Korea-HS](https://2023.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2023 | high-school | best-sustainable-development-impact | nominee | [EastCoastBioCrew](https://2023.igem.wiki/eastcoastbiocrew/) | 2026-09-08 |
+| 2023 | high-school | best-sustainable-development-impact | nominee | [HK-Joint-School](https://2023.igem.wiki/hk-joint-school/) | 2026-09-08 |
+| 2023 | high-school | best-sustainable-development-impact | nominee | [SZ-SHD](https://2023.igem.wiki/sz-shd/) | 2026-09-08 |
+| 2023 | high-school | best-sustainable-development-impact | nominee | [Thinker-Guangdong](https://2023.igem.wiki/thinker-guangdong/) | 2026-09-08 |
+| 2023 | overgrad | best-sustainable-development-impact | winner | [Heidelberg](https://2023.igem.wiki/heidelberg/) | 2026-09-08 |
+| 2023 | overgrad | best-sustainable-development-impact | nominee | [Aachen](https://2023.igem.wiki/aachen/) | 2026-09-08 |
+| 2023 | overgrad | best-sustainable-development-impact | nominee | [Leiden](https://2023.igem.wiki/leiden/) | 2026-09-08 |
+| 2023 | overgrad | best-sustainable-development-impact | nominee | [SDU-Denmark](https://2023.igem.wiki/sdu-denmark/) | 2026-09-08 |
+| 2023 | overgrad | best-sustainable-development-impact | nominee | [UBC-Okanagan](https://2023.igem.wiki/ubc-okanagan/) | 2026-09-08 |
+| 2023 | undergrad | best-sustainable-development-impact | winner | [thessaloniki](https://2023.igem.wiki/thessaloniki/) | 2026-09-08 |
+| 2023 | undergrad | best-sustainable-development-impact | nominee | [AFCM-Egypt](https://2023.igem.wiki/afcm-egypt/) | 2026-09-08 |
+| 2023 | undergrad | best-sustainable-development-impact | nominee | [Austin-UTexas](https://2023.igem.wiki/austin-utexas/) | 2026-09-08 |
+| 2023 | undergrad | best-sustainable-development-impact | nominee | [Tsinghua-TFL](https://2023.igem.wiki/tsinghua-tfl/) | 2026-09-08 |
+| 2023 | undergrad | best-sustainable-development-impact | nominee | [VITVellore](https://2023.igem.wiki/vitvellore/) | 2026-09-08 |
+| 2022 | high-school | best-education | winner | [Korea-HS](https://2022.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2022 | high-school | best-education | nominee | [GEMS-Taiwan](https://2022.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2022 | high-school | best-education | nominee | [Mingdao](https://2022.igem.wiki/mingdao/) | 2026-09-08 |
+| 2022 | high-school | best-education | nominee | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | high-school | best-education | nominee | [Shym-BIL-NIS](https://2022.igem.wiki/shym-bil-nis/) | 2026-09-08 |
+| 2022 | overgrad | best-education | winner | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-education | nominee | [Athens](https://2022.igem.wiki/athens/) | 2026-09-08 |
+| 2022 | overgrad | best-education | nominee | [MIT-MAHE](https://2022.igem.wiki/mit-mahe/) | 2026-09-08 |
+| 2022 | overgrad | best-education | nominee | [Sorbonne-U-Paris](https://2022.igem.wiki/sorbonne-u-paris/) | 2026-09-08 |
+| 2022 | overgrad | best-education | nominee | [Technion-Israel](https://2022.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-education | nominee | [WWU-Muenster](https://2022.igem.wiki/wwu-muenster/) | 2026-09-08 |
+| 2022 | undergrad | best-education | winner | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
+| 2022 | undergrad | best-education | nominee | [Bio-Brussels](https://2022.igem.wiki/bio-brussels/) | 2026-09-08 |
+| 2022 | undergrad | best-education | nominee | [IISER-TVM](https://2022.igem.wiki/iiser-tvm/) | 2026-09-08 |
+| 2022 | undergrad | best-education | nominee | [RUM-UPRM](https://2022.igem.wiki/rum-uprm/) | 2026-09-08 |
+| 2022 | undergrad | best-education | nominee | [SZPT-CHINA](https://2022.igem.wiki/szpt-china/) | 2026-09-08 |
+| 2022 | undergrad | best-education | nominee | [Toulouse-INSA-UPS](https://2022.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2022 | high-school | best-inclusivity | winner | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | high-school | best-inclusivity | nominee | [BJEA-China](https://2022.igem.wiki/bjea-china/) | 2026-09-08 |
+| 2022 | high-school | best-inclusivity | nominee | [Lambert-GA](https://2022.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2022 | high-school | best-inclusivity | nominee | [Mingdao](https://2022.igem.wiki/mingdao/) | 2026-09-08 |
+| 2022 | overgrad | best-inclusivity | winner | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-inclusivity | nominee | [LZU-CHINA](https://2022.igem.wiki/lzu-china/) | 2026-09-08 |
+| 2022 | overgrad | best-inclusivity | nominee | [Stockholm](https://2022.igem.wiki/stockholm/) | 2026-09-08 |
+| 2022 | overgrad | best-inclusivity | nominee | [Technion-Israel](https://2022.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-inclusivity | nominee | [UFMG-UFV-Brazil](https://2022.igem.wiki/ufmg-ufv-brazil/) | 2026-09-08 |
+| 2022 | undergrad | best-inclusivity | winner | [Exeter](https://2022.igem.wiki/exeter/) | 2026-09-08 |
+| 2022 | undergrad | best-inclusivity | nominee | [IISER-Pune2-India](https://2022.igem.wiki/iiser-pune2-india/) | 2026-09-08 |
+| 2022 | undergrad | best-inclusivity | nominee | [IISER-TVM](https://2022.igem.wiki/iiser-tvm/) | 2026-09-08 |
+| 2022 | undergrad | best-inclusivity | nominee | [NU-Kazakhstan](https://2022.igem.wiki/nu-kazakhstan/) | 2026-09-08 |
+| 2022 | undergrad | best-inclusivity | nominee | [Tec-Chihuahua](https://2022.igem.wiki/tec-chihuahua/) | 2026-09-08 |
+| 2022 | high-school | best-integrated-human-practices | winner | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | high-school | best-integrated-human-practices | nominee | [BS-United-China](https://2022.igem.wiki/bs-united-china/) | 2026-09-08 |
+| 2022 | high-school | best-integrated-human-practices | nominee | [ICJFLS](https://2022.igem.wiki/icjfls/) | 2026-09-08 |
+| 2022 | high-school | best-integrated-human-practices | nominee | [KEYSTONE](https://2022.igem.wiki/keystone/) | 2026-09-08 |
+| 2022 | high-school | best-integrated-human-practices | nominee | [Lambert-GA](https://2022.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2022 | overgrad | best-integrated-human-practices | winner | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-integrated-human-practices | nominee | [Montpellier](https://2022.igem.wiki/montpellier/) | 2026-09-08 |
+| 2022 | overgrad | best-integrated-human-practices | nominee | [Technion-Israel](https://2022.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-integrated-human-practices | nominee | [Thessaly](https://2022.igem.wiki/thessaly/) | 2026-09-08 |
+| 2022 | overgrad | best-integrated-human-practices | nominee | [UZurich](https://2022.igem.wiki/uzurich/) | 2026-09-08 |
+| 2022 | undergrad | best-integrated-human-practices | winner | [TU-Eindhoven](https://2022.igem.wiki/tu-eindhoven/) | 2026-09-08 |
+| 2022 | undergrad | best-integrated-human-practices | nominee | [Exeter](https://2022.igem.wiki/exeter/) | 2026-09-08 |
+| 2022 | undergrad | best-integrated-human-practices | nominee | [HKUST](https://2022.igem.wiki/hkust/) | 2026-09-08 |
+| 2022 | undergrad | best-integrated-human-practices | nominee | [IISER-Pune2-India](https://2022.igem.wiki/iiser-pune2-india/) | 2026-09-08 |
+| 2022 | undergrad | best-integrated-human-practices | nominee | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
+| 2022 | high-school | best-sustainable-development-impact | winner | [PuiChing-Macau](https://2022.igem.wiki/puiching-macau/) | 2026-09-08 |
+| 2022 | high-school | best-sustainable-development-impact | nominee | [GreatBay-SCIE](https://2022.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2022 | high-school | best-sustainable-development-impact | nominee | [Korea-HS](https://2022.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2022 | high-school | best-sustainable-development-impact | nominee | [LINKS-China](https://2022.igem.wiki/links-china/) | 2026-09-08 |
+| 2022 | high-school | best-sustainable-development-impact | nominee | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | overgrad | best-sustainable-development-impact | winner | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-sustainable-development-impact | nominee | [EPFL](https://2022.igem.wiki/epfl/) | 2026-09-08 |
+| 2022 | overgrad | best-sustainable-development-impact | nominee | [TUDelft](https://2022.igem.wiki/tudelft/) | 2026-09-08 |
+| 2022 | overgrad | best-sustainable-development-impact | nominee | [UFMG-UFV-Brazil](https://2022.igem.wiki/ufmg-ufv-brazil/) | 2026-09-08 |
+| 2022 | overgrad | best-sustainable-development-impact | nominee | [UniofBath](https://2022.igem.wiki/uniofbath/) | 2026-09-08 |
+| 2022 | undergrad | best-sustainable-development-impact | winner | [Calgary](https://2022.igem.wiki/calgary/) | 2026-09-08 |
+| 2022 | undergrad | best-sustainable-development-impact | nominee | [HKUST](https://2022.igem.wiki/hkust/) | 2026-09-08 |
+| 2022 | undergrad | best-sustainable-development-impact | nominee | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
+| 2022 | undergrad | best-sustainable-development-impact | nominee | [Ionis-Paris](https://2022.igem.wiki/ionis-paris/) | 2026-09-08 |
+| 2022 | undergrad | best-sustainable-development-impact | nominee | [Nanjing-China](https://2022.igem.wiki/nanjing-china/) | 2026-09-08 |
 | 2021 | high-school | best-education | winner | [CCA-San-Diego](https://2021.igem.org/Team:CCA_San_Diego) | 2026-09-08 |
 | 2021 | high-school | best-education | nominee | [GreatBay-United](https://2021.igem.org/Team:GreatBay_United) | 2026-09-08 |
 | 2021 | high-school | best-education | nominee | [iBowu-China](https://2021.igem.org/Team:iBowu-China) | 2026-09-08 |
@@ -113,8 +277,14 @@ Coverage: **93 award records** (18 winners, 75 nominees) and **8 reviewed pages*
 | 2025 | [Munich — human-practices](https://2025.igem.wiki/munich/human-practices) | deep | Best Integrated Human Practices nominee OG | Engagement is organized around questions feedback interpretation and response | Chronology can obscure which choices changed without an integration summary | 2026-09-08 |
 | 2025 | [NYU-Abu-Dhabi — human-practices](https://2025.igem.wiki/nyu-abu-dhabi/human-practices) | deep | Best Integrated Human Practices winner UG | Stakeholder inputs are linked to concrete project changes | Contact volume is not a substitute for showing decision impact | 2026-09-08 |
 | 2025 | [UniMuenster — human-practices](https://2025.igem.wiki/unimuenster/human-practices) | deep | Best Integrated Human Practices and Education nominee OG | Education and stakeholder work are connected to project responsibilities | Participation evidence and learning outcomes require distinct measures | 2026-09-08 |
+| 2024 | [GreatBay-SCIE — human-practices](https://2024.igem.wiki/greatbay-scie/human-practices) | deep | Best Integrated Human Practices winner HS | Uses a five-stage process and a three-dimensional stakeholder map; interviews alter fragment design bioassay protocol packaging and the registration path | Repeated success-shaped interaction units can flatten uncertainty; unfinished Pichia pastoris verification must remain labeled as future work | 2026-09-08 |
 | 2024 | [JU-Krakow — human-practices](https://2024.igem.wiki/ju-krakow/human-practices) | deep | Best Wiki winner UG | Local context and stakeholder encounters feed the project narrative | Make the before and after design decision explicit for each key input | 2026-09-08 |
+| 2024 | [Stanford — human-practices](https://2024.igem.wiki/stanford/human-practices) | deep | Best Integrated Human Practices nominee UG | Applies human-centered design; roughly twenty patient interviews lead to a patient advisory board and a continuing feedback channel | More than forty contacts need clearer mapping to concrete technical decisions plus explicit evidence for representativeness and consent | 2026-09-08 |
+| 2023 | [Aalto-Helsinki — human-practices](https://2023.igem.wiki/aalto-helsinki/human-practices) | deep | Best Integrated Human Practices nominee OG | Organizes a project journey with per-stakeholder implementation outcomes; records bioethics guidance survey translations bias and scale changes | Repeated framework language fragments the causal story; a smaller set of decisive changes and tighter survey-bias boundaries would be clearer | 2026-09-08 |
+| 2023 | [HUST-China — human-practices](https://2023.igem.wiki/hust-china/human-practices) | deep | Best Integrated Human Practices winner UG | Uses coal-plant field data on temperature and gas conditions to reject a cooling-tower location and change hardware and experimental design | Positive feedback dominates; the strongest change chains need direct technical-evidence links and explicit unresolved cost or feasibility constraints | 2026-09-08 |
 | 2023 | [ShanghaiTech-China — human-practices](https://2023.igem.wiki/shanghaitech-china/human-practices) | deep | Best Wiki winner UG | Engagement is cross-linked with engineering and implementation | A long activity list benefits from an evidence-backed integration map | 2026-09-08 |
+| 2022 | [Technion-Israel — human-practices](https://2022.igem.wiki/technion-israel/human-practices) | deep | Best Integrated Human Practices nominee OG | Documents diverse independent advisers and shows feedback changing communication feasibility modeling measurement plans and the OraCell tool | The long sequence of meetings makes it difficult to compare which stakeholder input had the strongest evidence or remained unresolved | 2026-09-08 |
+| 2022 | [TU-Eindhoven — human-practices](https://2022.igem.wiki/tu-eindhoven/human-practices) | deep | Best Integrated Human Practices winner UG | Maps stakeholders by power and interest; translates values into norms and requirements; connects patient input to design modeling and wet-lab consequences | The framework-heavy page can bury the few highest-impact changes and would benefit from a concise before-and-after decision summary | 2026-09-08 |
 | 2021 | [LINKS-China — human-practices](https://2021.igem.org/Team:LINKS_China/Human_Practices) | deep | Best Wiki winner and Integrated HP nominee HS | Stakeholder interactions are connected across education and project development | Legacy labels and navigation need reinterpretation under current criteria | 2026-09-08 |
 
 ## Use rule

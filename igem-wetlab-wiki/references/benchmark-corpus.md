@@ -31,6 +31,17 @@ Deep reads also include strong Engineering and Results pages from Best Wiki team
 | <https://2023.igem.wiki/shanghaitech-china/engineering> | Best Wiki winner, UG | Explicit DBTL cycles retain failures and quantify later improvement | A percentage improvement needs baseline, definition, and uncertainty |
 | <https://2021.igem.org/Team:NUS_Singapore/Engineering> | Best Wiki winner, UG | Model sensitivity prompted a repeated experiment and a documented performance change | Distinguish technical from biological replication |
 
+## 2022–2024 additions
+
+| Team/page | Award relationship | Reusable observation | Caution |
+|---|---|---|---|
+| <https://2024.igem.wiki/austin-utexas/measurement> | Best Measurement winner, UG | iGEM calibrants, an OD660 workaround, four trials with triplicate cultures, uncertainty, and detection thresholds support comparison across constructs | Particle count is an estimated cell count and nonlinear low-signal ranges bound the conclusion |
+| <https://2024.igem.wiki/freiburg/measurement/> | Best Measurement nominee, OG | Matrix controls and uncertainty propagation expose a standard mismatch and produce a quantified lower operating limit | Some tests have only duplicate or single measurements and disruption of lipid nanoparticles may be incomplete |
+| <https://2023.igem.wiki/estonia-tuit/measurement> | Best Measurement winner, OG | Normalized flow cytometry, three biological replicates, standard deviation, and explicit significance tests make comparisons inspectable | High-copy expression saturates the response, so a lower-copy design remains necessary |
+| <https://2023.igem.wiki/lambert-ga/measurement> | Best Measurement nominee, HS | Stakeholder testing leads to a redesigned low-cost fluorometer that is compared with a plate reader using triplicates and regression | Green-fluorophore characterization is stronger than the preliminary evidence for other colors |
+| <https://2022.igem.wiki/fudan/measurement> | Best Measurement winner, UG | PCR, SDS-PAGE, color, microscopy, and HPLC form a multi-method verification chain; a failed assay changes the method | Comparative language needs clearer replicate, uncertainty, and statistical support |
+| <https://2022.igem.wiki/leiden/measurement> | Best Measurement nominee, OG | Samples, controls, settings, SEM, conversion, and assumptions are stated together | Tumor-heating extrapolation depends on linearity and composition assumptions that need separate validation |
+
 ## Extracted principles
 
 - Measurement quality is a scientific argument: calibration, controls, range, uncertainty, and comparability must be visible.

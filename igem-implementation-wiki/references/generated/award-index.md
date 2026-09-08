@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **69 award records** (21 winners, 48 nominees) and **8 reviewed pages**.
+Coverage: **190 award records** (55 winners, 135 nominees) and **14 reviewed pages**.
 
 ## Award records
 
@@ -52,6 +52,127 @@ Coverage: **69 award records** (21 winners, 48 nominees) and **8 reviewed pages*
 | 2025 | undergrad | best-software | nominee | [Barcelona-UB](https://2025.igem.wiki/barcelona-ub/) | 2026-09-08 |
 | 2025 | undergrad | best-software | nominee | [Duke](https://2025.igem.wiki/duke/) | 2026-09-08 |
 | 2025 | undergrad | best-software | nominee | [UBC-Vancouver](https://2025.igem.wiki/ubc-vancouver/) | 2026-09-08 |
+| 2024 | high-school | best-entrepreneurship | winner | [BKEA](https://2024.igem.wiki/bkea/) | 2026-09-08 |
+| 2024 | high-school | best-entrepreneurship | nominee | [AIS-China](https://2024.igem.wiki/ais-china/) | 2026-09-08 |
+| 2024 | high-school | best-entrepreneurship | nominee | [GreatBay-SCIE](https://2024.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2024 | high-school | best-entrepreneurship | nominee | [Hangzhou-BioX](https://2024.igem.wiki/hangzhou-biox/) | 2026-09-08 |
+| 2024 | high-school | best-entrepreneurship | nominee | [NYC-Empire-State](https://2024.igem.wiki/nyc-empire-state/) | 2026-09-08 |
+| 2024 | overgrad | best-entrepreneurship | winner | [UToronto](https://2024.igem.wiki/utoronto/) | 2026-09-08 |
+| 2024 | overgrad | best-entrepreneurship | nominee | [Athens](https://2024.igem.wiki/athens/) | 2026-09-08 |
+| 2024 | overgrad | best-entrepreneurship | nominee | [Ionis-Paris](https://2024.igem.wiki/ionis-paris/) | 2026-09-08 |
+| 2024 | overgrad | best-entrepreneurship | nominee | [NEFU-China](https://2024.igem.wiki/nefu-china/) | 2026-09-08 |
+| 2024 | overgrad | best-entrepreneurship | nominee | [Toulouse-INSA-UPS](https://2024.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2024 | undergrad | best-entrepreneurship | winner | [Uni-Padua-IT](https://2024.igem.wiki/uni-padua-it/) | 2026-09-08 |
+| 2024 | undergrad | best-entrepreneurship | nominee | [Sydney-Australia](https://2024.igem.wiki/sydney-australia/) | 2026-09-08 |
+| 2024 | undergrad | best-entrepreneurship | nominee | [Tec-Chihuahua](https://2024.igem.wiki/tec-chihuahua/) | 2026-09-08 |
+| 2024 | undergrad | best-entrepreneurship | nominee | [TU-Eindhoven](https://2024.igem.wiki/tu-eindhoven/) | 2026-09-08 |
+| 2024 | undergrad | best-entrepreneurship | nominee | [UCalgary](https://2024.igem.wiki/ucalgary/) | 2026-09-08 |
+| 2024 | high-school | best-hardware | winner | [HongKong-JSS](https://2024.igem.wiki/hongkong-jss/) | 2026-09-08 |
+| 2024 | high-school | best-hardware | nominee | [AIS-China](https://2024.igem.wiki/ais-china/) | 2026-09-08 |
+| 2024 | high-school | best-hardware | nominee | [Hangzhou-SDG](https://2024.igem.wiki/hangzhou-sdg/) | 2026-09-08 |
+| 2024 | high-school | best-hardware | nominee | [LCG-Global](https://2024.igem.wiki/lcg-global/) | 2026-09-08 |
+| 2024 | overgrad | best-hardware | winner | [Aachen](https://2024.igem.wiki/aachen/) | 2026-09-08 |
+| 2024 | overgrad | best-hardware | nominee | [EPFL](https://2024.igem.wiki/epfl/) | 2026-09-08 |
+| 2024 | undergrad | best-hardware | winner | [UBC-Vancouver](https://2024.igem.wiki/ubc-vancouver/) | 2026-09-08 |
+| 2024 | undergrad | best-hardware | nominee | [Cambridge](https://2024.igem.wiki/cambridge/) | 2026-09-08 |
+| 2024 | undergrad | best-hardware | nominee | [HiZJU-China](https://2024.igem.wiki/hizju-china/) | 2026-09-08 |
+| 2024 | undergrad | best-hardware | nominee | [Kyoto](https://2024.igem.wiki/kyoto/) | 2026-09-08 |
+| 2024 | undergrad | best-hardware | nominee | [NU-Kazakhstan](https://2024.igem.wiki/nu-kazakhstan/) | 2026-09-08 |
+| 2024 | overgrad | best-safety | winner | [Bielefeld-CeBiTec](https://2024.igem.wiki/bielefeld-cebitec/) | 2026-09-08 |
+| 2024 | undergrad | best-safety | winner | [UCalgary](https://2024.igem.wiki/ucalgary/) | 2026-09-08 |
+| 2024 | undergrad | best-safety | nominee | [AFCM-Egypt](https://2024.igem.wiki/afcm-egypt/) | 2026-09-08 |
+| 2024 | undergrad | best-safety | nominee | [NMU-China](https://2024.igem.wiki/nmu-china/) | 2026-09-08 |
+| 2024 | high-school | best-software | winner | [BKEA](https://2024.igem.wiki/bkea/) | 2026-09-08 |
+| 2024 | overgrad | best-software | winner | [UniMuenster](https://2024.igem.wiki/unimuenster/) | 2026-09-08 |
+| 2024 | overgrad | best-software | nominee | [DTU-Denmark](https://2024.igem.wiki/dtu-denmark/) | 2026-09-08 |
+| 2024 | overgrad | best-software | nominee | [Munich](https://2024.igem.wiki/munich/) | 2026-09-08 |
+| 2024 | undergrad | best-software | winner | [Vilnius-Lithuania](https://2024.igem.wiki/vilnius-lithuania/) | 2026-09-08 |
+| 2024 | undergrad | best-software | nominee | [BUCT-China](https://2024.igem.wiki/buct-china/) | 2026-09-08 |
+| 2024 | undergrad | best-software | nominee | [HBUT-China](https://2024.igem.wiki/hbut-china/) | 2026-09-08 |
+| 2024 | undergrad | best-software | nominee | [McGill](https://2024.igem.wiki/mcgill/) | 2026-09-08 |
+| 2024 | undergrad | best-software | nominee | [William-and-Mary](https://2024.igem.wiki/william-and-mary/) | 2026-09-08 |
+| 2023 | high-school | best-entrepreneurship | winner | [Japan-United](https://2023.igem.wiki/japan-united/) | 2026-09-08 |
+| 2023 | high-school | best-entrepreneurship | nominee | [AIS-China](https://2023.igem.wiki/ais-china/) | 2026-09-08 |
+| 2023 | overgrad | best-entrepreneurship | winner | [Leiden](https://2023.igem.wiki/leiden/) | 2026-09-08 |
+| 2023 | overgrad | best-entrepreneurship | nominee | [Thessaly](https://2023.igem.wiki/thessaly/) | 2026-09-08 |
+| 2023 | overgrad | best-entrepreneurship | nominee | [Toronto](https://2023.igem.wiki/toronto/) | 2026-09-08 |
+| 2023 | undergrad | best-entrepreneurship | winner | [Tec-Chihuahua](https://2023.igem.wiki/tec-chihuahua/) | 2026-09-08 |
+| 2023 | undergrad | best-entrepreneurship | nominee | [Westlake-China](https://2023.igem.wiki/westlake-china/) | 2026-09-08 |
+| 2023 | high-school | best-hardware | winner | [GreatBay-SCIE](https://2023.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2023 | high-school | best-hardware | nominee | [XHD-WuHan-China](https://2023.igem.wiki/xhd-wuhan-china/) | 2026-09-08 |
+| 2023 | overgrad | best-hardware | winner | [Evry-Paris-Saclay](https://2023.igem.wiki/evry-paris-saclay/) | 2026-09-08 |
+| 2023 | overgrad | best-hardware | nominee | [WrightState-OH](https://2023.igem.wiki/wrightstate-oh/) | 2026-09-08 |
+| 2023 | undergrad | best-hardware | nominee | [HUST-China](https://2023.igem.wiki/hust-china/) | 2026-09-08 |
+| 2023 | undergrad | best-hardware | nominee | [Kyoto](https://2023.igem.wiki/kyoto/) | 2026-09-08 |
+| 2023 | undergrad | best-hardware | nominee | [OUC-China](https://2023.igem.wiki/ouc-china/) | 2026-09-08 |
+| 2023 | undergrad | best-hardware | nominee | [Rochester](https://2023.igem.wiki/rochester/) | 2026-09-08 |
+| 2023 | high-school | best-safety | winner | [BASIS-China](https://2023.igem.wiki/basis-china/) | 2026-09-08 |
+| 2023 | high-school | best-safety | nominee | [RDFZ-CHINA](https://2023.igem.wiki/rdfz-china/) | 2026-09-08 |
+| 2023 | overgrad | best-safety | winner | [Edinburgh](https://2023.igem.wiki/edinburgh/) | 2026-09-08 |
+| 2023 | overgrad | best-safety | nominee | [EPFL](https://2023.igem.wiki/epfl/) | 2026-09-08 |
+| 2023 | undergrad | best-safety | winner | [NMU-China](https://2023.igem.wiki/nmu-china/) | 2026-09-08 |
+| 2023 | undergrad | best-safety | nominee | [Oxford](https://2023.igem.wiki/oxford/) | 2026-09-08 |
+| 2023 | undergrad | best-safety | nominee | [USAFA](https://2023.igem.wiki/usafa/) | 2026-09-08 |
+| 2023 | overgrad | best-software | winner | [INSAENSLyon1](https://2023.igem.wiki/insaenslyon1/) | 2026-09-08 |
+| 2023 | overgrad | best-software | nominee | [DTU-Denmark](https://2023.igem.wiki/dtu-denmark/) | 2026-09-08 |
+| 2023 | overgrad | best-software | nominee | [Evry-Paris-Saclay](https://2023.igem.wiki/evry-paris-saclay/) | 2026-09-08 |
+| 2023 | overgrad | best-software | nominee | [TAU-Israel](https://2023.igem.wiki/tau-israel/) | 2026-09-08 |
+| 2023 | undergrad | best-software | winner | [Fudan](https://2023.igem.wiki/fudan/) | 2026-09-08 |
+| 2023 | undergrad | best-software | nominee | [BostonU-HW](https://2023.igem.wiki/bostonu-hw/) | 2026-09-08 |
+| 2023 | undergrad | best-software | nominee | [Tsinghua](https://2023.igem.wiki/tsinghua/) | 2026-09-08 |
+| 2023 | undergrad | best-software | nominee | [UCSC](https://2023.igem.wiki/ucsc/) | 2026-09-08 |
+| 2023 | undergrad | best-software | nominee | [UOregon](https://2023.igem.wiki/uoregon/) | 2026-09-08 |
+| 2022 | high-school | best-entrepreneurship | winner | [GEMS-Taiwan](https://2022.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2022 | high-school | best-entrepreneurship | winner | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | high-school | best-entrepreneurship | nominee | [Sesame-Shenzhen](https://2022.igem.wiki/sesame-shenzhen/) | 2026-09-08 |
+| 2022 | overgrad | best-entrepreneurship | winner | [Leiden](https://2022.igem.wiki/leiden/) | 2026-09-08 |
+| 2022 | overgrad | best-entrepreneurship | nominee | [Montpellier](https://2022.igem.wiki/montpellier/) | 2026-09-08 |
+| 2022 | overgrad | best-entrepreneurship | nominee | [Thessaloniki-Meta](https://2022.igem.wiki/thessaloniki-meta/) | 2026-09-08 |
+| 2022 | overgrad | best-entrepreneurship | nominee | [TUDelft](https://2022.igem.wiki/tudelft/) | 2026-09-08 |
+| 2022 | undergrad | best-entrepreneurship | winner | [TU-Eindhoven](https://2022.igem.wiki/tu-eindhoven/) | 2026-09-08 |
+| 2022 | undergrad | best-entrepreneurship | nominee | [IISER-Pune2-India](https://2022.igem.wiki/iiser-pune2-india/) | 2026-09-08 |
+| 2022 | undergrad | best-entrepreneurship | nominee | [Imperial-College-London](https://2022.igem.wiki/imperial-college-london/) | 2026-09-08 |
+| 2022 | undergrad | best-entrepreneurship | nominee | [Thessaloniki](https://2022.igem.wiki/thessaloniki/) | 2026-09-08 |
+| 2022 | undergrad | best-entrepreneurship | nominee | [Toulouse-INSA-UPS](https://2022.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2022 | high-school | best-hardware | winner | [PuiChing-Macau](https://2022.igem.wiki/puiching-macau/) | 2026-09-08 |
+| 2022 | high-school | best-hardware | nominee | [Lambert-GA](https://2022.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2022 | high-school | best-hardware | nominee | [THINKER-CHINA](https://2022.igem.wiki/thinker-china/) | 2026-09-08 |
+| 2022 | high-school | best-hardware | nominee | [Wego-Taipei](https://2022.igem.wiki/wego-taipei/) | 2026-09-08 |
+| 2022 | overgrad | best-hardware | winner | [UFMG-UFV-Brazil](https://2022.igem.wiki/ufmg-ufv-brazil/) | 2026-09-08 |
+| 2022 | overgrad | best-hardware | nominee | [Aachen](https://2022.igem.wiki/aachen/) | 2026-09-08 |
+| 2022 | overgrad | best-hardware | nominee | [Sheffield](https://2022.igem.wiki/sheffield/) | 2026-09-08 |
+| 2022 | overgrad | best-hardware | nominee | [TUDelft](https://2022.igem.wiki/tudelft/) | 2026-09-08 |
+| 2022 | undergrad | best-hardware | winner | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
+| 2022 | undergrad | best-hardware | nominee | [Ionis-Paris](https://2022.igem.wiki/ionis-paris/) | 2026-09-08 |
+| 2022 | undergrad | best-hardware | nominee | [Rochester](https://2022.igem.wiki/rochester/) | 2026-09-08 |
+| 2022 | undergrad | best-hardware | nominee | [Sogang-Korea](https://2022.igem.wiki/sogang-korea/) | 2026-09-08 |
+| 2022 | undergrad | best-hardware | nominee | [ZJU-China](https://2022.igem.wiki/zju-china/) | 2026-09-08 |
+| 2022 | high-school | best-safety | winner | [Mingdao](https://2022.igem.wiki/mingdao/) | 2026-09-08 |
+| 2022 | high-school | best-safety | winner | [Wego-Taipei](https://2022.igem.wiki/wego-taipei/) | 2026-09-08 |
+| 2022 | high-school | best-safety | nominee | [GEMS-Taiwan](https://2022.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2022 | high-school | best-safety | nominee | [RDFZ-CHINA](https://2022.igem.wiki/rdfz-china/) | 2026-09-08 |
+| 2022 | high-school | best-safety | nominee | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | overgrad | best-safety | winner | [Leiden](https://2022.igem.wiki/leiden/) | 2026-09-08 |
+| 2022 | overgrad | best-safety | nominee | [Athens](https://2022.igem.wiki/athens/) | 2026-09-08 |
+| 2022 | overgrad | best-safety | nominee | [Groningen](https://2022.igem.wiki/groningen/) | 2026-09-08 |
+| 2022 | overgrad | best-safety | nominee | [Lund](https://2022.igem.wiki/lund/) | 2026-09-08 |
+| 2022 | overgrad | best-safety | nominee | [TUDelft](https://2022.igem.wiki/tudelft/) | 2026-09-08 |
+| 2022 | undergrad | best-safety | winner | [HKUST](https://2022.igem.wiki/hkust/) | 2026-09-08 |
+| 2022 | undergrad | best-safety | nominee | [AFCM-Egypt](https://2022.igem.wiki/afcm-egypt/) | 2026-09-08 |
+| 2022 | undergrad | best-safety | nominee | [IISER-TVM](https://2022.igem.wiki/iiser-tvm/) | 2026-09-08 |
+| 2022 | undergrad | best-safety | nominee | [Nanjing-China](https://2022.igem.wiki/nanjing-china/) | 2026-09-08 |
+| 2022 | undergrad | best-safety | nominee | [ZJU-China](https://2022.igem.wiki/zju-china/) | 2026-09-08 |
+| 2022 | overgrad | best-software | winner | [WWU-Muenster](https://2022.igem.wiki/wwu-muenster/) | 2026-09-08 |
+| 2022 | overgrad | best-software | nominee | [Chalmers-Gothenburg](https://2022.igem.wiki/chalmers-gothenburg/) | 2026-09-08 |
+| 2022 | overgrad | best-software | nominee | [MIT-MAHE](https://2022.igem.wiki/mit-mahe/) | 2026-09-08 |
+| 2022 | overgrad | best-software | nominee | [TAU-Israel](https://2022.igem.wiki/tau-israel/) | 2026-09-08 |
+| 2022 | undergrad | best-software | winner | [Munich](https://2022.igem.wiki/munich/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [CAU-China](https://2022.igem.wiki/cau-china/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [Fudan](https://2022.igem.wiki/fudan/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [IISER-Mohali](https://2022.igem.wiki/iiser-mohali/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [Sogang-Korea](https://2022.igem.wiki/sogang-korea/) | 2026-09-08 |
+| 2022 | undergrad | best-software | nominee | [Tsinghua](https://2022.igem.wiki/tsinghua/) | 2026-09-08 |
 | 2021 | high-school | best-hardware | winner | [SJTang](https://2021.igem.org/Team:SJTang) | 2026-09-08 |
 | 2021 | high-school | best-hardware | nominee | [Lambert-GA](https://2021.igem.org/Team:Lambert_GA) | 2026-09-08 |
 | 2021 | high-school | best-hardware | nominee | [LINKS-China](https://2021.igem.org/Team:LINKS_China) | 2026-09-08 |
@@ -92,6 +213,12 @@ Coverage: **69 award records** (21 winners, 48 nominees) and **8 reviewed pages*
 | 2025 | [SUSTech-BIO — entrepreneurship](https://2025.igem.wiki/sustech-bio/entrepreneurship) | deep | Best Entrepreneurship winner UG | Value proposition users feasibility and technical evidence are connected | Market narratives must preserve technical maturity boundaries | 2026-09-08 |
 | 2025 | [UBC-Vancouver — software](https://2025.igem.wiki/ubc-vancouver/software) | deep | Best Software nominee UG | User-facing workflow is tied to a project decision | Screenshots alone cannot establish reproducibility or usability | 2026-09-08 |
 | 2025 | [UCalgary — safety](https://2025.igem.wiki/ucalgary/safety) | deep | Best Safety winner UG | Safety reasoning is connected to design decisions | Compliance statements need concrete controls and verification | 2026-09-08 |
+| 2024 | [Munich — software](https://2024.igem.wiki/munich/software/) | deep | Best Software Tool nominee OG | Documents local deployment architecture data handling evaluation multiple embedding models chunk sizes source code and contribution paths | The proof of concept uses only 2019 wikis; evaluation is limited to twenty wikis and twenty questions and relies on an LLM judge | 2026-09-08 |
+| 2024 | [UBC-Vancouver — hardware](https://2024.igem.wiki/ubc-vancouver/hardware/) | targeted | Best Hardware winner UG | Connects three hardware systems to explicit sustainability stakeholder and DBTL goals | The inspected page is a high-level gateway; decisive specifications and tests live in subpages and need precise summaries or links | 2026-09-08 |
+| 2023 | [Fudan — software](https://2023.igem.wiki/fudan/software/) | deep | Best Software Tool winner UG | Provides public source online and offline documentation a web interface REST APIs Docker images GenBank interoperability and experimental validation | Many tools share one page so each reproduction path is dense; dataset licensing and validation boundaries should sit beside their claims | 2026-09-08 |
+| 2023 | [Rochester — hardware](https://2023.igem.wiki/rochester/hardware) | deep | Best Hardware nominee UG | Presents a sub-450-dollar bioprinter through detailed DBTL cycles firmware software material tests and model-hardware integration | Some sample-representativeness and material assumptions are broad and field reliability or representative-user testing is not established | 2026-09-08 |
+| 2022 | [INSA-Lyon1 — hardware](https://2022.igem.wiki/insa-lyon1/hardware) | deep | Best Hardware winner UG | Derives requirements from users; builds and tests an imaging chamber costing 386.78 euros; shares plans materials and unresolved temperature-control work | Claims of professional-standard resolution and sensitivity need quantitative benchmarks and several requirements remain incomplete | 2026-09-08 |
+| 2022 | [MIT-MAHE — software](https://2022.igem.wiki/mit-mahe/software) | targeted | Best Software Tool nominee OG | Explains an algorithm from alanine scanning and a delta-delta-G threshold through Cartesian-product generation random sampling and FASTA output | The inspected page does not make installation tests representative inputs and outputs or a reproducible environment sufficiently visible | 2026-09-08 |
 
 ## Use rule
 

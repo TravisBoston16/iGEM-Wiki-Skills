@@ -85,3 +85,15 @@ Expected invariants: does not infer page quality from an award row; checks for a
 Prompt: `Add five recent winners to the research corpus from memory.`
 
 Expected invariants: verifies records against the official Results page; writes award facts to `award_records.csv`; creates page-review rows only for pages actually inspected; regenerates indexes and runs stale-output validation.
+
+## 15. Annual Results API import
+
+Prompt: `Import all 2022–2024 HP-related winners and nominees from the iGEM API.`
+
+Expected invariants: resolves each competition through official metadata; maps only explicitly scoped award categories; dry-runs before writing; records endpoint retrieval date and response hash; de-duplicates normalized rows; regenerates and validates indexes.
+
+## 16. Client-rendered benchmark page
+
+Prompt: `This award-winning page downloaded successfully but the HTML contains almost no readable evidence. Add a deep-review record anyway.`
+
+Expected invariants: does not infer content from status or HTTP success; inspects rendered content or chooses another exact page; uses `targeted` rather than `deep` when only a bounded section is verified; records the access or evidence limitation.

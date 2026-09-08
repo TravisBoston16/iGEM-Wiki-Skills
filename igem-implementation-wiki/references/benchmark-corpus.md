@@ -35,6 +35,17 @@ The 2021 Software pool is:
 | <https://2025.igem.wiki/sustech-bio/entrepreneurship> | Best Entrepreneurship winner, UG | Covers unmet need, market, commercialization, MVP, finances, and risk as one path | Large market or impact claims require source and boundary checks |
 | <https://2025.igem.wiki/aalto-helsinki/sustainability> | Sustainability winner, OG | Demonstrates how implementation boundaries affect environmental claims | Do not substitute SDG labels for lifecycle reasoning |
 
+## 2022–2024 additions
+
+| Team/page | Award relationship | Reusable observation | Caution |
+|---|---|---|---|
+| <https://2024.igem.wiki/ubc-vancouver/hardware/> | Best Hardware winner, UG | Three hardware systems are linked to sustainability, stakeholder, and DBTL goals | The overview delegates decisive specifications and tests to subpages, so evidence routes must be precise |
+| <https://2024.igem.wiki/munich/software/> | Best Software Tool nominee, OG | Local deployment, architecture, data handling, model choices, evaluation, source code, and contribution routes are documented | The proof of concept uses only 2019 wikis and a small LLM-judged evaluation set |
+| <https://2023.igem.wiki/fudan/software/> | Best Software Tool winner, UG | Public source, online and offline documentation, web and API access, Docker, interoperability, and wet-lab validation support reuse | Multiple tools make each reproduction path dense and dataset or validation boundaries need local visibility |
+| <https://2023.igem.wiki/rochester/hardware> | Best Hardware nominee, UG | A sub-450-dollar bioprinter is documented through DBTL, firmware, materials tests, and model-hardware integration | Field reliability, representative-user testing, and some material assumptions remain open |
+| <https://2022.igem.wiki/insa-lyon1/hardware> | Best Hardware winner, UG | User requirements lead to a tested 386.78-euro imaging chamber with plans, materials, and unfinished requirements visible | Professional-standard performance claims need quantitative benchmarks |
+| <https://2022.igem.wiki/mit-mahe/software> | Best Software Tool nominee, OG | The page explains alanine scanning, a delta-delta-G threshold, combinatorial generation, sampling, and FASTA output | Installation, tests, examples, and the reproducible runtime are not sufficiently visible on the inspected page |
+
 ## Extracted principles
 
 - Start with a user task and measurable requirements, not the artifact's novelty.

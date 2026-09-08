@@ -88,7 +88,9 @@ def validate_release_resources(failures: list[str]) -> None:
         "corpus/schema.md",
         "corpus/award_records.csv",
         "corpus/page_reviews.csv",
+        "corpus/source_manifest.csv",
         "scripts/build_corpus.py",
+        "scripts/import_annual_results.py",
     )
     for relative in required:
         if not (ROOT / relative).is_file():

@@ -26,6 +26,7 @@ DEPTHS = {"targeted", "deep"}
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SLUG = re.compile(r"^[A-Za-z0-9_-]+$")
 AWARD = re.compile(r"^[a-z0-9-]+$")
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 def read_csv(name: str, required: tuple[str, ...]) -> list[dict[str, str]]:
@@ -84,6 +85,22 @@ def validate_reviews(rows: list[dict[str, str]]) -> None:
         if key in seen:
             raise ValueError(f"duplicate page review: {key}")
         seen.add(key)
+
+
+def validate_sources(rows: list[dict[str, str]]) -> None:
+    seen: set[str] = set()
+    for row in rows:
+        if not row["year"].isdigit() or len(row["year"]) != 4:
+            raise ValueError(f"invalid source year: {row['year']}")
+        if row["year"] in seen:
+            raise ValueError(f"duplicate source year: {row['year']}")
+        seen.add(row["year"])
+        if not row["awards_endpoint"].startswith("https://api.igem.org/"):
+            raise ValueError(f"source endpoint must use the official iGEM API: {row['awards_endpoint']}")
+        if not ISO_DATE.fullmatch(row["retrieved_on"]):
+            raise ValueError(f"invalid source retrieval date: {row['retrieved_on']}")
+        if not SHA256.fullmatch(row["sha256"]):
+            raise ValueError(f"invalid source SHA-256: {row['sha256']}")
 
 
 def md(value: str) -> str:
@@ -160,7 +177,9 @@ def domain_index(domain: str, awards: list[dict[str, str]], reviews: list[dict[s
     return "\n".join(lines)
 
 
-def corpus_index(awards: list[dict[str, str]], reviews: list[dict[str, str]]) -> str:
+def corpus_index(
+    awards: list[dict[str, str]], reviews: list[dict[str, str]], sources: list[dict[str, str]]
+) -> str:
     lines = [
         "# Benchmark corpus index",
         "",
@@ -196,6 +215,20 @@ def corpus_index(awards: list[dict[str, str]], reviews: list[dict[str, str]]) ->
             "",
             "Counts are award-category records; a team may appear in multiple categories. See [`corpus/schema.md`](../../corpus/schema.md) for fields and maintenance rules.",
             "",
+            "## Official machine-source snapshots",
+            "",
+            "| Year | Official endpoint | Retrieved | SHA-256 |",
+            "|---:|---|---|---|",
+        ]
+    )
+    for row in sorted(sources, key=lambda item: -int(item["year"])):
+        lines.append(
+            f"| {row['year']} | [award results]({row['awards_endpoint']}) | "
+            f"{row['retrieved_on']} | `{row['sha256']}` |"
+        )
+    lines.extend(
+        [
+            "",
             "## Expansion rule",
             "",
             "Add an official award record before using award status. Add a page-review record only after inspecting the exact page. Record both a reusable decision and a limitation. Add class, year, and nominee counterexamples before treating a presentation pattern as universal.",
@@ -205,8 +238,14 @@ def corpus_index(awards: list[dict[str, str]], reviews: list[dict[str, str]]) ->
     return "\n".join(lines)
 
 
-def outputs(awards: list[dict[str, str]], reviews: list[dict[str, str]]) -> dict[Path, str]:
-    generated = {ROOT / "igem-wiki" / "references" / "corpus-index.md": corpus_index(awards, reviews)}
+def outputs(
+    awards: list[dict[str, str]], reviews: list[dict[str, str]], sources: list[dict[str, str]]
+) -> dict[Path, str]:
+    generated = {
+        ROOT / "igem-wiki" / "references" / "corpus-index.md": corpus_index(
+            awards, reviews, sources
+        )
+    }
     for domain, (skill, _) in DOMAINS.items():
         generated[ROOT / skill / "references" / "generated" / "award-index.md"] = domain_index(
             domain, awards, reviews
@@ -240,8 +279,13 @@ def main() -> int:
     )
     validate_awards(awards)
     validate_reviews(reviews)
+    sources = read_csv(
+        "source_manifest.csv",
+        ("year", "competition_uuid", "awards_endpoint", "retrieved_on", "sha256"),
+    )
+    validate_sources(sources)
     stale: list[str] = []
-    for path, content in outputs(awards, reviews).items():
+    for path, content in outputs(awards, reviews, sources).items():
         expected = content.rstrip() + "\n"
         if args.check:
             if not path.is_file() or path.read_text(encoding="utf-8") != expected:
@@ -255,7 +299,10 @@ def main() -> int:
             print(f"- {path}")
         return 1
     action = "Checked" if args.check else "Generated"
-    print(f"{action} {len(DOMAINS) + 1} indexes from {len(awards)} award records and {len(reviews)} page-review records.")
+    print(
+        f"{action} {len(DOMAINS) + 1} indexes from {len(awards)} award records, "
+        f"{len(reviews)} page-review records, and {len(sources)} official source snapshots."
+    )
     return 0
 
 

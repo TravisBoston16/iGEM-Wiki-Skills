@@ -39,6 +39,17 @@ The 2021 Education pool is:
 | <https://2023.igem.wiki/shanghaitech-china/human-practices> | Best Wiki winner, UG | Stakeholder work is connected to engineering cycles rather than isolated at the end | Cross-links must land on the exact affected evidence |
 | <https://2021.igem.org/Team:LINKS_China/Human_Practices> | Best Wiki winner and IHP nominee, HS | Strong visual chronology and project-context integration | Legacy interaction patterns need accessibility review |
 
+## 2022–2024 additions
+
+| Team/page | Award relationship | Reusable observation | Caution |
+|---|---|---|---|
+| <https://2024.igem.wiki/greatbay-scie/human-practices> | Best IHP winner, HS | A five-stage process and stakeholder matrix connect interviews to fragment design, bioassay protocol, packaging, and registration planning | Repeated success-shaped units can hide uncertainty; unfinished biological verification must stay future work |
+| <https://2024.igem.wiki/stanford/human-practices> | Best IHP nominee, UG | Patient interviews lead to a patient advisory board and a continuing feedback channel | Contact volume needs mapping to decisions plus explicit representativeness and consent evidence |
+| <https://2023.igem.wiki/hust-china/human-practices> | Best IHP winner, UG | On-site coal-plant temperature and gas data invalidate a proposed location and change hardware and experimental design | Positive feedback dominates; unresolved feasibility and cost should remain visible |
+| <https://2023.igem.wiki/aalto-helsinki/human-practices> | Best IHP nominee, OG | Per-stakeholder implementation notes connect bioethics, survey findings, and scale constraints to the project journey | Repeated framework language fragments the causal story and survey-bias boundaries need sharpening |
+| <https://2022.igem.wiki/tu-eindhoven/human-practices> | Best IHP winner, UG | Power-interest mapping and value-sensitive design translate patient values into requirements affecting wet lab and modeling | A long framework can bury the few highest-impact before-and-after decisions |
+| <https://2022.igem.wiki/technion-israel/human-practices> | Best IHP nominee, OG | Independent advisers change communication, feasibility modeling, measurement plans, and the OraCell tool | The sequence of meetings does not make their relative evidential weight easy to compare |
+
 ## Extracted principles
 
 - The strongest unit is not an interview; it is an evidence-backed project change.

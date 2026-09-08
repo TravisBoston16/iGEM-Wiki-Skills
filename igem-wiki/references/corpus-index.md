@@ -18,12 +18,20 @@ An award record does not prove that a page was reviewed or that every claim is e
 | Domain skill | Award records | Winners | Nominees | Reviewed pages | Years represented |
 |---|---:|---:|---:|---:|---|
 | [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 69 | 16 | 53 | 10 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 27 | 6 | 21 | 8 | 2025, 2021 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 54 | 14 | 40 | 14 | 2025, 2024, 2023, 2022, 2021 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 41 | 9 | 32 | 10 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 93 | 18 | 75 | 8 | 2025, 2021 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 69 | 21 | 48 | 8 | 2025, 2021 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 257 | 54 | 203 | 14 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 190 | 55 | 135 | 14 | 2025, 2024, 2023, 2022, 2021 |
 
 Counts are award-category records; a team may appear in multiple categories. See [`corpus/schema.md`](../../corpus/schema.md) for fields and maintenance rules.
+
+## Official machine-source snapshots
+
+| Year | Official endpoint | Retrieved | SHA-256 |
+|---:|---|---|---|
+| 2024 | [award results](https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results) | 2026-09-08 | `bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336` |
+| 2023 | [award results](https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results) | 2026-09-08 | `8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984` |
+| 2022 | [award results](https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results) | 2026-09-08 | `0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91` |
 
 ## Expansion rule
 

@@ -1,0 +1,4 @@
+year,competition_uuid,awards_endpoint,retrieved_on,sha256
+2024,5198bd74-a6bc-482d-bf02-d0f7dc5f33c7,https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results,2026-09-08,bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336
+2023,d7dab5d6-eedb-40ed-8b50-ffbcb2053851,https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results,2026-09-08,8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984
+2022,3a8e556f-e347-4b47-8d0e-9b697f49fba5,https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results,2026-09-08,0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91

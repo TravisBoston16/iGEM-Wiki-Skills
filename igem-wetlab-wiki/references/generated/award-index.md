@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **27 award records** (6 winners, 21 nominees) and **8 reviewed pages**.
+Coverage: **54 award records** (14 winners, 40 nominees) and **14 reviewed pages**.
 
 ## Award records
 
@@ -25,6 +25,33 @@ Coverage: **27 award records** (6 winners, 21 nominees) and **8 reviewed pages**
 | 2025 | undergrad | best-measurement | nominee | [McMaster-Canada](https://2025.igem.wiki/mcmaster-canada/) | 2026-09-08 |
 | 2025 | undergrad | best-measurement | nominee | [NU-Kazakhstan](https://2025.igem.wiki/nu-kazakhstan/) | 2026-09-08 |
 | 2025 | undergrad | best-measurement | nominee | [ShanghaiTech-China](https://2025.igem.wiki/shanghaitech-china/) | 2026-09-08 |
+| 2024 | high-school | best-measurement | winner | [HongKong-UCCKE](https://2024.igem.wiki/hongkong-uccke/) | 2026-09-08 |
+| 2024 | high-school | best-measurement | nominee | [Boston-BOSLab](https://2024.igem.wiki/boston-boslab/) | 2026-09-08 |
+| 2024 | high-school | best-measurement | nominee | [Korea-HS](https://2024.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2024 | high-school | best-measurement | nominee | [SubCat-HS](https://2024.igem.wiki/subcat-hs/) | 2026-09-08 |
+| 2024 | overgrad | best-measurement | winner | [KULeuven](https://2024.igem.wiki/kuleuven/) | 2026-09-08 |
+| 2024 | overgrad | best-measurement | nominee | [Freiburg](https://2024.igem.wiki/freiburg/) | 2026-09-08 |
+| 2024 | overgrad | best-measurement | nominee | [UppsalaUniversity](https://2024.igem.wiki/uppsalauniversity/) | 2026-09-08 |
+| 2024 | undergrad | best-measurement | winner | [Austin-utexas](https://2024.igem.wiki/austin-utexas/) | 2026-09-08 |
+| 2024 | undergrad | best-measurement | nominee | [Exeter](https://2024.igem.wiki/exeter/) | 2026-09-08 |
+| 2024 | undergrad | best-measurement | nominee | [Fudan](https://2024.igem.wiki/fudan/) | 2026-09-08 |
+| 2024 | undergrad | best-measurement | nominee | [HiZJU-China](https://2024.igem.wiki/hizju-china/) | 2026-09-08 |
+| 2024 | undergrad | best-measurement | nominee | [Madrid-UCM](https://2024.igem.wiki/madrid-ucm/) | 2026-09-08 |
+| 2023 | high-school | best-measurement | winner | [Korea-HS](https://2023.igem.wiki/korea-hs/) | 2026-09-08 |
+| 2023 | high-school | best-measurement | nominee | [Lambert-GA](https://2023.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2023 | overgrad | best-measurement | winner | [Estonia-TUIT](https://2023.igem.wiki/estonia-tuit/) | 2026-09-08 |
+| 2023 | overgrad | best-measurement | nominee | [Toulouse-INSA-UPS](https://2023.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2023 | undergrad | best-measurement | winner | [William-and-Mary](https://2023.igem.wiki/william-and-mary/) | 2026-09-08 |
+| 2023 | undergrad | best-measurement | nominee | [UNILausanne](https://2023.igem.wiki/unilausanne/) | 2026-09-08 |
+| 2022 | overgrad | best-measurement | winner | [Technion-Israel](https://2022.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-measurement | nominee | [Evry-Paris-Saclay](https://2022.igem.wiki/evry-paris-saclay/) | 2026-09-08 |
+| 2022 | overgrad | best-measurement | nominee | [Leiden](https://2022.igem.wiki/leiden/) | 2026-09-08 |
+| 2022 | overgrad | best-measurement | nominee | [Thessaloniki-Meta](https://2022.igem.wiki/thessaloniki-meta/) | 2026-09-08 |
+| 2022 | undergrad | best-measurement | winner | [Fudan](https://2022.igem.wiki/fudan/) | 2026-09-08 |
+| 2022 | undergrad | best-measurement | nominee | [IISER-Pune2-India](https://2022.igem.wiki/iiser-pune2-india/) | 2026-09-08 |
+| 2022 | undergrad | best-measurement | nominee | [Rochester](https://2022.igem.wiki/rochester/) | 2026-09-08 |
+| 2022 | undergrad | best-measurement | nominee | [XMU-China](https://2022.igem.wiki/xmu-china/) | 2026-09-08 |
+| 2022 | undergrad | best-measurement | nominee | [ZJU-China](https://2022.igem.wiki/zju-china/) | 2026-09-08 |
 | 2021 | high-school | best-measurement | winner | [Mingdao](https://2021.igem.org/Team:Mingdao) | 2026-09-08 |
 | 2021 | high-school | best-measurement | nominee | [Lambert-GA](https://2021.igem.org/Team:Lambert_GA) | 2026-09-08 |
 | 2021 | high-school | best-measurement | nominee | [LINKS-China](https://2021.igem.org/Team:LINKS_China) | 2026-09-08 |
@@ -47,8 +74,14 @@ Coverage: **27 award records** (6 winners, 21 nominees) and **8 reviewed pages**
 | 2025 | [GEMS-Taiwan — measurement](https://2025.igem.wiki/gems-taiwan/measurement) | deep | Best Measurement nominee HS | Measurement choices are explained for readers outside the subfield | Instrument settings and analysis scripts need equally direct access | 2026-09-08 |
 | 2025 | [GreatBay-SCIE — engineering](https://2025.igem.wiki/greatbay-scie/engineering) | deep | Strong cross-domain wiki and HP winner HS | DBTL cycles connect design changes to observed evidence | Cycle summaries should distinguish completed repeats from proposed work | 2026-09-08 |
 | 2025 | [ShanghaiTech-China — measurement](https://2025.igem.wiki/shanghaitech-china/measurement) | deep | Best Measurement nominee UG | Experimental workflow and quantitative readouts are organized around decisions | Replicate counts and uncertainty should remain visible beside figures | 2026-09-08 |
+| 2024 | [Austin-utexas — measurement](https://2024.igem.wiki/austin-utexas/measurement) | deep | Best Measurement winner UG | Uses iGEM calibrants an OD660 workaround four trials with triplicate cultures uncertainty and detection thresholds to compare fluorescence per cell | Particle count is only an estimate of cell count and low-OD or low-fluorescence nonlinearity limits the valid operating range | 2026-09-08 |
+| 2024 | [Freiburg — measurement](https://2024.igem.wiki/freiburg/measurement/) | deep | Best Measurement nominee OG | Tests standards matrix effects controls and uncertainty propagation; detects a standard mismatch and low-concentration failure; recommends a quantified operating floor | Some tests use duplicates or a single replicate and detergent treatment may not fully disrupt lipid nanoparticles | 2026-09-08 |
 | 2024 | [JU-Krakow — engineering](https://2024.igem.wiki/ju-krakow/engineering) | deep | Best Wiki winner UG | Iteration is narrated as decisions rather than a chronological lab diary | Some causal claims need direct links to the corresponding result | 2026-09-08 |
+| 2023 | [Estonia-TUIT — measurement](https://2023.igem.wiki/estonia-tuit/measurement) | deep | Best Measurement winner OG | Normalizes flow-cytometry measurements; uses three biological replicates standard deviation t-tests and explicit p-value thresholds across seven shRNAs | High-copy expression saturates the response and prevents quantitative discrimination; the proposed lower-copy plasmid remains future work | 2026-09-08 |
+| 2023 | [Lambert-GA — measurement](https://2023.igem.wiki/lambert-ga/measurement) | deep | Best Measurement nominee HS | Connects stakeholder testing to a redesigned low-cost fluorometer; uses triplicates plate-reader comparison regression and percent error | Completed characterization focuses on green fluorophores while red is preliminary so broad visible-spectrum claims need qualification | 2026-09-08 |
 | 2023 | [ShanghaiTech-China — engineering](https://2023.igem.wiki/shanghaitech-china/engineering) | deep | Best Wiki winner UG | Engineering cycles expose what changed and why | Dense sections benefit from a cycle-level claim evidence table | 2026-09-08 |
+| 2022 | [Fudan — measurement](https://2022.igem.wiki/fudan/measurement) | deep | Best Measurement winner UG | Builds a verification chain from PCR and SDS-PAGE through color microscopy and HPLC; an assay failure changes the method; measurements inform RBS optimization | HPLC and imaging conclusions need clearer replicate uncertainty and statistical support for comparative language | 2026-09-08 |
+| 2022 | [Leiden — measurement](https://2022.igem.wiki/leiden/measurement) | deep | Best Measurement nominee OG | States samples controls protocol and instrument settings; reports SEM a 7.1 degree Celsius temperature change and 44.3 percent conversion; makes assumptions visible | Tumor-heating extrapolation assumes linearity and starting-temperature invariance; nanoparticle mass may include debris or medium components | 2026-09-08 |
 | 2021 | [NUS-Singapore — engineering](https://2021.igem.org/Team:NUS_Singapore/Engineering) | deep | Best Wiki winner UG | Model sensitivity prompted a three-repeat wet-lab experiment | The result supports tested conditions rather than broad generalization | 2026-09-08 |
 
 ## Use rule

@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [0.4.0] - 2026-09-08
+
+### Added
+
+- 312 official 2022–2024 award-category records for Wet Lab, Human Practices, and Implementation, bringing the corpus to 611 records.
+- 18 inspected winner and nominee pages across the three expanded domains, bringing page reviews to 62.
+- Annual Results API importer and a source manifest containing competition identifiers, retrieval dates, endpoints, and response hashes.
+- Curated 2022–2024 comparison tables in the three domain benchmark corpora.
+- Evaluation scenarios for API-based corpus updates and client-rendered pages.
+
+### Changed
+
+- Generated corpus indexes now expose official machine-source provenance.
+- Repository validation now requires and validates the source manifest and importer.
+
 ## [0.3.0] - 2026-09-08
 
 ### Added
