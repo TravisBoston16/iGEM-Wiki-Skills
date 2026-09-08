@@ -1,0 +1,79 @@
+---
+name: igem-model-wiki
+description: Research, plan, write, implement, or audit an iGEM Model wiki page using current judging guidance, award-winning precedents, and the team's actual code, data, and experimental evidence. Use for Model-page architecture, scientific narrative, equations, figures, reproducibility, dry-lab/wet-lab integration, or page-level UX; do not use for unrelated wiki sections.
+---
+
+# iGEM Model Wiki
+
+Build a Model page that lets a judge trace each important conclusion from biological question to reproducible evidence. Treat award-winning pages as precedents to analyze, not templates to copy.
+
+## Choose the mode
+
+- **Research:** identify relevant Best Model and Best Wiki winners and extract reusable patterns.
+- **Plan:** inspect the team's sources and propose a page architecture without editing.
+- **Write or implement:** create or revise only the requested Model-page content and assets.
+- **Audit:** report evidence, narrative, usability, and reproducibility gaps before proposing changes.
+
+If the user asks to research winners or compare exemplars, read [references/benchmark-patterns.md](references/benchmark-patterns.md) and [references/benchmark-corpus.md](references/benchmark-corpus.md). For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
+
+## Start from current evidence
+
+1. Inspect the live workspace before proposing substantial changes: Model HTML, styles, scripts, figures, model code, notebooks, data, reports, and references. Search first; do not assume paths or asset versions.
+2. Build an evidence inventory for each model: biological question, decision it supports, inputs, outputs, assumptions, parameters and units, algorithm or equations, calibration or comparison data, uncertainty, sensitivity, validation, limitations, code/data location, and wet-lab or design consequence.
+3. Mark every planned statement as one of: directly observed, computed under declared assumptions, literature-derived, hypothesis, or future work. Weaken or remove claims that outrun the source evidence.
+4. If essential scientific sources are missing, state the gap and continue with an evidence-bounded plan. Do not invent equations, parameter values, validation, or experimental impact.
+
+## Refresh unstable facts
+
+When award status, judging criteria, or competition rules matter, verify them on the current official iGEM Competition site. Start from the official Results page and current Judging pages. Record year, competition class, prize, winner versus nominee, team, and exact page URL. Prefer recent winners relevant to the team's class, then add an older or structurally different example to avoid copying one fashion.
+
+## Build the scientific story
+
+Open with a compact map of the modeling system: the project problem, why modeling is needed, how modules connect, and what decisions or experiments they inform. Make inputs and outputs visible before technical depth.
+
+For each genuinely independent model or method, provide the smallest complete reasoning unit appropriate to the science. Usually include:
+
+1. **Question or purpose** — the biological uncertainty or design decision.
+2. **Background and assumptions** — scope, simplifications, boundary conditions, and what the model cannot establish.
+3. **Method** — variables, units, governing relationships, algorithm, parameter provenance, and implementation details needed to understand or reproduce it.
+4. **Results** — interpretable figures or tables, quantitative takeaways, uncertainty or sensitivity, and comparisons against experiments, literature, baselines, or withheld data where available.
+5. **Impact and limits** — what changed in design or wet-lab work, what remains provisional, and the next discriminating test.
+
+Use the project's established module vocabulary when it is clear. Do not force unrelated analyses into one catch-all Method, and do not split one coherent method merely to create more sections. Preserve the distinction between prediction, proxy, annotation, hypothesis, and experimental proof.
+
+## Make evidence inspectable
+
+- Define every symbol near its first use and give units for dimensional quantities.
+- Trace parameter values to measurements, literature, fitting, or explicit scenario assumptions.
+- Show representative intermediate results when they explain how an output was produced.
+- Pair every result figure with a caption that states what is plotted, under which conditions, and what conclusion is supported.
+- Include controls or baselines, robustness or sensitivity checks, and failure cases when they materially affect interpretation.
+- Link code, data, model artifacts, and references when available. Explain how to reproduce key results at a useful level; do not claim reproducibility from a repository link alone.
+- Keep negative, partial, and inconclusive results when they changed the project or define model limits.
+
+## Design for a long technical page
+
+- Provide a readable overview before equations and dense results.
+- Use a hierarchical table of contents or position-aware navigation for multiple models and subsections. Hash links must reveal any collapsed parent and land on visible content.
+- Use progressive disclosure for long derivations or secondary detail, while keeping assumptions, primary results, and limitations visible.
+- Prefer diagrams, plots, tables, and annotated workflows over decorative animation. Never hide scientific meaning in hover-only interactions.
+- Keep heading levels semantic, figures accessible, formulas legible, and mobile layouts usable.
+- Preserve the site's accepted visual system unless the user requests a redesign. Do not imitate an award winner's branding, illustrations, or code.
+
+## Deliver in verifiable stages
+
+For research or audit work, return:
+
+- a source table distinguishing official award evidence from observations about team pages;
+- recurring patterns, meaningful exceptions, and anti-patterns;
+- a gap analysis against the team's current Model page;
+- a prioritized architecture or revision plan tied to available evidence.
+
+For implementation work, edit only the requested scope, preserve unrelated user changes, and verify in proportion to risk:
+
+1. Check HTML/JS syntax and broken local references.
+2. Verify navigation, anchors, collapsed sections, equations, figures, and outbound code/data links.
+3. Render the real page in a browser at desktop and mobile widths; inspect the top, representative technical sections, and the end.
+4. Re-check scientific claims against the evidence inventory after layout edits.
+
+Do not present award-derived patterns as judging rules. Report both scientific and UX limitations instead of hiding them behind polish.
