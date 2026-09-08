@@ -1,0 +1,5 @@
+interface:
+  display_name: "iGEM Human Practices Wiki"
+  short_description: "Trace stakeholder insight to responsible project change"
+  default_prompt: "Use $igem-hp-wiki to audit how stakeholder input and responsibility changed our iGEM project."
+

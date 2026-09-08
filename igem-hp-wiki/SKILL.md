@@ -9,6 +9,8 @@ Document a responsible learning process, not a contact diary. The central eviden
 
 For precedent research or substantial HP work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
 
+For each consequential engagement or project change, adapt [assets/templates/integration-log.md](assets/templates/integration-log.md).
+
 ## Build the integration chain
 
 For every material engagement, record:
@@ -26,6 +28,8 @@ Use dates and links to the affected technical or implementation page. Distinguis
 
 Stakeholder matrices, timelines, surveys, and frameworks are tools, not outcomes. Explain why each was selected and what decision it enabled. Address consent, privacy, power imbalance, accessibility, translation, and representativeness where applicable.
 
+If AI assists transcription, translation, coding, summarization, or synthesis, preserve the original record, verify the output with a responsible team member, avoid uploading unnecessary personal data, and follow the coordinator's AI-integrity protocol.
+
 ## Audit quality
 
 - Replace meeting counts with change evidence.
@@ -34,4 +38,3 @@ Stakeholder matrices, timelines, surveys, and frameworks are tools, not outcomes
 - Bound survey conclusions to the sampled population and method.
 - Connect implementation, safety, regulation, access, and sustainability assumptions.
 - Render timelines, maps, matrices, accordions, transcripts, and long profiles accessibly on mobile and keyboard paths.
-

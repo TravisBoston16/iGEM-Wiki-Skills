@@ -2,6 +2,8 @@
 
 Use this contract to stop different wiki pages from telling incompatible versions of the project.
 
+Create or update a Claim-Evidence Register using [claim-evidence-register.md](claim-evidence-register.md) before a large rewrite. Treat it as the source of truth for public claim wording and evidence maturity.
+
 ## Canonical facts
 
 Keep one agreed statement for each of the following and reuse it consistently:
@@ -38,4 +40,5 @@ For each headline claim, check:
 4. Same user and operating environment.
 5. Compatible containment, regulation, cost, scale, and sustainability assumptions.
 6. Links lead to the page where the evidence can actually be inspected.
-
+7. AI assistance, outside contributions, reused work, and human verification are recorded consistently with current policy.
+8. Judging Form summaries and Standard URLs do not strengthen claims beyond the canonical evidence.

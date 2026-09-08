@@ -16,12 +16,16 @@ Build a Model page that lets a judge trace each important conclusion from biolog
 
 If the user asks to research winners or compare exemplars, read [references/benchmark-patterns.md](references/benchmark-patterns.md) and [references/benchmark-corpus.md](references/benchmark-corpus.md). For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
 
+For a new model module, model handoff, or reproducibility record, adapt [assets/templates/model-card.md](assets/templates/model-card.md). When one sequence or parameter set is only used to demonstrate that a workflow runs, label it an illustrative example and state what additional coverage is needed before generalization.
+
 ## Start from current evidence
 
 1. Inspect the live workspace before proposing substantial changes: Model HTML, styles, scripts, figures, model code, notebooks, data, reports, and references. Search first; do not assume paths or asset versions.
 2. Build an evidence inventory for each model: biological question, decision it supports, inputs, outputs, assumptions, parameters and units, algorithm or equations, calibration or comparison data, uncertainty, sensitivity, validation, limitations, code/data location, and wet-lab or design consequence.
 3. Mark every planned statement as one of: directly observed, computed under declared assumptions, literature-derived, hypothesis, or future work. Weaken or remove claims that outrun the source evidence.
 4. If essential scientific sources are missing, state the gap and continue with an evidence-bounded plan. Do not invent equations, parameter values, validation, or experimental impact.
+
+For machine-learning or AI-assisted analysis, also document dataset provenance and license, training/validation/test separation, leakage checks, baselines, metrics, uncertainty, applicability domain, software versions, random seeds, human verification, and current iGEM disclosure obligations.
 
 ## Refresh unstable facts
 

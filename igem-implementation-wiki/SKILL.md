@@ -9,6 +9,8 @@ Translate a project from laboratory result to a bounded use scenario. Make readi
 
 For precedent research or substantial implementation work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
 
+For an end-to-end use case, prototype handoff, or deployment claim, adapt [assets/templates/readiness-matrix.md](assets/templates/readiness-matrix.md).
+
 ## Establish the implementation case
 
 Name the intended user, beneficiary, setting, input, output, operating workflow, performance requirement, infrastructure, training, maintenance, cost, regulation, access, containment, and end-of-life path. Map each requirement to current evidence, an assumption, or future validation.
@@ -18,7 +20,7 @@ Name the intended user, beneficiary, setting, input, output, operating workflow,
 - **Implementation:** end-to-end use scenario, readiness, validation path, constraints, and adoption.
 - **Safety and Security:** hazards, threat or misuse cases, exposure paths, risk controls, residual risk, monitoring, and governance.
 - **Hardware:** user need, requirements, design alternatives, schematics or CAD, bill of materials, build, tests, iteration, operating guide, and files.
-- **Software:** user task, architecture, installation, inputs and outputs, examples, testing, limitations, repository, license, and reproducible run path.
+- **Software:** user task, architecture, installation, inputs and outputs, examples, testing, limitations, repository, license, standards compatibility, external integration, and reproducible run path.
 - **Entrepreneurship:** unmet need, customer and beneficiary, alternatives, value proposition, market evidence, regulatory and reimbursement path, business model, cost, risk, and milestones.
 - **Contribution:** a clearly packaged part, dataset, protocol, model, design, software tool, or lesson that another team can reuse.
 
@@ -30,3 +32,4 @@ Distinguish concept, simulated design, benchtop prototype, tested subsystem, int
 
 Test code installation or a representative run when authorized. Check CAD, schematics, BOM, firmware, datasets, licenses, manuals, emergency behavior, and repository links. Render workflows and technical tables on mobile. Do not claim open source, low cost, safe, scalable, accessible, or sustainable without inspectable support and a defined boundary.
 
+For current Best Software eligibility, verify the live rules. In the 2026 snapshot, software must use an OSI-approved open-source license and be hosted in the dedicated iGEM GitLab repository; a GitHub link alone is not sufficient. Check any Software & AI Village restriction before recommending the award.

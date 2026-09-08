@@ -9,6 +9,8 @@ Make the project understandable before making it impressive. The opening path sh
 
 For precedent research or substantial story work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
 
+For a new or substantially restructured page, adapt the coordinator's page-brief template before writing. Preserve the evidence status and maturity from the Claim-Evidence Register in headlines, summaries, and award pages.
+
 ## Build the narrative spine
 
 1. Define the problem, affected users, context, and why existing approaches are insufficient.
@@ -35,4 +37,3 @@ Use progressive detail: one-sentence project statement, short story, system diag
 - Test the first screen, global navigation, no-motion or reduced-motion path, mobile layout, keyboard path, and link destinations in a real browser.
 
 Do not copy another team's visual identity, mascots, animations, or prose. Extract information-design decisions and adapt them to the team's evidence and established design system.
-

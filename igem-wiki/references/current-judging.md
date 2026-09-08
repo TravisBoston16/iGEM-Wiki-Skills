@@ -1,6 +1,6 @@
 # Current judging map
 
-Verified on 2026-09-08. Refresh these facts from the official competition site whenever a new season, rules update, or award claim matters.
+Verified on 2026-09-08. Refresh these facts from the official competition site whenever a new season, rules update, Standard URL, deadline, or award claim matters. For the detailed 2026 snapshot and pre-freeze audit, read [seasons/2026-judging.md](seasons/2026-judging.md).
 
 ## Official sources
 
@@ -9,6 +9,8 @@ Verified on 2026-09-08. Refresh these facts from the official competition site w
 - Medals: <https://competition.igem.org/judging/medals>
 - Project Awards: <https://competition.igem.org/judging/awards/project>
 - Rules and policies: <https://competition.igem.org/about/rules-and-policies>
+- Judge Handbook: <https://competition.igem.org/judging/handbook>
+- Deliverable guides: <https://competition.igem.org/deliverables/guides>
 
 ## 2026 implications for wiki work
 
@@ -16,6 +18,7 @@ Verified on 2026-09-08. Refresh these facts from the official competition site w
 - Project Awards consider the Project, Presentation, and Wiki together. The wiki therefore has to support claims about engineering, synthetic biology, likelihood of success, data, impact, Human Practices integration, responsibility, documentation, and student leadership.
 - Bronze emphasizes required deliverables, attributions, and a useful contribution. Silver includes Engineering Success and Human Practices. Gold is assessed through three selected Special Awards, including at least one general bioengineering prize and one specialization prize.
 - Special Award pages contain category-specific prompts for Model, Measurement, Parts, Education, Entrepreneurship, Hardware, Inclusivity, Integrated Human Practices, Safety and Security, Software, Sustainability, and other current categories.
+- Judges inspect required Standard URLs and Registry entries for relevant criteria. Best Wiki is assessed across the whole site.
+- AI-assisted work remains the team's responsibility and must follow current transparency, verification, attribution, privacy, intellectual-property, safety, and communication policies.
 
 Do not convert these summaries into a scoring formula. Read the live wording for the team's chosen awards and preserve the distinction between eligibility, medal criteria, nomination, and winning.
-

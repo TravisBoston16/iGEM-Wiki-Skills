@@ -1,0 +1,5 @@
+interface:
+  display_name: "iGEM Wiki"
+  short_description: "Coordinate an evidence-led, judging-ready iGEM wiki"
+  default_prompt: "Use $igem-wiki to audit our full iGEM wiki and prioritize evidence, consistency, and judging-readiness gaps."
+

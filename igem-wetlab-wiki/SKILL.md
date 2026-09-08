@@ -9,6 +9,8 @@ Turn laboratory work into an auditable chain of design, test, learning, and revi
 
 For precedent research or substantial wet-lab work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
 
+When documenting Engineering Success or a consequential iteration, adapt [assets/templates/dbtl-cycle.md](assets/templates/dbtl-cycle.md). Use the whole-wiki figure evidence card when a figure carries a headline claim.
+
 ## Inventory the evidence
 
 For each experiment, record the question, construct or sample, protocol version, conditions, controls, biological and technical replicates, raw data, analysis, result, uncertainty, failure modes, and decision it informed. Verify the actual notebook, figures, code, and Registry entries before drafting.
@@ -29,7 +31,8 @@ Include purpose, method summary, controls and replicates, figure or table, quant
 
 Do not treat a single representative image, technical replicate, fitted curve, or qualitative observation as broader proof than it is. Report values below detection or quantification limits conservatively. Keep axis units, normalization, exclusions, statistical tests, and transformations visible.
 
+For a current iGEM season, verify the required Engineering Standard URL and any Registry requirements through the coordinator's season reference. A wiki Parts page does not replace complete Registry documentation.
+
 ## Verify
 
 Confirm that protocols match figures, Results match raw or processed data, Engineering cycles match chronology, part identifiers resolve, and duplicated numbers agree. Render tables, gels, microscopy, plots, equations, and long protocols at desktop and mobile widths.
-
