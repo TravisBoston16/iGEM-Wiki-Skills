@@ -7,7 +7,7 @@ description: Plan, write, implement, or audit iGEM wet-lab documentation, includ
 
 Turn laboratory work into an auditable chain of design, test, learning, and revision. Preserve failures and uncertainty when they explain the next decision.
 
-For precedent research or substantial wet-lab work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
+For precedent research or substantial wet-lab work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live.
 
 When documenting Engineering Success or a consequential iteration, adapt [assets/templates/dbtl-cycle.md](assets/templates/dbtl-cycle.md). Use the whole-wiki figure evidence card when a figure carries a headline claim.
 

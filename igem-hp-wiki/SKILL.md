@@ -7,7 +7,7 @@ description: Plan, write, implement, or audit iGEM Human Practices, Integrated H
 
 Document a responsible learning process, not a contact diary. The central evidence is how a perspective, need, or tension changed project framing, design, testing, safety, communication, or implementation.
 
-For precedent research or substantial HP work, read [references/benchmark-corpus.md](references/benchmark-corpus.md).
+For precedent research or substantial HP work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live.
 
 For each consequential engagement or project change, adapt [assets/templates/integration-log.md](assets/templates/integration-log.md).
 

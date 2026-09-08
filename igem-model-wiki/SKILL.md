@@ -14,7 +14,7 @@ Build a Model page that lets a judge trace each important conclusion from biolog
 - **Write or implement:** create or revise only the requested Model-page content and assets.
 - **Audit:** report evidence, narrative, usability, and reproducibility gaps before proposing changes.
 
-If the user asks to research winners or compare exemplars, read [references/benchmark-patterns.md](references/benchmark-patterns.md) and [references/benchmark-corpus.md](references/benchmark-corpus.md). For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
+If the user asks to research winners or compare exemplars, read [references/benchmark-patterns.md](references/benchmark-patterns.md), the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md), and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live. For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
 
 For a new model module, model handoff, or reproducibility record, adapt [assets/templates/model-card.md](assets/templates/model-card.md). When one sequence or parameter set is only used to demonstrate that a workflow runs, label it an illustrative example and state what additional coverage is needed before generalization.
 

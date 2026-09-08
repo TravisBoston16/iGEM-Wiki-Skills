@@ -1,6 +1,6 @@
 # Model winner and nominee corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use the existing `benchmark-patterns.md` for cross-year principles; use this file for the broader winner/nominee pool.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use `benchmark-patterns.md` for cross-year principles and this file for curated interpretation. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
 
 ## Award pool
 
@@ -36,4 +36,3 @@ Selected intervening winners are TU-Eindhoven 2022, ZJU-China 2023, and Heidelbe
 ## Expansion rule
 
 For each new model example, record model purpose, data origin, parameter provenance, assumptions, validation type, sensitivity or uncertainty, wet-lab or design consequence, reproduction path, and a limitation. Add nominees that contradict any emerging winner-only pattern.
-

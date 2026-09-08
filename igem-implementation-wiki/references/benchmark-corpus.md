@@ -1,6 +1,6 @@
 # Implementation benchmark corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The corpus combines Hardware, Software, Safety and Security, and Entrepreneurship award pools.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The corpus combines Hardware, Software, Safety and Security, and Entrepreneurship award pools. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
 
 ## Award pools
 

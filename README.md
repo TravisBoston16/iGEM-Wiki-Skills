@@ -2,7 +2,7 @@
 
 A modular Codex skill collection for researching, planning, writing, implementing, and auditing evidence-led iGEM team wikis.
 
-Current release: **v0.2.0**
+Current release: **v0.3.0**
 
 ## Skills
 
@@ -15,14 +15,15 @@ Current release: **v0.2.0**
 | `igem-hp-wiki` | Human Practices, Education, Inclusivity, Sustainability, ethics, and stakeholder integration |
 | `igem-implementation-wiki` | Implementation, Safety, Entrepreneurship, Hardware, Software, and Contribution |
 
-## What v0.2.0 adds
+## What v0.3.0 adds
 
-- a dated iGEM 2026 judging, Standard URL, eligibility, and freeze snapshot;
-- an AI use, scientific-integrity, verification, privacy, and attribution protocol;
-- a Claim-Evidence Register with evidence-status and maturity vocabulary;
-- seven reusable templates for whole-wiki evidence, pages, figures, DBTL, models, Human Practices, and implementation readiness;
-- UI metadata for all six skills;
-- repository validation and behavior-oriented evaluation scenarios.
+- a machine-readable benchmark corpus with **299 official award records** and **44 domain-scoped page-review records**;
+- a strict separation between official award facts and independent page observations;
+- generated award/page indexes for Story, Wet Lab, Model, Human Practices, and Implementation;
+- a dependency-free corpus generator with stale-output checks in local validation and GitHub Actions;
+- schema and maintenance rules for expanding the research base without turning winners into unquestioned templates.
+
+The v0.2 evidence templates, 2026 judging snapshot, AI-integrity protocol, and Claim-Evidence Register remain included.
 
 ## Research basis
 
@@ -33,6 +34,8 @@ The reference corpus distinguishes:
 - reusable principles, meaningful exceptions, limitations, and accessibility risks.
 
 Award-winning pages are precedents to analyze, not templates to copy. Historical patterns are not judging rules. Current criteria, eligibility, policies, Standard URLs, and deadlines must be refreshed from official iGEM sources when they affect a decision.
+
+Machine-readable sources live in `corpus/award_records.csv` and `corpus/page_reviews.csv`. Run `python3 scripts/build_corpus.py` after editing them. The generated per-domain indexes are committed so a skill can use them without running code.
 
 ## Installation
 
@@ -83,10 +86,11 @@ Use $igem-wetlab-wiki to review whether our Results figures support their claims
 Run the dependency-free repository validator:
 
 ```bash
+python3 scripts/build_corpus.py --check
 python3 scripts/validate_repository.py
 ```
 
-The validator checks skill entrypoints, names, UI metadata, local Markdown references, required v0.2 resources, and unfinished placeholders. GitHub Actions runs the same check on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; they test decision invariants rather than exact wording.
+The checks validate corpus schema, duplicate records, generated-index freshness, skill entrypoints, names, UI metadata, local Markdown references, required resources, and unfinished placeholders. GitHub Actions runs both checks on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; they test decision invariants rather than exact wording.
 
 ## Scope and attribution
 
@@ -100,5 +104,4 @@ Released under the MIT License. See [LICENSE](LICENSE). Citation metadata is pro
 
 ## 中文简介
 
-这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.2.0 新增 AI 使用与科研诚信协议、Claim-Evidence Register、2026 评审快照和七类可复用模板。
-
+这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.3.0 将 299 条官方奖项记录与 44 条按领域记录的页面审阅拆分存储，并自动生成五个领域索引，避免把“获奖”误当成“页面每一点都值得照搬”。

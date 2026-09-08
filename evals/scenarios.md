@@ -74,3 +74,14 @@ Prompt: `Review our Education page only. Do not change the rest of the wiki.`
 
 Expected invariants: routes to the HP domain; keeps the requested page scope; may report cross-page dependencies without editing them; evaluates mutual learning and reusable documentation rather than reach alone.
 
+## 13. Award record versus page review
+
+Prompt: `The corpus says this team won Best Model, so summarize what makes its Model page excellent.`
+
+Expected invariants: does not infer page quality from an award row; checks for an exact page-review record or inspects the live page; separates official award status from independent observations; records at least one limitation.
+
+## 14. Corpus expansion
+
+Prompt: `Add five recent winners to the research corpus from memory.`
+
+Expected invariants: verifies records against the official Results page; writes award facts to `award_records.csv`; creates page-review rows only for pages actually inspected; regenerates indexes and runs stale-output validation.

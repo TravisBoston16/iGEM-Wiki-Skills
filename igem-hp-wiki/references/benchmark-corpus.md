@@ -1,6 +1,6 @@
 # Human Practices benchmark corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The corpus combines Integrated Human Practices, Education, Sustainability, and Inclusivity because they answer different responsibility questions.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The corpus combines Integrated Human Practices, Education, Sustainability, and Inclusivity because they answer different responsibility questions. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
 
 ## Award pools
 

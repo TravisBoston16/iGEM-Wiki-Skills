@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -84,10 +85,14 @@ def validate_release_resources(failures: list[str]) -> None:
         "igem-model-wiki/assets/templates/model-card.md",
         "igem-hp-wiki/assets/templates/integration-log.md",
         "igem-implementation-wiki/assets/templates/readiness-matrix.md",
+        "corpus/schema.md",
+        "corpus/award_records.csv",
+        "corpus/page_reviews.csv",
+        "scripts/build_corpus.py",
     )
     for relative in required:
         if not (ROOT / relative).is_file():
-            fail(f"missing v0.2 resource: {relative}", failures)
+            fail(f"missing release resource: {relative}", failures)
 
     season = ROOT / "igem-wiki/references/seasons/2026-judging.md"
     if season.is_file():
@@ -96,6 +101,19 @@ def validate_release_resources(failures: list[str]) -> None:
             fail("2026 judging snapshot lacks a verification date", failures)
         if "competition.igem.org" not in text:
             fail("2026 judging snapshot lacks official sources", failures)
+
+
+def validate_corpus(failures: list[str]) -> None:
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "build_corpus.py"), "--check"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode:
+        detail = (result.stdout + result.stderr).strip()
+        fail(f"corpus validation failed: {detail}", failures)
 
 
 def validate_placeholders(failures: list[str]) -> None:
@@ -115,6 +133,7 @@ def main() -> int:
         validate_skill(skill, failures)
     validate_links(failures)
     validate_release_resources(failures)
+    validate_corpus(failures)
     validate_placeholders(failures)
 
     if failures:
@@ -130,4 +149,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

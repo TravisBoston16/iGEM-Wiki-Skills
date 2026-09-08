@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Check generated corpus indexes
+        run: python3 scripts/build_corpus.py --check
       - name: Validate repository
         run: python3 scripts/validate_repository.py
-

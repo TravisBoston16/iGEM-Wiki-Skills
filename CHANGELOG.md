@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [0.3.0] - 2026-09-08
+
+### Added
+
+- Machine-readable award and page-review CSV corpus with a documented schema.
+- 299 official award-category records across five wiki domains.
+- 44 domain-scoped page-review records with reusable observations and explicit limitations.
+- Generated award/page indexes for every domain skill.
+- Dependency-free corpus generator and stale-output validation.
+
+### Changed
+
+- Domain skills now use generated indexes as the canonical local award inventory while preserving curated interpretive notes.
+- Repository validation and CI now check corpus integrity and generated artifacts.
+
 ## [0.2.0] - 2026-09-08
 
 ### Added
@@ -27,4 +42,3 @@ All notable changes to this project are documented here.
 - Initial coordinator and five domain skills.
 - Winner and nominee benchmark corpora.
 - Whole-wiki, Model, evidence, UX, and reproducibility checklists.
-
