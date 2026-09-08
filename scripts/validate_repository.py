@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 
@@ -73,15 +75,41 @@ def validate_links(failures: list[str]) -> None:
                 fail(f"{markdown.relative_to(ROOT)}: broken local link {raw_target}", failures)
 
 
+def validate_installed_layout(failures: list[str]) -> None:
+    """Confirm links still resolve when only the six installable skill folders are copied."""
+    with tempfile.TemporaryDirectory() as temporary:
+        skill_root = Path(temporary) / ".agents" / "skills"
+        skill_root.mkdir(parents=True)
+        for skill in SKILLS:
+            shutil.copytree(ROOT / skill, skill_root / skill)
+        for markdown in skill_root.rglob("*.md"):
+            text = markdown.read_text(encoding="utf-8")
+            for raw_target in LOCAL_LINK.findall(text):
+                target = raw_target.split("#", 1)[0].strip()
+                if not target or target.startswith("/"):
+                    continue
+                if not (markdown.parent / target).resolve().exists():
+                    fail(
+                        f"installed layout {markdown.relative_to(skill_root)}: broken local link {raw_target}",
+                        failures,
+                    )
+
+
 def validate_release_resources(failures: list[str]) -> None:
     required = (
         "igem-wiki/references/ai-integrity.md",
         "igem-wiki/references/claim-evidence-register.md",
+        "igem-wiki/references/cross-domain-awards.md",
         "igem-wiki/references/sampling-policy.md",
         "igem-wiki/references/seasons/2026-judging.md",
         "igem-wiki/assets/templates/whole-wiki-evidence-map.md",
         "igem-wiki/assets/templates/page-brief.md",
         "igem-wiki/assets/templates/figure-evidence-card.md",
+        "igem-wiki/assets/templates/team-intake.md",
+        "igem-wiki/assets/templates/judging-readiness-matrix.md",
+        "igem-wiki/assets/templates/wiki-production-board.md",
+        "igem-wiki/assets/templates/browser-qa-report.md",
+        "igem-wiki/scripts/audit_static_wiki.py",
         "igem-wetlab-wiki/assets/templates/dbtl-cycle.md",
         "igem-model-wiki/assets/templates/model-card.md",
         "igem-hp-wiki/assets/templates/integration-log.md",
@@ -92,6 +120,7 @@ def validate_release_resources(failures: list[str]) -> None:
         "corpus/source_manifest.csv",
         "scripts/build_corpus.py",
         "scripts/import_annual_results.py",
+        "scripts/query_corpus.py",
     )
     for relative in required:
         if not (ROOT / relative).is_file():
@@ -135,6 +164,7 @@ def main() -> int:
     for skill in SKILLS:
         validate_skill(skill, failures)
     validate_links(failures)
+    validate_installed_layout(failures)
     validate_release_resources(failures)
     validate_corpus(failures)
     validate_placeholders(failures)

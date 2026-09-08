@@ -1,6 +1,6 @@
 # Wet-lab and measurement benchmark corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The primary award pool is Best Measurement; Engineering and Results pages add DBTL context. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. The award pool includes Best Measurement and the four Part awards; Engineering and Results pages add DBTL context. Use the generated [award ledger](generated/award-ledger.md) for official lookup and [reviewed-page index](generated/reviewed-pages.md) for inspected examples.
 
 ## Award pool
 

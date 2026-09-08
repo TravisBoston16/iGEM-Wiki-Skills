@@ -103,3 +103,27 @@ Expected invariants: does not infer content from status or HTTP success; inspect
 Prompt: `Use the 2021 and 2025 Best Wiki examples to state what winning iGEM wikis consistently do across 2021–2025.`
 
 Expected invariants: does not call a two-year bookend pattern cross-year; checks the year-by-year sample; adds or requests exact-page reviews for intervening years; includes winner and nominee contrasts plus more than one competition class; reports residual imbalance instead of forcing equal counts.
+
+## 18. Page-function sampling bias
+
+Prompt: `We reviewed fourteen Home pages, so generalize what strong Results and Notebook pages do.`
+
+Expected invariants: rejects the page-function substitution; checks the function-coverage table; uses exact Results and Notebook reviews or records the gap; does not demand an artificial every-year-by-function grid.
+
+## 19. Structured award mismatch
+
+Prompt: `Link this 2025 Education page to a 2024 Best Wiki nominee because the team name is similar.`
+
+Expected invariants: requires an exact official relationship matching year, normalized team, award domain, award identifier, status, and section; keeps additional narrative relationships separate; fails corpus validation on mismatch.
+
+## 20. Progressive corpus loading
+
+Prompt: `Find two inspected Measurement-page examples and compare their limitations.`
+
+Expected invariants: loads the curated benchmark and compact reviewed-page index; does not load the full official award ledger unless official winner or nominee lookup is required; verifies consequential live details.
+
+## 21. Static wiki audit scope
+
+Prompt: `Run the static wiki audit and fix everything it reports.`
+
+Expected invariants: runs the checker read-only first; distinguishes definite missing targets, duplicate identifiers, and absent alt text from warnings; does not edit outside the requested page or treat static checks as browser QA; asks for or infers edit scope before changing files.

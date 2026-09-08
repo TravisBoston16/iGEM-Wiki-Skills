@@ -4,6 +4,8 @@ A modular Codex skill collection for researching, planning, writing, implementin
 
 Current release: **v0.5.0**
 
+The working tree also contains unreleased corpus and tooling improvements planned for v0.6.0: full 2021–2025 official award-family imports, structured award links for page reviews, page-function coverage, progressive corpus indexes, intake and QA templates, and read-only query and static-site audit tools.
+
 ## Skills
 
 | Skill | Scope |
@@ -41,7 +43,7 @@ The reference corpus distinguishes:
 
 Award-winning pages are precedents to analyze, not templates to copy. Historical patterns are not judging rules. Current criteria, eligibility, policies, Standard URLs, and deadlines must be refreshed from official iGEM sources when they affect a decision.
 
-Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, and `corpus/source_manifest.csv`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. The generated per-domain indexes are committed so a skill can use them without running code.
+Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, and `corpus/source_manifest.csv`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. Use `scripts/query_corpus.py` to select only relevant records. The generated compact reviewed-page indexes and separate full award ledgers are committed so a skill can use them without running code.
 
 ## Installation
 
@@ -82,6 +84,10 @@ Use $igem-wetlab-wiki to review whether our Results figures support their claims
 - `igem-wiki/assets/templates/whole-wiki-evidence-map.md`
 - `igem-wiki/assets/templates/page-brief.md`
 - `igem-wiki/assets/templates/figure-evidence-card.md`
+- `igem-wiki/assets/templates/team-intake.md`
+- `igem-wiki/assets/templates/judging-readiness-matrix.md`
+- `igem-wiki/assets/templates/wiki-production-board.md`
+- `igem-wiki/assets/templates/browser-qa-report.md`
 - `igem-wetlab-wiki/assets/templates/dbtl-cycle.md`
 - `igem-model-wiki/assets/templates/model-card.md`
 - `igem-hp-wiki/assets/templates/integration-log.md`
@@ -96,7 +102,13 @@ python3 scripts/build_corpus.py --check
 python3 scripts/validate_repository.py
 ```
 
-The checks validate corpus schema, duplicate records, domain-year sampling floors, winner/nominee and competition-class coverage, generated-index freshness, skill entrypoints, names, UI metadata, local Markdown references, required resources, and unfinished placeholders. GitHub Actions runs both checks on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; they test decision invariants rather than exact wording.
+For a read-only first pass over static HTML:
+
+```bash
+python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki --no-fail
+```
+
+The checks validate corpus schema, duplicate records, official award relationships, domain-year sampling floors, winner/nominee and competition-class coverage, generated-index freshness, skill entrypoints, names, UI metadata, both repository and installed-layout Markdown references, required resources, and unfinished placeholders. GitHub Actions runs both checks on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; they test decision invariants rather than exact wording.
 
 ## Scope and attribution
 
@@ -110,4 +122,4 @@ Released under the MIT License. See [LICENSE](LICENSE). Citation metadata is pro
 
 ## 中文简介
 
-这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.5.0 收录 739 条官方奖项记录与 76 条按领域记录的页面审阅，补齐 2021–2025 年所选奖项族（含 Best Wiki 与 Best Model）的跨年记录，并以“领域 × 年份”、winner/nominee 和组别校验防止取样再次只偏向区间端点。
+这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。当前正式版 v0.5.0 收录 739 条官方奖项记录与 76 条页面审阅；未发布的下一版工作树进一步加入全区间官方奖项族、页面功能覆盖、结构化奖项关联和可执行审核工具。

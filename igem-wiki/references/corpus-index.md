@@ -17,11 +17,11 @@ An award record does not prove that a page was reviewed or that every claim is e
 
 | Domain skill | Award records | Winners | Nominees | Reviewed pages | Years represented |
 |---|---:|---:|---:|---:|---|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 54 | 14 | 40 | 16 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 19 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 302 | 68 | 234 | 21 | 2025, 2024, 2023, 2022, 2021 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 84 | 15 | 69 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 257 | 54 | 203 | 15 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 190 | 55 | 135 | 17 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 263 | 54 | 209 | 19 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 209 | 58 | 151 | 21 | 2025, 2024, 2023, 2022, 2021 |
 
 Counts are award-category records; a team may appear in multiple categories. Review coverage follows the portable [sampling policy](sampling-policy.md).
 
@@ -31,31 +31,62 @@ Each cell reports `official award records / inspected pages`. The policy enforce
 
 | Domain | 2021 | 2022 | 2023 | 2024 | 2025 |
 |---|---:|---:|---:|---:|---:|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 4 | 31 / 2 | 30 / 3 | 30 / 2 | 33 / 3 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 12 / 3 | 9 / 2 | 6 / 3 | 12 / 3 | 15 / 5 |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 4 | 31 / 3 | 30 / 4 | 30 / 3 | 33 / 5 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 73 / 3 | 52 / 2 | 56 / 5 | 60 / 6 | 61 / 5 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 22 / 2 | 16 / 2 | 15 / 2 | 15 / 2 | 16 / 6 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 46 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 47 / 5 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 27 / 2 | 51 / 2 | 31 / 2 | 39 / 2 | 42 / 9 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 46 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 53 / 9 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 42 / 2 | 51 / 2 | 31 / 3 | 39 / 3 | 46 / 11 |
+
+## Page-function coverage
+
+This table prevents a large sample of one page type from masquerading as domain coverage. One review is marked thin and a dash marks an in-scope function with no exact-page review; both are research signals rather than a claim that every function needs every year.
+
+| Domain | Function | Reviewed pages | Status |
+|---|---|---:|---|
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | home | 14 | covered |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | description | 4 | covered |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | awards | 1 | thin |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | engineering | 4 | covered |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | results | 2 | covered |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | measurement | 12 | covered |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | experiments | 1 | thin |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | parts | 1 | thin |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | notebook | 1 | thin |
+| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | model | 14 | covered |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | human-practices | 14 | covered |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | education | 2 | covered |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | inclusivity | 2 | covered |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | sustainability | 1 | thin |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | implementation | 1 | thin |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | safety | 2 | covered |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | hardware | 8 | covered |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | software | 5 | covered |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | entrepreneurship | 1 | thin |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | contribution | 3 | covered |
+
+Model reviews share one Standard URL, so Model diversity is assessed by archetype and evidence role during precedent selection rather than by page slug alone.
 
 ## Reviewed-page sample balance
 
-Winner-linked and nominee-linked counts may overlap when one page has both relationships.
+Counts use each review's structured primary award relationship; additional relationships remain in the human-readable note.
 
 | Domain | Winner-linked | Nominee-linked | Classes represented |
 |---|---:|---:|---|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 9 | 5 | undergrad, overgrad, high-school |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 10 | 6 | undergrad, overgrad, high-school |
-| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 7 | 8 | undergrad, overgrad, high-school |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 10 | 6 | undergrad, overgrad, high-school |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 11 | 6 | undergrad, overgrad, high-school |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 14 | 5 | undergrad, overgrad, high-school |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 15 | 6 | undergrad, overgrad, high-school |
+| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 6 | 8 | undergrad, overgrad, high-school |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 13 | 6 | undergrad, overgrad, high-school |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 15 | 6 | undergrad, overgrad, high-school |
 
 ## Official machine-source snapshots
 
 | Year | Official endpoint | Retrieved | SHA-256 |
 |---:|---|---|---|
+| 2025 | [award results](https://api.igem.org/v1/competitions/d615db72-738d-47c0-a929-fbdeb4882fc0/awards/results) | 2026-09-08 | `bb59685321d027a2e50c68eef4fe553e301d2ca3509f14d1d711ed23d58f621a` |
 | 2024 | [award results](https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results) | 2026-09-08 | `bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336` |
 | 2023 | [award results](https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results) | 2026-09-08 | `8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984` |
 | 2022 | [award results](https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results) | 2026-09-08 | `0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91` |
+| 2021 | [award results](https://api.igem.org/v1/competitions/9700650d-5b53-4003-affa-61f2bf096632/awards/results) | 2026-09-08 | `aadca335f8de65e6809e8152e40135a109f16fe819f2c1dbc5891a75b5058f4c` |
 
 ## Expansion rule
 

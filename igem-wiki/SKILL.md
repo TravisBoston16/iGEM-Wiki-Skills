@@ -17,6 +17,8 @@ Load only the domain instructions needed for the request:
 - **Human Practices, Education, Inclusivity, Sustainability, or stakeholder integration:** read `../igem-hp-wiki/SKILL.md`.
 - **Implementation, Safety, Entrepreneurship, Hardware, Software, or Contribution:** read `../igem-implementation-wiki/SKILL.md`.
 
+For the current Alternative Platform category, route biological-platform characterization to Wet Lab, deployment and safety evidence to Implementation, and whole-project framing to Story. Historical Results do not contain a same-name 2021–2025 award family, so use current official criteria rather than inventing a legacy mapping. Presentation production is outside this skill collection; the wiki should keep presentation claims consistent and traceable without treating Best Presentation as a wiki-page precedent.
+
 For a whole-site plan or audit, read [references/current-judging.md](references/current-judging.md), [references/cross-page-contract.md](references/cross-page-contract.md), and [references/review-checklist.md](references/review-checklist.md). Read [references/claim-evidence-register.md](references/claim-evidence-register.md) when claims span pages or risk overgeneralization. Read [references/ai-integrity.md](references/ai-integrity.md) whenever AI materially assists submitted work. For precedent research, also read [references/corpus-index.md](references/corpus-index.md) and [references/sampling-policy.md](references/sampling-policy.md).
 
 When the 2026 Competition is in scope, read [references/seasons/2026-judging.md](references/seasons/2026-judging.md) and verify unstable requirements live. Do not silently apply a 2026 snapshot to another season.
@@ -39,7 +41,7 @@ Before substantial writing or restructuring:
 4. Keep one canonical owner for each detailed result. Other pages should summarize and link rather than copy divergent versions.
 5. If evidence is missing, weaken the claim or mark the gap. Never invent results, iterations, stakeholder influence, validation, citations, or award eligibility.
 
-For a reusable planning artifact, adapt [assets/templates/whole-wiki-evidence-map.md](assets/templates/whole-wiki-evidence-map.md). For a new or substantially revised page, adapt [assets/templates/page-brief.md](assets/templates/page-brief.md). For an important figure, adapt [assets/templates/figure-evidence-card.md](assets/templates/figure-evidence-card.md).
+For a reusable planning artifact, adapt [assets/templates/whole-wiki-evidence-map.md](assets/templates/whole-wiki-evidence-map.md). For a new or substantially revised page, adapt [assets/templates/page-brief.md](assets/templates/page-brief.md). For an important figure, adapt [assets/templates/figure-evidence-card.md](assets/templates/figure-evidence-card.md). At project start use [assets/templates/team-intake.md](assets/templates/team-intake.md); during production use [assets/templates/wiki-production-board.md](assets/templates/wiki-production-board.md); before judging use [assets/templates/judging-readiness-matrix.md](assets/templates/judging-readiness-matrix.md) and [assets/templates/browser-qa-report.md](assets/templates/browser-qa-report.md).
 
 ## Build a judge-readable project path
 
@@ -71,6 +73,6 @@ When judging criteria, competition rules, deadlines, standard URLs, or award sta
 
 ## Verify implementation
 
-For edits, check syntax and references, then render the real pages at desktop and mobile widths. Test global navigation, local table of contents, anchors, collapsed content, figures, equations, tables, media fallbacks, and outbound evidence links. Essential meaning must remain available without hover, animation, or a particular browser.
+For edits, check syntax and references, then render the real pages at desktop and mobile widths. For a static HTML tree, `scripts/audit_static_wiki.py PATH --no-fail` can provide a read-only first pass for local links, fragments, duplicate identifiers, image alternatives, language, titles, and heading count. Treat warnings as review prompts and do not use this check as a substitute for browser or assistive-technology QA. Test global navigation, local table of contents, anchors, collapsed content, figures, equations, tables, media fallbacks, and outbound evidence links. Essential meaning must remain available without hover, animation, or a particular browser.
 
 Deliver the outcome with the evidence inventory, key gaps, prioritized changes, files changed if any, and verification performed.

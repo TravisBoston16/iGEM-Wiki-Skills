@@ -25,6 +25,20 @@ STATUSES = {"winner", "nominee"}
 DEPTHS = {"targeted", "deep"}
 BENCHMARK_YEARS = tuple(str(year) for year in range(2021, 2026))
 MIN_REVIEWS_PER_DOMAIN_YEAR = 2
+CORE_PAGE_FUNCTIONS = {
+    "story": ("home", "description", "awards"),
+    "wetlab": ("engineering", "results", "measurement", "experiments", "parts", "notebook"),
+    "model": ("model",),
+    "hp": ("human-practices", "education", "inclusivity", "sustainability"),
+    "implementation": (
+        "implementation",
+        "safety",
+        "hardware",
+        "software",
+        "entrepreneurship",
+        "contribution",
+    ),
+}
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SLUG = re.compile(r"^[A-Za-z0-9_-]+$")
 AWARD = re.compile(r"^[a-z0-9-]+$")
@@ -78,22 +92,47 @@ def validate_awards(rows: list[dict[str, str]]) -> None:
             )
 
 
-def review_classes(relationship: str) -> set[str]:
-    return {
-        section
-        for token, section in (("UG", "undergrad"), ("OG", "overgrad"), ("HS", "high-school"))
-        if re.search(rf"(?:^|[\s;,]){token}(?:$|[\s;,])", relationship)
+def normalized_team(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", value.casefold())
+
+
+def canonical_page_function(value: str) -> str:
+    aliases = {
+        "project-description": "description",
+        "human_practices": "human-practices",
     }
+    return aliases.get(value, value)
 
 
-def validate_reviews(rows: list[dict[str, str]]) -> None:
+def validate_reviews(
+    rows: list[dict[str, str]], awards: list[dict[str, str]]
+) -> None:
     seen: set[tuple[str, str]] = set()
     coverage: Counter[tuple[str, str]] = Counter()
     statuses: dict[tuple[str, str], set[str]] = {}
     classes: dict[str, set[str]] = {domain: set() for domain in DOMAINS}
+    official = {
+        (
+            row["domain"],
+            row["year"],
+            row["section"],
+            row["award"],
+            row["status"],
+            normalized_team(row["team_slug"]),
+        )
+        for row in awards
+    }
     for row in rows:
         if row["domain"] not in DOMAINS:
             raise ValueError(f"unknown domain: {row['domain']}")
+        if row["award_domain"] not in DOMAINS:
+            raise ValueError(f"unknown linked award domain: {row['award_domain']}")
+        if row["award_status"] not in STATUSES:
+            raise ValueError(f"unknown linked award status: {row['award_status']}")
+        if row["award_section"] not in SECTIONS:
+            raise ValueError(f"unknown linked award section: {row['award_section']}")
+        if not AWARD.fullmatch(row["award"]):
+            raise ValueError(f"invalid linked award identifier: {row['award']}")
         if row["review_depth"] not in DEPTHS:
             raise ValueError(f"unknown review depth: {row['review_depth']}")
         if not row["page_url"].startswith("https://"):
@@ -102,18 +141,27 @@ def validate_reviews(rows: list[dict[str, str]]) -> None:
             raise ValueError(f"invalid review year: {row['year']}")
         if not ISO_DATE.fullmatch(row["last_checked"]):
             raise ValueError(f"invalid review date: {row['last_checked']}")
+        award_key = (
+            row["award_domain"],
+            row["year"],
+            row["award_section"],
+            row["award"],
+            row["award_status"],
+            normalized_team(row["team_slug"]),
+        )
+        if award_key not in official:
+            raise ValueError(
+                f"page review does not match an official award record: {award_key}"
+            )
         key = (row["domain"], row["page_url"])
         if key in seen:
             raise ValueError(f"duplicate page review: {key}")
         seen.add(key)
         stratum = (row["domain"], row["year"])
         coverage[stratum] += 1
-        relationship = row["award_relationship"].casefold()
         statuses.setdefault(stratum, set())
-        for status in STATUSES:
-            if status in relationship:
-                statuses[stratum].add(status)
-        classes[row["domain"]].update(review_classes(row["award_relationship"]))
+        statuses[stratum].add(row["award_status"])
+        classes[row["domain"]].add(row["award_section"])
     for domain in DOMAINS:
         for year in BENCHMARK_YEARS:
             count = coverage[(domain, year)]
@@ -147,6 +195,11 @@ def validate_sources(rows: list[dict[str, str]]) -> None:
             raise ValueError(f"invalid source retrieval date: {row['retrieved_on']}")
         if not SHA256.fullmatch(row["sha256"]):
             raise ValueError(f"invalid source SHA-256: {row['sha256']}")
+    missing = set(BENCHMARK_YEARS) - seen
+    if missing:
+        raise ValueError(
+            f"source manifest is missing benchmark years {', '.join(sorted(missing))}"
+        )
 
 
 def md(value: str) -> str:
@@ -171,14 +224,13 @@ def award_sort(row: dict[str, str]) -> tuple[object, ...]:
 
 def domain_index(domain: str, awards: list[dict[str, str]], reviews: list[dict[str, str]]) -> str:
     _, label = DOMAINS[domain]
-    domain_awards = sorted((row for row in awards if row["domain"] == domain), key=award_sort)
-    domain_reviews = sorted(
-        (row for row in reviews if row["domain"] == domain),
-        key=lambda row: (-int(row["year"]), row["team"].casefold(), row["page_type"]),
-    )
+    domain_awards = [row for row in awards if row["domain"] == domain]
+    domain_reviews = [row for row in reviews if row["domain"] == domain]
     winners = sum(row["status"] == "winner" for row in domain_awards)
+    year_counts = Counter(row["year"] for row in domain_reviews)
+    page_types = Counter(canonical_page_function(row["page_type"]) for row in domain_reviews)
     lines = [
-        f"# {label} award and page-review index",
+        f"# {label} benchmark index",
         "",
         "> Generated by `scripts/build_corpus.py`. Edit the CSV files in `corpus/`, not this file.",
         "",
@@ -186,7 +238,62 @@ def domain_index(domain: str, awards: list[dict[str, str]], reviews: list[dict[s
         "",
         f"Coverage: **{len(domain_awards)} award records** ({winners} winners, {len(domain_awards) - winners} nominees) and **{len(domain_reviews)} reviewed pages**.",
         "",
-        "## Award records",
+        "## Load only what the task needs",
+        "",
+        "- Read [reviewed-pages.md](reviewed-pages.md) for inspected examples, reusable observations, and limitations.",
+        "- Read [award-ledger.md](award-ledger.md) only when verifying or listing official winners and nominees.",
+        "- Read the curated `../benchmark-corpus.md` for synthesized domain principles.",
+        "",
+        "## Review coverage",
+        "",
+        "| Dimension | Coverage |",
+        "|---|---|",
+        f"| Years | {', '.join(f'{year}: {year_counts[year]}' for year in BENCHMARK_YEARS)} |",
+        f"| Page functions | {', '.join(f'{name}: {count}' for name, count in sorted(page_types.items()))} |",
+        "",
+        "## Use rule",
+        "",
+        "Select examples by task fit, evidence type, class, year, and page function—not visual prestige. Verify the live page before quoting or relying on a detail, and keep current judging requirements separate from historical precedent.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def reviewed_pages_index(domain: str, reviews: list[dict[str, str]]) -> str:
+    _, label = DOMAINS[domain]
+    domain_reviews = sorted(
+        (row for row in reviews if row["domain"] == domain),
+        key=lambda row: (-int(row["year"]), row["page_type"], row["team"].casefold()),
+    )
+    lines = [
+        f"# {label} reviewed pages",
+        "",
+        "> Generated by `scripts/build_corpus.py` from exact-page inspections.",
+        "",
+        "Read this compact file for precedent selection. Award relationships are checked against the official ledger, but award status does not prove page quality.",
+        "",
+        "| Year | Team/page | Depth | Primary award relationship | Reusable observations | Limitation | Checked |",
+        "|---:|---|---|---|---|---|---|",
+    ]
+    for row in domain_reviews:
+        lines.append(
+            f"| {row['year']} | [{md(row['team'])} — {md(row['page_type'])}]({row['page_url']}) | "
+            f"{row['review_depth']} | {md(row['award_relationship'])} | {md(row['strengths'])} | "
+            f"{md(row['limitations'])} | {row['last_checked']} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def award_ledger(domain: str, awards: list[dict[str, str]]) -> str:
+    _, label = DOMAINS[domain]
+    domain_awards = sorted((row for row in awards if row["domain"] == domain), key=award_sort)
+    lines = [
+        f"# {label} official award ledger",
+        "",
+        "> Generated by `scripts/build_corpus.py` from `corpus/award_records.csv`.",
+        "",
+        "Use this file only for award lookup. It does not assert that a linked team page was reviewed or exemplary.",
         "",
         "| Year | Class | Award | Status | Team | Verified |",
         "|---:|---|---|---|---|---|",
@@ -196,30 +303,7 @@ def domain_index(domain: str, awards: list[dict[str, str]], reviews: list[dict[s
             f"| {row['year']} | {md(row['section'])} | {md(row['award'])} | {row['status']} | "
             f"[{md(row['team'])}]({wiki_url(row)}) | {row['verified_on']} |"
         )
-    lines.extend(
-        [
-            "",
-            "## Reviewed pages",
-            "",
-            "| Year | Team/page | Depth | Award relationship | Reusable observations | Limitation | Checked |",
-            "|---:|---|---|---|---|---|---|",
-        ]
-    )
-    for row in domain_reviews:
-        lines.append(
-            f"| {row['year']} | [{md(row['team'])} — {md(row['page_type'])}]({row['page_url']}) | "
-            f"{row['review_depth']} | {md(row['award_relationship'])} | {md(row['strengths'])} | "
-            f"{md(row['limitations'])} | {row['last_checked']} |"
-        )
-    lines.extend(
-        [
-            "",
-            "## Use rule",
-            "",
-            "Select examples by task fit, evidence type, class, and year—not visual prestige. Verify the live page before quoting or relying on a detail, and keep current judging requirements separate from historical precedent.",
-            "",
-        ]
-    )
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -283,9 +367,35 @@ def corpus_index(
     lines.extend(
         [
             "",
+            "## Page-function coverage",
+            "",
+            "This table prevents a large sample of one page type from masquerading as domain coverage. One review is marked thin and a dash marks an in-scope function with no exact-page review; both are research signals rather than a claim that every function needs every year.",
+            "",
+            "| Domain | Function | Reviewed pages | Status |",
+            "|---|---|---:|---|",
+        ]
+    )
+    for domain, (skill, _) in DOMAINS.items():
+        counts = Counter(
+            canonical_page_function(row["page_type"])
+            for row in reviews
+            if row["domain"] == domain
+        )
+        for function in CORE_PAGE_FUNCTIONS[domain]:
+            count = counts[function]
+            status = "covered" if count >= 2 else "thin" if count == 1 else "gap"
+            lines.append(
+                f"| [`{skill}`](../../{skill}/references/generated/award-index.md) | "
+                f"{function} | {count or '—'} | {status} |"
+            )
+    lines.extend(
+        [
+            "",
+            "Model reviews share one Standard URL, so Model diversity is assessed by archetype and evidence role during precedent selection rather than by page slug alone.",
+            "",
             "## Reviewed-page sample balance",
             "",
-            "Winner-linked and nominee-linked counts may overlap when one page has both relationships.",
+            "Counts use each review's structured primary award relationship; additional relationships remain in the human-readable note.",
             "",
             "| Domain | Winner-linked | Nominee-linked | Classes represented |",
             "|---|---:|---:|---|",
@@ -293,10 +403,10 @@ def corpus_index(
     )
     for domain, (skill, _) in DOMAINS.items():
         domain_reviews = [row for row in reviews if row["domain"] == domain]
-        winner_linked = sum("winner" in row["award_relationship"].casefold() for row in domain_reviews)
-        nominee_linked = sum("nominee" in row["award_relationship"].casefold() for row in domain_reviews)
+        winner_linked = sum(row["award_status"] == "winner" for row in domain_reviews)
+        nominee_linked = sum(row["award_status"] == "nominee" for row in domain_reviews)
         classes = sorted(
-            {item for row in domain_reviews for item in review_classes(row["award_relationship"])},
+            {row["award_section"] for row in domain_reviews},
             key=("undergrad", "overgrad", "high-school").index,
         )
         lines.append(
@@ -338,8 +448,14 @@ def outputs(
         )
     }
     for domain, (skill, _) in DOMAINS.items():
-        generated[ROOT / skill / "references" / "generated" / "award-index.md"] = domain_index(
-            domain, awards, reviews
+        generated[ROOT / skill / "references" / "generated" / "award-index.md"] = (
+            domain_index(domain, awards, reviews)
+        )
+        generated[ROOT / skill / "references" / "generated" / "reviewed-pages.md"] = (
+            reviewed_pages_index(domain, reviews)
+        )
+        generated[ROOT / skill / "references" / "generated" / "award-ledger.md"] = (
+            award_ledger(domain, awards)
         )
     return generated
 
@@ -363,13 +479,17 @@ def main() -> int:
             "page_url",
             "review_depth",
             "last_checked",
+            "award_domain",
+            "award",
+            "award_status",
+            "award_section",
             "award_relationship",
             "strengths",
             "limitations",
         ),
     )
     validate_awards(awards)
-    validate_reviews(reviews)
+    validate_reviews(reviews, awards)
     sources = read_csv(
         "source_manifest.csv",
         ("year", "competition_uuid", "awards_endpoint", "retrieved_on", "sha256"),
@@ -391,7 +511,7 @@ def main() -> int:
         return 1
     action = "Checked" if args.check else "Generated"
     print(
-        f"{action} {len(DOMAINS) + 1} indexes from {len(awards)} award records, "
+        f"{action} {len(outputs(awards, reviews, sources))} indexes from {len(awards)} award records, "
         f"{len(reviews)} page-review records, and {len(sources)} official source snapshots."
     )
     return 0

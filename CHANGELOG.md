@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented here.
 
+## [Unreleased]
+
+### Added
+
+- Full 2021–2025 official Results imports for every mapped award family including the four current Part award families.
+- Eighteen exact-page reviews covering previously thin Description, Awards, Results, Experiments, Notebook, Parts, Education, Inclusivity, Implementation, and Contribution functions.
+- Compact reviewed-page indexes and separate full official award ledgers for progressive loading.
+- Dependency-free corpus query and read-only static-wiki audit tools.
+- Team intake, judging-readiness, production-board, and browser-QA templates.
+- Functional-coverage, structured-award-link, progressive-loading, and static-audit evaluation scenarios.
+
+### Changed
+
+- Page reviews now carry a structured primary official award relationship validated against the award inventory.
+- Sampling policy now treats page function as an explicit axis without imposing an every-year-by-function quota.
+- The corpus source manifest must cover every maintained benchmark year.
+- Team slugs imported from official results are normalized to portable URL-safe identifiers.
+- Coordinator routing now handles the current Alternative Platform category and keeps Best Presentation outside wiki-page precedent sampling.
+
 ## [0.5.0] - 2026-09-08
 
 ### Added

@@ -1,6 +1,6 @@
 # Story and wiki benchmark corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Page notes are observations, not judging rules. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Page notes are observations, not judging rules. Use the generated [award ledger](generated/award-ledger.md) for official lookup and [reviewed-page index](generated/reviewed-pages.md) for inspected examples.
 
 ## Award pool
 

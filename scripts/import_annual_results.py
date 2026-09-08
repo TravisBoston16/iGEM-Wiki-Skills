@@ -7,6 +7,7 @@ import argparse
 import csv
 import hashlib
 import json
+import re
 import tempfile
 import urllib.request
 from pathlib import Path
@@ -18,6 +19,10 @@ AWARDS = {
     "Best Wiki": ("story", "best-wiki"),
     "Best Model": ("model", "best-model"),
     "Best Measurement": ("wetlab", "best-measurement"),
+    "Best New Basic Part": ("wetlab", "best-new-basic-part"),
+    "Best New Composite Part": ("wetlab", "best-new-composite-part"),
+    "Best New Improved Part": ("wetlab", "best-new-improved-part"),
+    "Best Part Collection": ("wetlab", "best-part-collection"),
     "Best Integrated Human Practices": ("hp", "best-integrated-human-practices"),
     "Best Education": ("hp", "best-education"),
     "Best Sustainable Development Impact": ("hp", "best-sustainable-development-impact"),
@@ -70,7 +75,8 @@ def normalize_name(name: str) -> str:
 
 
 def normalize_slug(name: str) -> str:
-    return name.replace("_", "-").lower()
+    simplified = re.sub(r"[^a-z0-9_-]+", "-", name.casefold()).replace("_", "-")
+    return re.sub(r"-+", "-", simplified).strip("-")
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:

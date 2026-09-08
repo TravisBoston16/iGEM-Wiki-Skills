@@ -2,6 +2,8 @@
 
 Verified on 2026-09-08. Refresh these facts from the official competition site whenever a new season, rules update, Standard URL, deadline, or award claim matters. For the detailed 2026 snapshot and pre-freeze audit, read [seasons/2026-judging.md](seasons/2026-judging.md).
 
+For categories that cross page ownership or lack a direct historical award family, read [cross-domain-awards.md](cross-domain-awards.md).
+
 ## Official sources
 
 - Annual results: <https://competition.igem.org/results/>

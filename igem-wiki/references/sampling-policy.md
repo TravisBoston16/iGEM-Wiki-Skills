@@ -21,6 +21,18 @@ For each domain and each year in the maintained interval:
 
 These are minimum floors, not quotas. Some domains legitimately contain more award families or more useful page types, so raw counts need not be equal. Report year-by-year counts so readers can see remaining imbalance.
 
+## Functional coverage
+
+Use page function as a separate sampling axis. Do not demand every function in every year; that would reward mechanical volume and may be impossible when categories or Standard URLs change. Instead maintain at least one or two useful reviews for each in-scope core function across the interval, include contrasting evidence where possible, and report gaps explicitly.
+
+- **Story:** Home; Description or Project Description; Awards or Judging; site-level navigation and accessibility.
+- **Wet lab:** Engineering; Results; Measurement; Experiments or Protocols; Parts and Registry handoff; Notebook.
+- **Model:** vary model archetype and decision role rather than page slug—for example mechanistic or kinetic; stochastic; structural or sequence; data-driven or machine-learning; spatial or multiscale when relevant.
+- **Human Practices:** Human Practices or IHP; Education; Inclusivity; Sustainability.
+- **Implementation:** Implementation; Safety and Security; Hardware; Software; Entrepreneurship; Contribution.
+
+Record page type in the corpus. For Model reviews, state the archetype in the review observation until a dedicated taxonomy field is added. A missing function is a research backlog item, not permission to generalize from a different page type.
+
 ## Cross-year inference rule
 
 Call a pattern "recurring" or "cross-year" only when it is supported by reviewed pages from at least three competition years and at least two competition classes, with at least one limitation or counterexample considered. Otherwise label it as an example, a provisional pattern, or a year-specific observation.
@@ -36,7 +48,7 @@ Do not infer scientific quality, judging causality, or a current rule from award
 ## Maintenance sequence
 
 1. Import or verify award records.
-2. Inspect pages against the missing domain-year, award-status, class, and page-function strata.
+2. Inspect pages against the missing domain-year, award-status, class, and page-function strata; prioritize a real user or judging need over equal counts.
 3. Add review rows with strengths and limitations.
 4. Rebuild the generated indexes.
 5. Run repository validation and inspect the year-by-year coverage table before release.

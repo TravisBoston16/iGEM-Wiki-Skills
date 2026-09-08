@@ -1,4 +1,6 @@
 year,competition_uuid,awards_endpoint,retrieved_on,sha256
+2025,d615db72-738d-47c0-a929-fbdeb4882fc0,https://api.igem.org/v1/competitions/d615db72-738d-47c0-a929-fbdeb4882fc0/awards/results,2026-09-08,bb59685321d027a2e50c68eef4fe553e301d2ca3509f14d1d711ed23d58f621a
 2024,5198bd74-a6bc-482d-bf02-d0f7dc5f33c7,https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results,2026-09-08,bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336
 2023,d7dab5d6-eedb-40ed-8b50-ffbcb2053851,https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results,2026-09-08,8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984
 2022,3a8e556f-e347-4b47-8d0e-9b697f49fba5,https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results,2026-09-08,0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91
+2021,9700650d-5b53-4003-affa-61f2bf096632,https://api.igem.org/v1/competitions/9700650d-5b53-4003-affa-61f2bf096632/awards/results,2026-09-08,aadca335f8de65e6809e8152e40135a109f16fe819f2c1dbc5891a75b5058f4c

@@ -7,7 +7,7 @@ description: Plan, write, implement, or audit iGEM wet-lab documentation, includ
 
 Turn laboratory work into an auditable chain of design, test, learning, and revision. Preserve failures and uncertainty when they explain the next decision.
 
-For precedent research or substantial wet-lab work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live.
+For precedent research or substantial wet-lab work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the compact [reviewed-page index](references/generated/reviewed-pages.md). Read the full [official award ledger](references/generated/award-ledger.md) only when verifying or listing winners and nominees. Verify consequential details live.
 
 When documenting Engineering Success or a consequential iteration, adapt [assets/templates/dbtl-cycle.md](assets/templates/dbtl-cycle.md). Use the whole-wiki figure evidence card when a figure carries a headline claim.
 
@@ -31,7 +31,7 @@ Include purpose, method summary, controls and replicates, figure or table, quant
 
 Do not treat a single representative image, technical replicate, fitted curve, or qualitative observation as broader proof than it is. Report values below detection or quantification limits conservatively. Keep axis units, normalization, exclusions, statistical tests, and transformations visible.
 
-For a current iGEM season, verify the required Engineering Standard URL and any Registry requirements through the coordinator's season reference. A wiki Parts page does not replace complete Registry documentation.
+For a current iGEM season, verify the required Engineering Standard URL and any Registry requirements through the coordinator's season reference. A wiki Parts page does not replace complete Registry documentation. Treat the Registry as the canonical part artifact: verify identifiers, sequence and design, provenance, experience or characterization, and links back to supporting wiki evidence. For an Improved Part, compare against the original part as a control and cross-reference both entries. For a Part Collection, document the collection-level rationale and reuse path as well as each individual Registry entry.
 
 ## Verify
 

@@ -7,7 +7,7 @@ description: Plan, write, implement, or audit iGEM Implementation, Safety and Se
 
 Translate a project from laboratory result to a bounded use scenario. Make readiness, dependencies, risks, and reusable artifacts explicit instead of presenting a concept as deployable.
 
-For precedent research or substantial implementation work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live.
+For precedent research or substantial implementation work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the compact [reviewed-page index](references/generated/reviewed-pages.md). Read the full [official award ledger](references/generated/award-ledger.md) only when verifying or listing winners and nominees. Verify consequential details live.
 
 For an end-to-end use case, prototype handoff, or deployment claim, adapt [assets/templates/readiness-matrix.md](assets/templates/readiness-matrix.md).
 

@@ -1,6 +1,6 @@
 # Model winner and nominee corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use `benchmark-patterns.md` for cross-year principles and this file for curated interpretation. The canonical record-level inventory is generated from CSV at [generated/award-index.md](generated/award-index.md); use it for counts and award lookup.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use `benchmark-patterns.md` for cross-year principles and this file for curated interpretation. Use the generated [award ledger](generated/award-ledger.md) for official lookup and [reviewed-page index](generated/reviewed-pages.md) for inspected examples.
 
 ## Award pool
 

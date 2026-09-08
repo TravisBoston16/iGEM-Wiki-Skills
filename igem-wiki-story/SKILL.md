@@ -7,7 +7,7 @@ description: Plan, write, implement, or audit the narrative and information arch
 
 Make the project understandable before making it impressive. The opening path should tell a judge what problem exists, who experiences it, what the team built, what evidence was obtained, and where to inspect it.
 
-For precedent research or substantial story work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the generated award/page inventory in [references/generated/award-index.md](references/generated/award-index.md). Treat the generated inventory as the canonical local source for award-record coverage; verify consequential details live.
+For precedent research or substantial story work, read the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md) and the compact [reviewed-page index](references/generated/reviewed-pages.md). Read the full [official award ledger](references/generated/award-ledger.md) only when verifying or listing winners and nominees. Verify consequential details live.
 
 For a new or substantially restructured page, adapt the coordinator's page-brief template before writing. Preserve the evidence status and maturity from the Claim-Evidence Register in headlines, summaries, and award pages.
 
