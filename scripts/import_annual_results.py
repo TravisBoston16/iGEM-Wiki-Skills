@@ -15,6 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 API_ROOT = "https://api.igem.org/v1"
 AWARDS = {
+    "Best Wiki": ("story", "best-wiki"),
+    "Best Model": ("model", "best-model"),
     "Best Measurement": ("wetlab", "best-measurement"),
     "Best Integrated Human Practices": ("hp", "best-integrated-human-practices"),
     "Best Education": ("hp", "best-education"),

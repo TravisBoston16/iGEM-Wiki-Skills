@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **54 award records** (14 winners, 40 nominees) and **14 reviewed pages**.
+Coverage: **54 award records** (14 winners, 40 nominees) and **16 reviewed pages**.
 
 ## Award records
 
@@ -82,7 +82,9 @@ Coverage: **54 award records** (14 winners, 40 nominees) and **14 reviewed pages
 | 2023 | [ShanghaiTech-China — engineering](https://2023.igem.wiki/shanghaitech-china/engineering) | deep | Best Wiki winner UG | Engineering cycles expose what changed and why | Dense sections benefit from a cycle-level claim evidence table | 2026-09-08 |
 | 2022 | [Fudan — measurement](https://2022.igem.wiki/fudan/measurement) | deep | Best Measurement winner UG | Builds a verification chain from PCR and SDS-PAGE through color microscopy and HPLC; an assay failure changes the method; measurements inform RBS optimization | HPLC and imaging conclusions need clearer replicate uncertainty and statistical support for comparative language | 2026-09-08 |
 | 2022 | [Leiden — measurement](https://2022.igem.wiki/leiden/measurement) | deep | Best Measurement nominee OG | States samples controls protocol and instrument settings; reports SEM a 7.1 degree Celsius temperature change and 44.3 percent conversion; makes assumptions visible | Tumor-heating extrapolation assumes linearity and starting-temperature invariance; nanoparticle mass may include debris or medium components | 2026-09-08 |
+| 2021 | [Fudan — measurement](https://2021.igem.org/Team:Fudan/Measurement) | deep | Best Measurement nominee UG | Documents failed extraction attempts protocol optimization a complete reusable procedure low- and high-copy tests and an external user trial | Several protocol units appear inconsistent and the single neighboring-lab trial is limited evidence for general usability or reproducibility | 2026-09-08 |
 | 2021 | [NUS-Singapore — engineering](https://2021.igem.org/Team:NUS_Singapore/Engineering) | deep | Best Wiki winner UG | Model sensitivity prompted a three-repeat wet-lab experiment | The result supports tested conditions rather than broad generalization | 2026-09-08 |
+| 2021 | [Vilnius-Lithuania — measurement](https://2021.igem.org/Team:Vilnius-Lithuania/Measurement) | deep | Best Measurement winner UG | Connects calibration triplicate colony sampling controls functional-data analysis an unexpected negative result and promoter selection | Regression and confidence-interval claims need clearer sample definitions model diagnostics and uncertainty interpretation beside the conclusions | 2026-09-08 |
 
 ## Use rule
 

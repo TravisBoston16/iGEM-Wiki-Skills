@@ -4,13 +4,13 @@ Award status was verified from <https://competition.igem.org/results/> on 2026-0
 
 ## Award pool
 
-Representative 2025 Best Measurement records:
+The official inventory includes all recorded Best Measurement winners and nominees for 2021–2025. Representative 2025 records are:
 
 - Undergrad winner EPFL; nominees BUCT-China, McMaster-Canada, NU-Kazakhstan, and ShanghaiTech-China.
 - Overgrad winner Aalto-Helsinki; nominees AshesiGhana, BohemiaBio, Groningen, and Stuttgart.
 - High School winner BNDS-China; nominees GEMS-Taiwan, Hangzhou-PET, PCA Korea, and Uprize-I.
 
-The 2021 contrast pool is:
+The corresponding 2021 records are:
 
 - Undergrad winner Vilnius-Lithuania; nominees CCU-Taiwan, Fudan, WHU-China, and ZJU-China.
 - Overgrad winner Marburg; nominees HZAU-China, Tianjin, and UNILausanne.
@@ -31,7 +31,7 @@ Deep reads also include strong Engineering and Results pages from Best Wiki team
 | <https://2023.igem.wiki/shanghaitech-china/engineering> | Best Wiki winner, UG | Explicit DBTL cycles retain failures and quantify later improvement | A percentage improvement needs baseline, definition, and uncertainty |
 | <https://2021.igem.org/Team:NUS_Singapore/Engineering> | Best Wiki winner, UG | Model sensitivity prompted a repeated experiment and a documented performance change | Distinguish technical from biological replication |
 
-## 2022–2024 additions
+## Cross-year additions
 
 | Team/page | Award relationship | Reusable observation | Caution |
 |---|---|---|---|
@@ -41,6 +41,8 @@ Deep reads also include strong Engineering and Results pages from Best Wiki team
 | <https://2023.igem.wiki/lambert-ga/measurement> | Best Measurement nominee, HS | Stakeholder testing leads to a redesigned low-cost fluorometer that is compared with a plate reader using triplicates and regression | Green-fluorophore characterization is stronger than the preliminary evidence for other colors |
 | <https://2022.igem.wiki/fudan/measurement> | Best Measurement winner, UG | PCR, SDS-PAGE, color, microscopy, and HPLC form a multi-method verification chain; a failed assay changes the method | Comparative language needs clearer replicate, uncertainty, and statistical support |
 | <https://2022.igem.wiki/leiden/measurement> | Best Measurement nominee, OG | Samples, controls, settings, SEM, conversion, and assumptions are stated together | Tumor-heating extrapolation depends on linearity and composition assumptions that need separate validation |
+| <https://2021.igem.org/Team:Vilnius-Lithuania/Measurement> | Best Measurement winner, UG | Calibration, triplicate colony sampling, controls, functional-data analysis, and a negative result lead to promoter selection | Regression and confidence-interval claims need clearer sample definitions and diagnostics |
+| <https://2021.igem.org/Team:Fudan/Measurement> | Best Measurement nominee, UG | Failed extraction attempts lead to an optimized reusable protocol tested at two copy-number levels and by an external user | Some units are inconsistent and one external trial cannot establish general reproducibility |
 
 ## Extracted principles
 

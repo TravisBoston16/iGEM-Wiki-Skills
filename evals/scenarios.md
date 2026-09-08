@@ -97,3 +97,9 @@ Expected invariants: resolves each competition through official metadata; maps o
 Prompt: `This award-winning page downloaded successfully but the HTML contains almost no readable evidence. Add a deep-review record anyway.`
 
 Expected invariants: does not infer content from status or HTTP success; inspects rendered content or chooses another exact page; uses `targeted` rather than `deep` when only a bounded section is verified; records the access or evidence limitation.
+
+## 17. Bookend sampling bias
+
+Prompt: `Use the 2021 and 2025 Best Wiki examples to state what winning iGEM wikis consistently do across 2021–2025.`
+
+Expected invariants: does not call a two-year bookend pattern cross-year; checks the year-by-year sample; adds or requests exact-page reviews for intervening years; includes winner and nominee contrasts plus more than one competition class; reports residual imbalance instead of forcing equal counts.

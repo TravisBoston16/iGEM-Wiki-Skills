@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **69 award records** (16 winners, 53 nominees) and **10 reviewed pages**.
+Coverage: **154 award records** (22 winners, 132 nominees) and **14 reviewed pages**.
 
 ## Award records
 
@@ -43,12 +43,97 @@ Coverage: **69 award records** (16 winners, 53 nominees) and **10 reviewed pages
 | 2025 | undergrad | best-wiki | nominee | [TU-Eindhoven](https://2025.igem.wiki/tu-eindhoven/) | 2026-09-08 |
 | 2025 | undergrad | best-wiki | nominee | [UOttawa](https://2025.igem.wiki/uottawa/) | 2026-09-08 |
 | 2025 | undergrad | best-wiki | nominee | [XJTLU-Science-China](https://2025.igem.wiki/xjtlu-science-china/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | winner | [GEMS-Taiwan](https://2024.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [AIS-China](https://2024.igem.wiki/ais-china/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [BGI-MammothEdu-East](https://2024.igem.wiki/bgi-mammothedu-east/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [BKEA](https://2024.igem.wiki/bkea/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [BNDS-China](https://2024.igem.wiki/bnds-china/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [Formosa](https://2024.igem.wiki/formosa/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [GreatBay-SCIE](https://2024.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [HongKong-JSS](https://2024.igem.wiki/hongkong-jss/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [Keystone](https://2024.igem.wiki/keystone/) | 2026-09-08 |
+| 2024 | high-school | best-wiki | nominee | [RDFZ-CHINA](https://2024.igem.wiki/rdfz-china/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | winner | [Marburg](https://2024.igem.wiki/marburg/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [Aachen](https://2024.igem.wiki/aachen/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [DTU-Denmark](https://2024.igem.wiki/dtu-denmark/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [Freiburg](https://2024.igem.wiki/freiburg/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [Leiden](https://2024.igem.wiki/leiden/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [Toulouse-INSA-UPS](https://2024.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [TUM-Straubing](https://2024.igem.wiki/tum-straubing/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [UNILausanne](https://2024.igem.wiki/unilausanne/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [UZurich](https://2024.igem.wiki/uzurich/) | 2026-09-08 |
+| 2024 | overgrad | best-wiki | nominee | [WageningenUR](https://2024.igem.wiki/wageningenur/) | 2026-09-08 |
 | 2024 | undergrad | best-wiki | winner | [Heidelberg](https://2024.igem.wiki/heidelberg/) | 2026-09-08 |
 | 2024 | undergrad | best-wiki | winner | [JU-Krakow](https://2024.igem.wiki/ju-krakow/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [BNUZH-China](https://2024.igem.wiki/bnuzh-china/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [CJUH-JLU-China](https://2024.igem.wiki/cjuh-jlu-china/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [Fudan](https://2024.igem.wiki/fudan/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [Patras](https://2024.igem.wiki/patras/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [Sydney-Australia](https://2024.igem.wiki/sydney-australia/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [Vilnius-Lithuania](https://2024.igem.wiki/vilnius-lithuania/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [Waseda-Tokyo](https://2024.igem.wiki/waseda-tokyo/) | 2026-09-08 |
+| 2024 | undergrad | best-wiki | nominee | [XMU-China](https://2024.igem.wiki/xmu-china/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | winner | [BASIS-China](https://2023.igem.wiki/basis-china/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [AIS-China](https://2023.igem.wiki/ais-china/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [GreatBay-SCIE](https://2023.igem.wiki/greatbay-scie/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [Japan-United](https://2023.igem.wiki/japan-united/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [Lambert-GA](https://2023.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [LINKS-China](https://2023.igem.wiki/links-china/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [Nanjing-SDG](https://2023.igem.wiki/nanjing-sdg/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [RDFZ-CHINA](https://2023.igem.wiki/rdfz-china/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [Shanghai-SDG](https://2023.igem.wiki/shanghai-sdg/) | 2026-09-08 |
+| 2023 | high-school | best-wiki | nominee | [Taipei-KCISLK-V1](https://2023.igem.wiki/taipei-kcislk-v1/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | winner | [Leiden](https://2023.igem.wiki/leiden/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Aalto-Helsinki](https://2023.igem.wiki/aalto-helsinki/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [DTU-Denmark](https://2023.igem.wiki/dtu-denmark/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Estonia-TUIT](https://2023.igem.wiki/estonia-tuit/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Freiburg](https://2023.igem.wiki/freiburg/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Heidelberg](https://2023.igem.wiki/heidelberg/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [SZU-China](https://2023.igem.wiki/szu-china/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Thessaly](https://2023.igem.wiki/thessaly/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [Toronto](https://2023.igem.wiki/toronto/) | 2026-09-08 |
+| 2023 | overgrad | best-wiki | nominee | [TU-Eindhoven](https://2023.igem.wiki/tu-eindhoven/) | 2026-09-08 |
 | 2023 | undergrad | best-wiki | winner | [ShanghaiTech-China](https://2023.igem.wiki/shanghaitech-china/) | 2026-09-08 |
 | 2023 | undergrad | best-wiki | winner | [ZJU-China](https://2023.igem.wiki/zju-china/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [Fudan](https://2023.igem.wiki/fudan/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [HUST-China](https://2023.igem.wiki/hust-china/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [Kyoto](https://2023.igem.wiki/kyoto/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [McGill](https://2023.igem.wiki/mcgill/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [MSP-Maastricht](https://2023.igem.wiki/msp-maastricht/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [NUS-Singapore](https://2023.igem.wiki/nus-singapore/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [Vilnius-Lithuania](https://2023.igem.wiki/vilnius-lithuania/) | 2026-09-08 |
+| 2023 | undergrad | best-wiki | nominee | [WHU-China](https://2023.igem.wiki/whu-china/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | winner | [Lambert-GA](https://2022.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [BS-United-China](https://2022.igem.wiki/bs-united-china/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [GEMS-Taiwan](https://2022.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [ICJFLS](https://2022.igem.wiki/icjfls/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [LINKS-China](https://2022.igem.wiki/links-china/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [Mingdao](https://2022.igem.wiki/mingdao/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [Nanjing-NFLS](https://2022.igem.wiki/nanjing-nfls/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [NYC-Empire-State](https://2022.igem.wiki/nyc-empire-state/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [SHSBNU-China](https://2022.igem.wiki/shsbnu-china/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [Wego-Taipei](https://2022.igem.wiki/wego-taipei/) | 2026-09-08 |
+| 2022 | high-school | best-wiki | nominee | [YkPaO](https://2022.igem.wiki/ykpao/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | winner | [Leiden](https://2022.igem.wiki/leiden/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [EPFL](https://2022.igem.wiki/epfl/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [MIT-MAHE](https://2022.igem.wiki/mit-mahe/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [Montpellier](https://2022.igem.wiki/montpellier/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [Technion-Israel](https://2022.igem.wiki/technion-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [Thessaly](https://2022.igem.wiki/thessaly/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [UNILausanne](https://2022.igem.wiki/unilausanne/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [UZurich](https://2022.igem.wiki/uzurich/) | 2026-09-08 |
+| 2022 | overgrad | best-wiki | nominee | [WWU-Muenster](https://2022.igem.wiki/wwu-muenster/) | 2026-09-08 |
 | 2022 | undergrad | best-wiki | winner | [INSA-Lyon1](https://2022.igem.wiki/insa-lyon1/) | 2026-09-08 |
 | 2022 | undergrad | best-wiki | winner | [Patras-Medicine](https://2022.igem.wiki/patras-medicine/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [Estonia-TUIT](https://2022.igem.wiki/estonia-tuit/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [HKUST](https://2022.igem.wiki/hkust/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [Imperial-College-London](https://2022.igem.wiki/imperial-college-london/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [Ionis-Paris](https://2022.igem.wiki/ionis-paris/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [McGill](https://2022.igem.wiki/mcgill/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [Munich](https://2022.igem.wiki/munich/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [TU-Eindhoven](https://2022.igem.wiki/tu-eindhoven/) | 2026-09-08 |
+| 2022 | undergrad | best-wiki | nominee | [UBC-Okanagan](https://2022.igem.wiki/ubc-okanagan/) | 2026-09-08 |
 | 2021 | high-school | best-wiki | winner | [LINKS-China](https://2021.igem.org/Team:LINKS_China) | 2026-09-08 |
 | 2021 | high-school | best-wiki | winner | [TAS-Taipei](https://2021.igem.org/Team:TAS_Taipei) | 2026-09-08 |
 | 2021 | high-school | best-wiki | nominee | [BJEA-China](https://2021.igem.org/Team:BJEA_China) | 2026-09-08 |
@@ -87,11 +172,15 @@ Coverage: **69 award records** (16 winners, 53 nominees) and **10 reviewed pages
 | 2025 | [EPFL — home](https://2025.igem.wiki/epfl/) | deep | Best Wiki winner UG | Problem-first opening; visible routes to core evidence; restrained motion | Home cannot substitute for Results or detailed evidence pages | 2026-09-08 |
 | 2025 | [GreatBay-SCIE — home](https://2025.igem.wiki/greatbay-scie/) | deep | Best Wiki winner HS | Connects project story to model wet-lab HP and implementation routes | Multiple messages still need one dominant project sentence | 2026-09-08 |
 | 2025 | [Heidelberg — home](https://2025.igem.wiki/heidelberg/) | targeted | Best Wiki nominee OG | Navigation subtitles preview page purpose and make a dense project scannable | Decorative transitions need text and reduced-motion fallbacks | 2026-09-08 |
+| 2024 | [Fudan — home](https://2024.igem.wiki/fudan/) | targeted | Best Wiki nominee UG | Separates Project Technology and Community routes and exposes the team repository from the primary navigation | Much of the project story is embedded in image assets with little extractable text so essential meaning and accessibility are fragile | 2026-09-08 |
 | 2024 | [JU-Krakow — home](https://2024.igem.wiki/ju-krakow/) | deep | Best Wiki winner UG | Local stakes and a consistent visual story lead into evidence pages | Dynamic counters can fail or show zero without robust fallbacks | 2026-09-08 |
+| 2023 | [Heidelberg — home](https://2023.igem.wiki/heidelberg/) | deep | Best Wiki nominee OG | Combines award status a quantified mixed-plastic problem the two-strain mechanism and links between modeling and wet-lab design | Broad circular-economy and SDG impact language exceeds what a home page can substantiate and should remain linked to bounded evidence | 2026-09-08 |
 | 2023 | [ShanghaiTech-China — home](https://2023.igem.wiki/shanghaitech-china/) | deep | Best Wiki winner UG | Home routes quickly to engineering and results evidence | Long pages need reading-position cues and clearer section summaries | 2026-09-08 |
 | 2023 | [ZJU-China — home](https://2023.igem.wiki/zju-china/) | deep | Best Wiki winner UG | Problem-to-solution framing connects molecular and system scales | Dense visual hierarchy benefits from short plain-language summaries | 2026-09-08 |
+| 2022 | [MIT-MAHE — home](https://2022.igem.wiki/mit-mahe/) | targeted | Best Wiki nominee OG | Moves from aquaculture pressure to vibriosis and then to a two-part peptide and chitosan-nanoparticle solution | The sparse image-led landing page provides little direct evidence or claim qualification and depends heavily on visual assets | 2026-09-08 |
 | 2022 | [Patras-Medicine — home](https://2022.igem.wiki/patras-medicine/) | targeted | Best Wiki winner UG | Succinct project framing and direct routes reduce orientation cost | The landing page alone cannot establish scientific maturity | 2026-09-08 |
 | 2021 | [EPFL — home](https://2021.igem.org/Team:EPFL) | deep | Best Wiki winner OG | Navigation subtitles and cross-domain links expose project integration | Legacy navigation and responsiveness need current-browser rechecking | 2026-09-08 |
+| 2021 | [KCL-UK — home](https://2021.igem.org/Team:KCL_UK) | targeted | Best Wiki nominee UG | States the project problem solution and three technical components in a short first-page path with direct evidence links | Clinical and revolutionary language remains aspirational on the home page and needs explicit links to maturity and safety evidence | 2026-09-08 |
 | 2021 | [NUS-Singapore — home](https://2021.igem.org/Team:NUS_Singapore) | deep | Best Wiki winner UG | Explicit model and experiment routes make integration visible | Legacy interface patterns should not be copied without modernization | 2026-09-08 |
 | 2021 | [TAS-Taipei — home](https://2021.igem.org/Team:TAS_Taipei) | deep | Best Wiki winner HS | Model prototype and application are connected in the top-level story | Motion-heavy storytelling needs equivalent static and keyboard access | 2026-09-08 |
 

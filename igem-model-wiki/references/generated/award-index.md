@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **41 award records** (9 winners, 32 nominees) and **10 reviewed pages**.
+Coverage: **84 award records** (15 winners, 69 nominees) and **14 reviewed pages**.
 
 ## Award records
 
@@ -26,9 +26,52 @@ Coverage: **41 award records** (9 winners, 32 nominees) and **10 reviewed pages*
 | 2025 | undergrad | best-model | nominee | [NJU-China](https://2025.igem.wiki/nju-china/) | 2026-09-08 |
 | 2025 | undergrad | best-model | nominee | [PekingHSC](https://2025.igem.wiki/pekinghsc/) | 2026-09-08 |
 | 2025 | undergrad | best-model | nominee | [SUSTech-BIO](https://2025.igem.wiki/sustech-bio/) | 2026-09-08 |
+| 2024 | high-school | best-model | winner | [IEA](https://2024.igem.wiki/iea/) | 2026-09-08 |
+| 2024 | high-school | best-model | nominee | [City-of-London-UK](https://2024.igem.wiki/city-of-london-uk/) | 2026-09-08 |
+| 2024 | high-school | best-model | nominee | [GEMS-Taiwan](https://2024.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2024 | high-school | best-model | nominee | [HK-Joint-School](https://2024.igem.wiki/hk-joint-school/) | 2026-09-08 |
+| 2024 | high-school | best-model | nominee | [LINKS-China](https://2024.igem.wiki/links-china/) | 2026-09-08 |
+| 2024 | overgrad | best-model | winner | [UToronto](https://2024.igem.wiki/utoronto/) | 2026-09-08 |
+| 2024 | overgrad | best-model | nominee | [Toulouse-INSA-UPS](https://2024.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
+| 2024 | overgrad | best-model | nominee | [UCopenhagen](https://2024.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2024 | overgrad | best-model | nominee | [UniMuenster](https://2024.igem.wiki/unimuenster/) | 2026-09-08 |
+| 2024 | overgrad | best-model | nominee | [WageningenUR](https://2024.igem.wiki/wageningenur/) | 2026-09-08 |
 | 2024 | undergrad | best-model | winner | [Heidelberg](https://2024.igem.wiki/heidelberg/) | 2026-09-08 |
+| 2024 | undergrad | best-model | nominee | [BNUZH-China](https://2024.igem.wiki/bnuzh-china/) | 2026-09-08 |
+| 2024 | undergrad | best-model | nominee | [CJUH-JLU-China](https://2024.igem.wiki/cjuh-jlu-china/) | 2026-09-08 |
+| 2024 | undergrad | best-model | nominee | [Tsinghua](https://2024.igem.wiki/tsinghua/) | 2026-09-08 |
+| 2024 | undergrad | best-model | nominee | [Waseda-Tokyo](https://2024.igem.wiki/waseda-tokyo/) | 2026-09-08 |
+| 2023 | high-school | best-model | winner | [BJEA-China](https://2023.igem.wiki/bjea-china/) | 2026-09-08 |
+| 2023 | high-school | best-model | nominee | [BZK-SH](https://2023.igem.wiki/bzk-sh/) | 2026-09-08 |
+| 2023 | high-school | best-model | nominee | [Lambert-GA](https://2023.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2023 | high-school | best-model | nominee | [LINKS-China](https://2023.igem.wiki/links-china/) | 2026-09-08 |
+| 2023 | high-school | best-model | nominee | [PuiChing-Macau](https://2023.igem.wiki/puiching-macau/) | 2026-09-08 |
+| 2023 | overgrad | best-model | winner | [Toronto](https://2023.igem.wiki/toronto/) | 2026-09-08 |
+| 2023 | overgrad | best-model | nominee | [Heidelberg](https://2023.igem.wiki/heidelberg/) | 2026-09-08 |
+| 2023 | overgrad | best-model | nominee | [Leiden](https://2023.igem.wiki/leiden/) | 2026-09-08 |
+| 2023 | overgrad | best-model | nominee | [Sheffield](https://2023.igem.wiki/sheffield/) | 2026-09-08 |
+| 2023 | overgrad | best-model | nominee | [Toulouse-INSA-UPS](https://2023.igem.wiki/toulouse-insa-ups/) | 2026-09-08 |
 | 2023 | undergrad | best-model | winner | [ZJU-China](https://2023.igem.wiki/zju-china/) | 2026-09-08 |
+| 2023 | undergrad | best-model | nominee | [AFCM-Egypt](https://2023.igem.wiki/afcm-egypt/) | 2026-09-08 |
+| 2023 | undergrad | best-model | nominee | [NUS-Singapore](https://2023.igem.wiki/nus-singapore/) | 2026-09-08 |
+| 2023 | undergrad | best-model | nominee | [UCAS-China](https://2023.igem.wiki/ucas-china/) | 2026-09-08 |
+| 2023 | undergrad | best-model | nominee | [William-and-Mary](https://2023.igem.wiki/william-and-mary/) | 2026-09-08 |
+| 2022 | high-school | best-model | winner | [GEMS-Taiwan](https://2022.igem.wiki/gems-taiwan/) | 2026-09-08 |
+| 2022 | high-school | best-model | nominee | [City-of-London-UK](https://2022.igem.wiki/city-of-london-uk/) | 2026-09-08 |
+| 2022 | high-school | best-model | nominee | [ICJFLS](https://2022.igem.wiki/icjfls/) | 2026-09-08 |
+| 2022 | high-school | best-model | nominee | [Lambert-GA](https://2022.igem.wiki/lambert-ga/) | 2026-09-08 |
+| 2022 | high-school | best-model | nominee | [Seoul-Korea](https://2022.igem.wiki/seoul-korea/) | 2026-09-08 |
+| 2022 | overgrad | best-model | winner | [TAU-Israel](https://2022.igem.wiki/tau-israel/) | 2026-09-08 |
+| 2022 | overgrad | best-model | nominee | [Leiden](https://2022.igem.wiki/leiden/) | 2026-09-08 |
+| 2022 | overgrad | best-model | nominee | [Thessaloniki-Meta](https://2022.igem.wiki/thessaloniki-meta/) | 2026-09-08 |
+| 2022 | overgrad | best-model | nominee | [UCopenhagen](https://2022.igem.wiki/ucopenhagen/) | 2026-09-08 |
+| 2022 | overgrad | best-model | nominee | [UZurich](https://2022.igem.wiki/uzurich/) | 2026-09-08 |
 | 2022 | undergrad | best-model | winner | [TU-Eindhoven](https://2022.igem.wiki/tu-eindhoven/) | 2026-09-08 |
+| 2022 | undergrad | best-model | nominee | [IISER-Pune2-India](https://2022.igem.wiki/iiser-pune2-india/) | 2026-09-08 |
+| 2022 | undergrad | best-model | nominee | [Munich](https://2022.igem.wiki/munich/) | 2026-09-08 |
+| 2022 | undergrad | best-model | nominee | [NMU-China](https://2022.igem.wiki/nmu-china/) | 2026-09-08 |
+| 2022 | undergrad | best-model | nominee | [UTokyo](https://2022.igem.wiki/utokyo/) | 2026-09-08 |
+| 2022 | undergrad | best-model | nominee | [William-and-Mary](https://2022.igem.wiki/william-and-mary/) | 2026-09-08 |
 | 2021 | high-school | best-model | winner | [TAS-Taipei](https://2021.igem.org/Team:TAS_Taipei) | 2026-09-08 |
 | 2021 | high-school | best-model | nominee | [Lambert-GA](https://2021.igem.org/Team:Lambert_GA) | 2026-09-08 |
 | 2021 | high-school | best-model | nominee | [LINKS-China](https://2021.igem.org/Team:LINKS_China) | 2026-09-08 |
@@ -63,6 +106,10 @@ Coverage: **41 award records** (9 winners, 32 nominees) and **10 reviewed pages*
 | 2025 | [Peking — model](https://2025.igem.wiki/peking/model/) | deep | Best Model winner UG | Repeated hierarchy exposes purpose assumptions methods parameters sources and results | A simulated demonstration dataset must remain labeled as an example | 2026-09-08 |
 | 2025 | [SUSTech-BIO — model](https://2025.igem.wiki/sustech-bio/model) | deep | Best Model nominee UG | Experimental response surfaces and predictive models form a design loop | Accuracy claims require split strategy metric definition and uncertainty | 2026-09-08 |
 | 2024 | [Heidelberg — model](https://2024.igem.wiki/heidelberg/model) | deep | Best Model winner UG | Three-scale pipeline exposes inputs outputs calibration HPC details and computational limits | Unprocessed data volume is a limitation not validation | 2026-09-08 |
+| 2024 | [Tsinghua — model](https://2024.igem.wiki/tsinghua/model) | deep | Best Model nominee UG | States two modeling purposes connects four physiological stages and exposes equations parameters code and evidence status within each module | Many parameters are assumed and one dataset is manually drafted because animal evidence is absent so those outputs demonstrate method rather than prediction | 2026-09-08 |
+| 2023 | [Heidelberg — model](https://2023.igem.wiki/heidelberg/model) | deep | Best Model nominee OG | Opens with a capability-assumption-limitation table then tests a genome-scale digital twin against measured growth and feeds knockout predictions to wet-lab design | The headline accuracy comes from a small test set and industrial scale-up conclusions remain simulation-based rather than independently validated | 2026-09-08 |
+| 2023 | [ZJU-China — model](https://2023.igem.wiki/zju-china/model) | deep | Best Model winner UG | Links four scales from environmental spread and vascular transport to expression and antigen binding and compares transport predictions with qPCR trends | The very dense page scatters assumptions parameter provenance and validation boundaries making it difficult to judge which outputs are calibrated | 2026-09-08 |
+| 2022 | [Munich — model](https://2022.igem.wiki/munich/model) | deep | Best Model nominee UG | Builds from a system diagram to ODEs and a parameter table that distinguishes assumed and literature-derived values then connects docking mutations to design choices | The rough approximation depends heavily on estimated parameters and needs dimensional checks uncertainty propagation and stronger independent validation | 2026-09-08 |
 | 2022 | [TU-Eindhoven — model](https://2022.igem.wiki/tu-eindhoven/model) | deep | Best Model winner UG | Parameter units sources global sensitivity and wet-lab repeats are integrated | Fitted parameters and independently validated parameters must be distinguished | 2026-09-08 |
 | 2021 | [NUS-Singapore — model](https://2021.igem.org/Team:NUS_Singapore/Model) | deep | Best Model nominee and Best Wiki winner UG | Sensitivity analysis triggered a three-repeat experiment and documented improvement | Do not generalize beyond tested conditions | 2026-09-08 |
 | 2021 | [TAS-Taipei — model](https://2021.igem.org/Team:TAS_Taipei/Model) | deep | Best Model and Best Wiki winner HS | Each model connects to experiment prototype or application and records an unresolved issue | Unsupported environmental extrapolation belongs in future work | 2026-09-08 |

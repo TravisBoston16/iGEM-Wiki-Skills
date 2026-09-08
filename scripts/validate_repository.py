@@ -77,6 +77,7 @@ def validate_release_resources(failures: list[str]) -> None:
     required = (
         "igem-wiki/references/ai-integrity.md",
         "igem-wiki/references/claim-evidence-register.md",
+        "igem-wiki/references/sampling-policy.md",
         "igem-wiki/references/seasons/2026-judging.md",
         "igem-wiki/assets/templates/whole-wiki-evidence-map.md",
         "igem-wiki/assets/templates/page-brief.md",

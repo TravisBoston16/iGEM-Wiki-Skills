@@ -4,7 +4,7 @@ Award status was verified from <https://competition.igem.org/results/> on 2026-0
 
 ## Award pool
 
-The seed pool includes every 2025 Best Wiki winner and nominee across Undergrad, Overgrad, and High School, plus the corresponding 2021 pool and selected 2022–2024 winners.
+The official inventory includes every recorded Best Wiki winner and nominee across Undergrad, Overgrad, and High School for each year from 2021 through 2025. Use the generated index for the complete list; the names below illustrate the range rather than define the sample.
 
 Representative 2025 records:
 
@@ -12,7 +12,7 @@ Representative 2025 records:
 - Overgrad winner: Munich. Nominees include Aachen, AshesiGhana, Brno Czech Republic, DTU-Denmark, Freiburg, Heidelberg, Marburg, TAU-Israel, UiOslo-Norway, UNILausanne, and WageningenUR.
 - High School winner: GreatBay-SCIE. Nominees include BNDS-China, GCGS, GEMS-Taiwan, Lambert-GA, MPA-USA, PCA Korea, SubCat-Greatbay, Taipei-KCISLK-V3, and Uprize-I.
 
-Earlier contrasts include Heidelberg and JU-Krakow 2024, ShanghaiTech-China and ZJU-China 2023, INSA-Lyon1 and Patras-Medicine 2022, and the complete 2021 Best Wiki pool.
+Cross-year contrasts include Heidelberg and JU-Krakow 2024, ShanghaiTech-China and ZJU-China 2023, INSA-Lyon1 and Patras-Medicine 2022, and the complete 2021 Best Wiki pool.
 
 The recorded 2021 pool is:
 
@@ -32,6 +32,10 @@ The recorded 2021 pool is:
 | <https://2022.igem.wiki/patras-medicine/> | Best Wiki winner, UG | Succinct homepage routes to distinct workstreams; side navigation supports depth | Keep claims within demonstrated maturity |
 | <https://2021.igem.org/Team:NUS_Singapore> | Best Wiki winner, UG | Model, experiment, and project outcomes are cross-linked as one story | Legacy platform patterns may not transfer directly |
 | <https://2021.igem.org/Team:TAS_Taipei> | Best Wiki winner, HS | Three model strands each connect to prototype or experiment | Avoid relying on decorative transitions for orientation |
+| <https://2024.igem.wiki/fudan/> | Best Wiki nominee, UG | Project, Technology, and Community routes expose the project structure and repository | Essential story content embedded in images needs text fallback |
+| <https://2023.igem.wiki/heidelberg/> | Best Wiki nominee, OG | Quantified problem framing connects the two-strain mechanism to Model and wet-lab routes | Broad circular-economy impact language needs bounded evidence links |
+| <https://2022.igem.wiki/mit-mahe/> | Best Wiki nominee, OG | Aquaculture pressure leads directly to the peptide and chitosan-nanoparticle solution | Sparse image-led pages can hide evidence and claim qualification |
+| <https://2021.igem.org/Team:KCL_UK> | Best Wiki nominee, UG | A short first-page path states the problem, solution, and three technical components | Clinical and revolutionary wording needs explicit maturity and safety boundaries |
 
 ## Extracted principles
 

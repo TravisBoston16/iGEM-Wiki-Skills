@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here.
 
+## [0.5.0] - 2026-09-08
+
+### Added
+
+- 128 official Best Wiki and Best Model records for 2022–2024, bringing the corpus to 739 award-category records.
+- 14 inspected pages that close domain-year gaps, bringing the page-review corpus to 76 records.
+- A portable benchmark sampling policy with explicit domain-year, award-status, competition-class, and cross-year inference rules.
+- Generated year-by-year coverage and reviewed-sample balance tables.
+
+### Changed
+
+- Story and Model award inventories now cover every maintained year rather than 2021/2025 bookends plus selected intervening winners.
+- Curated benchmark notes now include the newly inspected cross-year winner and nominee contrasts.
+- Corpus validation now rejects missing benchmark years, insufficient domain-year review depth, missing winner or nominee coverage, and missing competition classes.
+- The generated coordinator index no longer depends on a repository-external relative link when skills are installed project-locally.
+
 ## [0.4.0] - 2026-09-08
 
 ### Added

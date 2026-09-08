@@ -17,7 +17,7 @@ Load only the domain instructions needed for the request:
 - **Human Practices, Education, Inclusivity, Sustainability, or stakeholder integration:** read `../igem-hp-wiki/SKILL.md`.
 - **Implementation, Safety, Entrepreneurship, Hardware, Software, or Contribution:** read `../igem-implementation-wiki/SKILL.md`.
 
-For a whole-site plan or audit, read [references/current-judging.md](references/current-judging.md), [references/cross-page-contract.md](references/cross-page-contract.md), and [references/review-checklist.md](references/review-checklist.md). Read [references/claim-evidence-register.md](references/claim-evidence-register.md) when claims span pages or risk overgeneralization. Read [references/ai-integrity.md](references/ai-integrity.md) whenever AI materially assists submitted work. For precedent research, also read [references/corpus-index.md](references/corpus-index.md).
+For a whole-site plan or audit, read [references/current-judging.md](references/current-judging.md), [references/cross-page-contract.md](references/cross-page-contract.md), and [references/review-checklist.md](references/review-checklist.md). Read [references/claim-evidence-register.md](references/claim-evidence-register.md) when claims span pages or risk overgeneralization. Read [references/ai-integrity.md](references/ai-integrity.md) whenever AI materially assists submitted work. For precedent research, also read [references/corpus-index.md](references/corpus-index.md) and [references/sampling-policy.md](references/sampling-policy.md).
 
 When the 2026 Competition is in scope, read [references/seasons/2026-judging.md](references/seasons/2026-judging.md) and verify unstable requirements live. Do not silently apply a 2026 snapshot to another season.
 

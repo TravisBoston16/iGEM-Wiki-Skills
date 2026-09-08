@@ -4,7 +4,7 @@ Award status was verified from <https://competition.igem.org/results/> on 2026-0
 
 ## Award pools
 
-Representative 2025 records:
+The official inventory includes every recorded winner and nominee in the selected Implementation-related award families for 2021–2025. Representative 2025 records are:
 
 - Hardware winners Cornell, TUDarmstadt, and SHSID; nominees include BIT-China, Estonia-TUBI, NUDT-CHINA, Rochester, Brno Czech Republic, ETH-Zurich, GEC-Guangzhou, HongKong-JSS, SHSBNU-China, and UCS-A.
 - Software winners BIT-China, EPFL, Marburg, Munich, and Lambert-GA; nominees include Barcelona-UB, Duke, UBC-Vancouver, TU-Dresden, and HK-Joint-School.
@@ -34,6 +34,9 @@ The 2021 Software pool is:
 | <https://2025.igem.wiki/ucalgary/safety-and-security> | Best Safety winner, UG | Bowtie analysis links hazards, preventive barriers, consequence controls, weaknesses, and implementation timing; reusable tool is provided | Risk diagrams need evidence that controls were tested where possible |
 | <https://2025.igem.wiki/sustech-bio/entrepreneurship> | Best Entrepreneurship winner, UG | Covers unmet need, market, commercialization, MVP, finances, and risk as one path | Large market or impact claims require source and boundary checks |
 | <https://2025.igem.wiki/aalto-helsinki/sustainability> | Sustainability winner, OG | Demonstrates how implementation boundaries affect environmental claims | Do not substitute SDG labels for lifecycle reasoning |
+| <https://2025.igem.wiki/shsid/hardware> | Best Hardware winner, HS | Three design versions, expert feedback, modular subsystems, software control, and component tests expose the design path | Overlapping sensor ranges and module-level tests leave real-wastewater full-cycle reliability and biosafety open |
+| <https://2021.igem.org/Team:UPenn/Hardware> | Best Hardware winner, UG | A 96-well device includes source files, assembly time, costed materials, calibration, and biological tests | Some calibration remains unimplemented and broad robustness claims need repeated independent evidence |
+| <https://2021.igem.org/Team:Rochester/Hardware> | Best Hardware nominee, UG | Manufacturing attempts, stakeholder advice, COMSOL, and measured flow are tied to design changes | Duplicated passages and inconsistent flow units weaken specification auditability |
 
 ## 2022–2024 additions
 

@@ -4,7 +4,7 @@ Award status was verified from <https://competition.igem.org/results/> on 2026-0
 
 ## Award pools
 
-Representative 2025 Integrated Human Practices records:
+The official inventory includes every recorded winner and nominee in the selected Human Practices-related award families for 2021–2025. Representative 2025 Integrated Human Practices records are:
 
 - Undergrad winner NYU-Abu-Dhabi; nominees CJUH-JLU-China, JLU-NBBMS, Peking, Thessaloniki, and TU-Eindhoven.
 - Overgrad winner WageningenUR; nominees Aachen, Marburg, Munich, UNICAMP-Brazil, and UniMuenster.
@@ -38,6 +38,7 @@ The 2021 Education pool is:
 | <https://2024.igem.wiki/ju-krakow/human-practices> | Best Wiki winner, UG | Repeated Who, Why, Learned, Adapted units make project change inspectable; cancelled ideas remain visible | Long timelines need summaries of the most consequential changes |
 | <https://2023.igem.wiki/shanghaitech-china/human-practices> | Best Wiki winner, UG | Stakeholder work is connected to engineering cycles rather than isolated at the end | Cross-links must land on the exact affected evidence |
 | <https://2021.igem.org/Team:LINKS_China/Human_Practices> | Best Wiki winner and IHP nominee, HS | Strong visual chronology and project-context integration | Legacy interaction patterns need accessibility review |
+| <https://2021.igem.org/Team:Bolivia/Human_Practices> | Best IHP winner, UG | Expert and community input changes the target population, water-matrix strategy, sampling, affordability, and usability requirements | Local survey evidence does not by itself support broad benefit claims without representativeness and feasibility bounds |
 
 ## 2022–2024 additions
 

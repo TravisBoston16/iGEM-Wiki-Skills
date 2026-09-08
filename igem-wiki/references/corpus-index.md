@@ -17,13 +17,37 @@ An award record does not prove that a page was reviewed or that every claim is e
 
 | Domain skill | Award records | Winners | Nominees | Reviewed pages | Years represented |
 |---|---:|---:|---:|---:|---|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 69 | 16 | 53 | 10 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 54 | 14 | 40 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 41 | 9 | 32 | 10 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 257 | 54 | 203 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 190 | 55 | 135 | 14 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 14 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 54 | 14 | 40 | 16 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 84 | 15 | 69 | 14 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 257 | 54 | 203 | 15 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 190 | 55 | 135 | 17 | 2025, 2024, 2023, 2022, 2021 |
 
-Counts are award-category records; a team may appear in multiple categories. See [`corpus/schema.md`](../../corpus/schema.md) for fields and maintenance rules.
+Counts are award-category records; a team may appear in multiple categories. Review coverage follows the portable [sampling policy](sampling-policy.md).
+
+## Year-by-year coverage
+
+Each cell reports `official award records / inspected pages`. The policy enforces a review floor, not equal-sized samples.
+
+| Domain | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---:|---:|---:|---:|---:|
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 4 | 31 / 2 | 30 / 3 | 30 / 2 | 33 / 3 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 12 / 3 | 9 / 2 | 6 / 3 | 12 / 3 | 15 / 5 |
+| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 22 / 2 | 16 / 2 | 15 / 2 | 15 / 2 | 16 / 6 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 46 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 47 / 5 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 27 / 2 | 51 / 2 | 31 / 2 | 39 / 2 | 42 / 9 |
+
+## Reviewed-page sample balance
+
+Winner-linked and nominee-linked counts may overlap when one page has both relationships.
+
+| Domain | Winner-linked | Nominee-linked | Classes represented |
+|---|---:|---:|---|
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 9 | 5 | undergrad, overgrad, high-school |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 10 | 6 | undergrad, overgrad, high-school |
+| [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 7 | 8 | undergrad, overgrad, high-school |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 10 | 6 | undergrad, overgrad, high-school |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 11 | 6 | undergrad, overgrad, high-school |
 
 ## Official machine-source snapshots
 
@@ -35,4 +59,4 @@ Counts are award-category records; a team may appear in multiple categories. See
 
 ## Expansion rule
 
-Add an official award record before using award status. Add a page-review record only after inspecting the exact page. Record both a reusable decision and a limitation. Add class, year, and nominee counterexamples before treating a presentation pattern as universal.
+Add an official award record before using award status. Add a page-review record only after inspecting the exact page. Record both a reusable decision and a limitation. Follow the [sampling policy](sampling-policy.md), and add class, year, and nominee counterexamples before treating a presentation pattern as universal.

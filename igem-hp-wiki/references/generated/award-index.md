@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **257 award records** (54 winners, 203 nominees) and **14 reviewed pages**.
+Coverage: **257 award records** (54 winners, 203 nominees) and **15 reviewed pages**.
 
 ## Award records
 
@@ -285,6 +285,7 @@ Coverage: **257 award records** (54 winners, 203 nominees) and **14 reviewed pag
 | 2023 | [ShanghaiTech-China — human-practices](https://2023.igem.wiki/shanghaitech-china/human-practices) | deep | Best Wiki winner UG | Engagement is cross-linked with engineering and implementation | A long activity list benefits from an evidence-backed integration map | 2026-09-08 |
 | 2022 | [Technion-Israel — human-practices](https://2022.igem.wiki/technion-israel/human-practices) | deep | Best Integrated Human Practices nominee OG | Documents diverse independent advisers and shows feedback changing communication feasibility modeling measurement plans and the OraCell tool | The long sequence of meetings makes it difficult to compare which stakeholder input had the strongest evidence or remained unresolved | 2026-09-08 |
 | 2022 | [TU-Eindhoven — human-practices](https://2022.igem.wiki/tu-eindhoven/human-practices) | deep | Best Integrated Human Practices winner UG | Maps stakeholders by power and interest; translates values into norms and requirements; connects patient input to design modeling and wet-lab consequences | The framework-heavy page can bury the few highest-impact changes and would benefit from a concise before-and-after decision summary | 2026-09-08 |
+| 2021 | [Bolivia — human-practices](https://2021.igem.org/Team:Bolivia/Human_Practices) | deep | Best Integrated Human Practices winner UG | Expert and community input changes the target population water-matrix strategy sampling approach and affordability and usability requirements | The survey supports local needs but broad claims that the project will be beneficial need representativeness consent and feasibility boundaries | 2026-09-08 |
 | 2021 | [LINKS-China — human-practices](https://2021.igem.org/Team:LINKS_China/Human_Practices) | deep | Best Wiki winner and Integrated HP nominee HS | Stakeholder interactions are connected across education and project development | Legacy labels and navigation need reinterpretation under current criteria | 2026-09-08 |
 
 ## Use rule

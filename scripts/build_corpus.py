@@ -23,6 +23,8 @@ DOMAINS = {
 SECTIONS = {"undergrad", "overgrad", "high-school"}
 STATUSES = {"winner", "nominee"}
 DEPTHS = {"targeted", "deep"}
+BENCHMARK_YEARS = tuple(str(year) for year in range(2021, 2026))
+MIN_REVIEWS_PER_DOMAIN_YEAR = 2
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 SLUG = re.compile(r"^[A-Za-z0-9_-]+$")
 AWARD = re.compile(r"^[a-z0-9-]+$")
@@ -47,6 +49,7 @@ def read_csv(name: str, required: tuple[str, ...]) -> list[dict[str, str]]:
 
 def validate_awards(rows: list[dict[str, str]]) -> None:
     seen: set[tuple[str, ...]] = set()
+    coverage: Counter[tuple[str, str]] = Counter()
     for row in rows:
         if row["domain"] not in DOMAINS:
             raise ValueError(f"unknown domain: {row['domain']}")
@@ -66,10 +69,28 @@ def validate_awards(rows: list[dict[str, str]]) -> None:
         if key in seen:
             raise ValueError(f"duplicate award row: {key}")
         seen.add(key)
+        coverage[(row["domain"], row["year"])] += 1
+    for domain in DOMAINS:
+        missing = [year for year in BENCHMARK_YEARS if not coverage[(domain, year)]]
+        if missing:
+            raise ValueError(
+                f"{domain}: official award inventory is missing benchmark years {', '.join(missing)}"
+            )
+
+
+def review_classes(relationship: str) -> set[str]:
+    return {
+        section
+        for token, section in (("UG", "undergrad"), ("OG", "overgrad"), ("HS", "high-school"))
+        if re.search(rf"(?:^|[\s;,]){token}(?:$|[\s;,])", relationship)
+    }
 
 
 def validate_reviews(rows: list[dict[str, str]]) -> None:
     seen: set[tuple[str, str]] = set()
+    coverage: Counter[tuple[str, str]] = Counter()
+    statuses: dict[tuple[str, str], set[str]] = {}
+    classes: dict[str, set[str]] = {domain: set() for domain in DOMAINS}
     for row in rows:
         if row["domain"] not in DOMAINS:
             raise ValueError(f"unknown domain: {row['domain']}")
@@ -85,6 +106,31 @@ def validate_reviews(rows: list[dict[str, str]]) -> None:
         if key in seen:
             raise ValueError(f"duplicate page review: {key}")
         seen.add(key)
+        stratum = (row["domain"], row["year"])
+        coverage[stratum] += 1
+        relationship = row["award_relationship"].casefold()
+        statuses.setdefault(stratum, set())
+        for status in STATUSES:
+            if status in relationship:
+                statuses[stratum].add(status)
+        classes[row["domain"]].update(review_classes(row["award_relationship"]))
+    for domain in DOMAINS:
+        for year in BENCHMARK_YEARS:
+            count = coverage[(domain, year)]
+            if count < MIN_REVIEWS_PER_DOMAIN_YEAR:
+                raise ValueError(
+                    f"{domain} {year}: needs at least {MIN_REVIEWS_PER_DOMAIN_YEAR} reviewed pages; found {count}"
+                )
+            missing_statuses = STATUSES - statuses.get((domain, year), set())
+            if missing_statuses:
+                raise ValueError(
+                    f"{domain} {year}: reviewed-page sample lacks {', '.join(sorted(missing_statuses))} coverage"
+                )
+        missing_classes = SECTIONS - classes[domain]
+        if missing_classes:
+            raise ValueError(
+                f"{domain}: reviewed-page sample lacks competition classes {', '.join(sorted(missing_classes))}"
+            )
 
 
 def validate_sources(rows: list[dict[str, str]]) -> None:
@@ -213,7 +259,52 @@ def corpus_index(
     lines.extend(
         [
             "",
-            "Counts are award-category records; a team may appear in multiple categories. See [`corpus/schema.md`](../../corpus/schema.md) for fields and maintenance rules.",
+            "Counts are award-category records; a team may appear in multiple categories. Review coverage follows the portable [sampling policy](sampling-policy.md).",
+            "",
+            "## Year-by-year coverage",
+            "",
+            "Each cell reports `official award records / inspected pages`. The policy enforces a review floor, not equal-sized samples.",
+            "",
+            "| Domain | 2021 | 2022 | 2023 | 2024 | 2025 |",
+            "|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for domain, (skill, _) in DOMAINS.items():
+        cells = []
+        for year in BENCHMARK_YEARS:
+            award_count = sum(
+                row["domain"] == domain and row["year"] == year for row in awards
+            )
+            review_count = sum(
+                row["domain"] == domain and row["year"] == year for row in reviews
+            )
+            cells.append(f"{award_count} / {review_count}")
+        lines.append(f"| [`{skill}`](../../{skill}/references/generated/award-index.md) | " + " | ".join(cells) + " |")
+    lines.extend(
+        [
+            "",
+            "## Reviewed-page sample balance",
+            "",
+            "Winner-linked and nominee-linked counts may overlap when one page has both relationships.",
+            "",
+            "| Domain | Winner-linked | Nominee-linked | Classes represented |",
+            "|---|---:|---:|---|",
+        ]
+    )
+    for domain, (skill, _) in DOMAINS.items():
+        domain_reviews = [row for row in reviews if row["domain"] == domain]
+        winner_linked = sum("winner" in row["award_relationship"].casefold() for row in domain_reviews)
+        nominee_linked = sum("nominee" in row["award_relationship"].casefold() for row in domain_reviews)
+        classes = sorted(
+            {item for row in domain_reviews for item in review_classes(row["award_relationship"])},
+            key=("undergrad", "overgrad", "high-school").index,
+        )
+        lines.append(
+            f"| [`{skill}`](../../{skill}/references/generated/award-index.md) | {winner_linked} | "
+            f"{nominee_linked} | {', '.join(classes)} |"
+        )
+    lines.extend(
+        [
             "",
             "## Official machine-source snapshots",
             "",
@@ -231,7 +322,7 @@ def corpus_index(
             "",
             "## Expansion rule",
             "",
-            "Add an official award record before using award status. Add a page-review record only after inspecting the exact page. Record both a reusable decision and a limitation. Add class, year, and nominee counterexamples before treating a presentation pattern as universal.",
+            "Add an official award record before using award status. Add a page-review record only after inspecting the exact page. Record both a reusable decision and a limitation. Follow the [sampling policy](sampling-policy.md), and add class, year, and nominee counterexamples before treating a presentation pattern as universal.",
             "",
         ]
     )

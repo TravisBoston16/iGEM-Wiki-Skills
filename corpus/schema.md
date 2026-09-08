@@ -52,8 +52,10 @@ One row records the official machine-readable award-results snapshot used for a 
 1. Verify award rows against the official Results page or its official API before adding or changing them.
 2. Do not create a page-review row unless the exact page was opened and inspected.
 3. Record a limitation for every review; winner status is not a quality guarantee.
-4. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Use `--source-dir` with preserved JSON snapshots when an auditable offline import is required.
-5. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
-6. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
+4. Follow the portable [benchmark sampling policy](../igem-wiki/references/sampling-policy.md): for 2021–2025, maintain at least two inspected pages per domain-year, winner and nominee coverage where available, and all three competition classes across each domain.
+5. Treat the sampling floors as minima, not equal-count quotas; publish year-by-year counts so imbalances remain visible.
+6. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Use `--source-dir` with preserved JSON snapshots when an auditable offline import is required.
+7. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
+8. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
 
 The corpus is a research seed, not an exhaustive leaderboard. Recheck unstable current-season requirements separately.

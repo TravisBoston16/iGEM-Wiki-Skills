@@ -4,19 +4,21 @@ Award status was verified from <https://competition.igem.org/results/> on 2026-0
 
 ## Award pool
 
-### 2025
+The official inventory includes every recorded Best Model winner and nominee across Undergrad, Overgrad, and High School for each year from 2021 through 2025. Use the generated index for complete lookup; the endpoint lists below illustrate the range.
+
+### 2025 examples
 
 - Undergrad winner Peking; nominees IZJU-China, NJU-China, PekingHSC, and SUSTech-BIO.
 - Overgrad winner Heidelberg; nominees DTU-Denmark, HPI-Potsdam, Munich, TAU-Israel, and Toronto.
 - High School winner GreatBay-SCIE; nominees AIS-China, GEMS-Taiwan, HK-Joint-School, and Lambert-GA.
 
-### 2021
+### 2021 examples
 
 - Undergrad winner Ecuador; nominees FCB-UANL, NUS-Singapore, ShanghaiTech-China, Toulouse-INSA-UPS, Vilnius-Lithuania, Warwick, and XMU-China.
 - Overgrad winner HZAU-China; nominees Aachen, BOKU-Vienna, DTU-Denmark, Groningen, Humboldt-Berlin, TU-Eindhoven, and Uppsala.
 - High School winner TAS-Taipei; nominees Lambert-GA, LINKS-China, Mingdao, SHSBNU-China, and SMS-Shenzhen.
 
-Selected intervening winners are TU-Eindhoven 2022, ZJU-China 2023, and Heidelberg 2024. Together the seed contains more than forty category records and deliberately includes nominees and all classes.
+The complete intervening inventory includes winners and nominees for 2022, 2023, and 2024, rather than only the headline winners. Reviewed pages are stratified separately so every year includes both a winner-linked and nominee-linked example.
 
 ## Deep-read additions
 
@@ -30,6 +32,10 @@ Selected intervening winners are TU-Eindhoven 2022, ZJU-China 2023, and Heidelbe
 | <https://2025.igem.wiki/lambert-ga/model/> | Best Model nominee, HS | Opens with model purposes, data sources, assumptions, distinct outputs, and judging questions; ODE and geospatial models are linked to decisions | Long-range forecasts need explicit generalization and stability limits |
 | <https://2024.igem.wiki/heidelberg/model> | Best Model winner, UG | Three-scale pipeline exposes inputs, outputs, calibration, HPC details, and concrete computational limits | Unprocessed data volume is a limitation, not validation |
 | <https://2022.igem.wiki/tu-eindhoven/model> | Best Model winner, UG | Literature and experimental validation, parameter units and sources, global sensitivity analysis, and wet-lab repeats are integrated | Make fitted and independently validated parameters distinct |
+| <https://2024.igem.wiki/tsinghua/model> | Best Model nominee, UG | Two modeling purposes connect four physiological stages with equations, parameters, code, and local evidence status | Assumed parameters and manually drafted demonstration data must not be read as biological prediction |
+| <https://2023.igem.wiki/zju-china/model> | Best Model winner, UG | Four scales connect environmental spread, transport, expression, and binding, including comparison with qPCR trends | Density scatters assumptions, provenance, and calibration boundaries across the page |
+| <https://2023.igem.wiki/heidelberg/model> | Best Model nominee, OG | A capability-assumption-limitation table precedes a measured growth comparison and design-facing knockout analysis | The headline accuracy uses a small test and scale-up remains simulation-based |
+| <https://2022.igem.wiki/munich/model> | Best Model nominee, UG | A system diagram leads to ODEs and a parameter table that distinguishes assumed and literature-derived inputs | Estimated parameters require dimensional checks, uncertainty propagation, and stronger independent validation |
 | <https://2021.igem.org/Team:NUS_Singapore/Model> | Best Model nominee and Best Wiki winner, UG | Sensitivity analysis triggered a three-repeat experiment and documented improvement; calibration limits remain visible | Do not generalize beyond tested conditions |
 | <https://2021.igem.org/Team:TAS_Taipei/Model> | Best Model winner and Best Wiki winner, HS | Each model connects to experiment, prototype, or application and openly records an unresolved Q10 issue | Unsupported environmental extrapolation should stay future work |
 

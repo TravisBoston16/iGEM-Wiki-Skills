@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **190 award records** (55 winners, 135 nominees) and **14 reviewed pages**.
+Coverage: **190 award records** (55 winners, 135 nominees) and **17 reviewed pages**.
 
 ## Award records
 
@@ -210,6 +210,7 @@ Coverage: **190 award records** (55 winners, 135 nominees) and **14 reviewed pag
 | 2025 | [Cornell — hardware](https://2025.igem.wiki/cornell/hardware) | deep | Best Hardware winner UG | User need design iterations tests and physical constraints are connected | Prototype success must be bounded by tested operating conditions | 2026-09-08 |
 | 2025 | [HPI-Potsdam — safety](https://2025.igem.wiki/hpi-potsdam/safety) | deep | Best Safety winner OG | Risks controls and residual limitations are made visible | A checklist should not replace scenario-specific evidence | 2026-09-08 |
 | 2025 | [Rochester — hardware](https://2025.igem.wiki/rochester/hardware) | deep | Best Hardware nominee UG | Hardware development is presented as an engineering workflow | Usability and reliability evidence need representative users and repeated trials | 2026-09-08 |
+| 2025 | [SHSID — hardware](https://2025.igem.wiki/shsid/hardware) | deep | Best Hardware winner HS | Documents three design versions expert-driven changes a modular flow functional subsystem tests software control and open-source intent | Testing is largely module-level; color-sensor ranges overlap and real industrial wastewater integrated-cycle reliability and biosafety remain unvalidated | 2026-09-08 |
 | 2025 | [SUSTech-BIO — entrepreneurship](https://2025.igem.wiki/sustech-bio/entrepreneurship) | deep | Best Entrepreneurship winner UG | Value proposition users feasibility and technical evidence are connected | Market narratives must preserve technical maturity boundaries | 2026-09-08 |
 | 2025 | [UBC-Vancouver — software](https://2025.igem.wiki/ubc-vancouver/software) | deep | Best Software nominee UG | User-facing workflow is tied to a project decision | Screenshots alone cannot establish reproducibility or usability | 2026-09-08 |
 | 2025 | [UCalgary — safety](https://2025.igem.wiki/ucalgary/safety) | deep | Best Safety winner UG | Safety reasoning is connected to design decisions | Compliance statements need concrete controls and verification | 2026-09-08 |
@@ -219,6 +220,8 @@ Coverage: **190 award records** (55 winners, 135 nominees) and **14 reviewed pag
 | 2023 | [Rochester — hardware](https://2023.igem.wiki/rochester/hardware) | deep | Best Hardware nominee UG | Presents a sub-450-dollar bioprinter through detailed DBTL cycles firmware software material tests and model-hardware integration | Some sample-representativeness and material assumptions are broad and field reliability or representative-user testing is not established | 2026-09-08 |
 | 2022 | [INSA-Lyon1 — hardware](https://2022.igem.wiki/insa-lyon1/hardware) | deep | Best Hardware winner UG | Derives requirements from users; builds and tests an imaging chamber costing 386.78 euros; shares plans materials and unresolved temperature-control work | Claims of professional-standard resolution and sensitivity need quantitative benchmarks and several requirements remain incomplete | 2026-09-08 |
 | 2022 | [MIT-MAHE — software](https://2022.igem.wiki/mit-mahe/software) | targeted | Best Software Tool nominee OG | Explains an algorithm from alanine scanning and a delta-delta-G threshold through Cartesian-product generation random sampling and FASTA output | The inspected page does not make installation tests representative inputs and outputs or a reproducible environment sufficiently visible | 2026-09-08 |
+| 2021 | [Rochester — hardware](https://2021.igem.org/Team:Rochester/Hardware) | deep | Best Hardware nominee UG | Connects microfluidic design manufacturing attempts stakeholder advice COMSOL predictions and measured flow to successive design decisions | Duplicated passages and inconsistent reported flow units make the final specification and strength of model-hardware agreement difficult to audit | 2026-09-08 |
+| 2021 | [UPenn — hardware](https://2021.igem.org/Team:UPenn/Hardware) | deep | Best Hardware winner UG | Defines a user problem then publishes a 96-well device architecture source files assembly time bill of materials cost calibration and biological tests | Some calibration remained unimplemented and robust or industry-comparable claims need repeated independent performance and reliability evidence | 2026-09-08 |
 
 ## Use rule
 
