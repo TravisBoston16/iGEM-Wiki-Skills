@@ -68,6 +68,7 @@ def html_files(root: Path) -> list[Path]:
         path
         for path in root.rglob("*.html")
         if not any(part in SKIP_DIRS for part in path.relative_to(root).parts)
+        and path.resolve().is_relative_to(root)
     )
 
 
@@ -75,6 +76,8 @@ def resolve_page(root: Path, source: Path, raw_path: str) -> Path | None:
     decoded = unquote(raw_path)
     candidate = (root / decoded.lstrip("/")) if decoded.startswith("/") else (source.parent / decoded)
     candidate = candidate.resolve()
+    if not candidate.is_relative_to(root):
+        raise ValueError(f"local link escapes audit root: {raw_path}")
     options = [candidate]
     if candidate.suffix == "":
         options.extend((candidate.with_suffix(".html"), candidate / "index.html"))
@@ -133,7 +136,11 @@ def main() -> int:
             split = urlsplit(href)
             if split.scheme or split.netloc or href.startswith(("mailto:", "tel:", "javascript:")):
                 continue
-            target = source if not split.path else resolve_page(root, source, split.path)
+            try:
+                target = source if not split.path else resolve_page(root, source, split.path)
+            except ValueError as exc:
+                findings.append(finding("error", relative, line, str(exc)))
+                continue
             if target is None:
                 findings.append(finding("error", relative, line, f"missing local link target: {href}"))
                 continue

@@ -52,6 +52,9 @@ One row records the official machine-readable award-results snapshot used for a 
 | `awards_endpoint` | Exact official API endpoint used for award results |
 | `retrieved_on` | Date on which the response was retrieved |
 | `sha256` | SHA-256 digest of the raw response bytes |
+| `competitions_sha256` | SHA-256 digest of the preserved competitions response |
+| `results_snapshot` | Repository-relative path to the exact annual Results JSON whose bytes match `sha256` |
+| `competitions_snapshot` | Repository-relative path to the official competitions JSON used to resolve the competition UUID |
 
 ## Maintenance contract
 
@@ -60,9 +63,9 @@ One row records the official machine-readable award-results snapshot used for a 
 3. Record a limitation for every review; winner status is not a quality guarantee.
 4. Follow the portable [benchmark sampling policy](../igem-wiki/references/sampling-policy.md): for 2021–2025, maintain at least two inspected pages per domain-year, winner and nominee coverage where available, all three competition classes across each domain, and explicit coverage of the domain's core page functions.
 5. Treat the sampling floors as minima, not equal-count quotas or a requirement to fill every year-by-function combination; publish year-by-year and function-by-function counts so imbalances remain visible.
-6. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Use `--source-dir` with preserved JSON snapshots when an auditable offline import is required.
+6. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Live writes preserve the exact official JSON inputs in `corpus/snapshots/`; use that directory with `--source-dir` for an auditable offline import.
 7. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
-8. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, and response hash.
+8. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, response hash, and exact raw inputs.
 9. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
 
 The corpus is a research seed, not an exhaustive leaderboard. Recheck unstable current-season requirements separately.

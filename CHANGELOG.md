@@ -4,14 +4,19 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-09-09
+
 ### Added
 
 - Full 2021–2025 official Results imports for every mapped award family including the four current Part award families.
+- Historical-name mappings for the 2021 Inclusivity, Safety and Security, and Sustainability awards, recovering 42 previously omitted records.
 - Eighteen exact-page reviews covering previously thin Description, Awards, Results, Experiments, Notebook, Parts, Education, Inclusivity, Implementation, and Contribution functions.
 - Compact reviewed-page indexes and separate full official award ledgers for progressive loading.
+- Exact official API input snapshots whose bytes are validated against the source manifest.
 - Dependency-free corpus query and read-only static-wiki audit tools.
 - Team intake, judging-readiness, production-board, and browser-QA templates.
 - Functional-coverage, structured-award-link, progressive-loading, and static-audit evaluation scenarios.
+- Release-metadata validation, evaluation-contract validation, deterministic tool tests, and a documented semantic-version release process.
 
 ### Changed
 
@@ -20,6 +25,8 @@ All notable changes to this project are documented here.
 - The corpus source manifest must cover every maintained benchmark year.
 - Team slugs imported from official results are normalized to portable URL-safe identifiers.
 - Coordinator routing now handles the current Alternative Platform category and keeps Best Presentation outside wiki-page precedent sampling.
+- Annual imports now fail when a maintained year's expected award titles disappear instead of silently preserving stale rows.
+- Static HTML link checks reject paths and symlink targets that escape the selected audit root.
 
 ## [0.5.0] - 2026-09-08
 

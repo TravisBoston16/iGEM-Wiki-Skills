@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import re
 import sys
 from collections import Counter
@@ -195,6 +196,22 @@ def validate_sources(rows: list[dict[str, str]]) -> None:
             raise ValueError(f"invalid source retrieval date: {row['retrieved_on']}")
         if not SHA256.fullmatch(row["sha256"]):
             raise ValueError(f"invalid source SHA-256: {row['sha256']}")
+        if not SHA256.fullmatch(row["competitions_sha256"]):
+            raise ValueError(f"invalid competitions SHA-256: {row['competitions_sha256']}")
+        results_snapshot = ROOT / row["results_snapshot"]
+        competitions_snapshot = ROOT / row["competitions_snapshot"]
+        for label, path in (
+            ("results snapshot", results_snapshot),
+            ("competitions snapshot", competitions_snapshot),
+        ):
+            if not path.is_file() or not path.resolve().is_relative_to(ROOT):
+                raise ValueError(f"missing or out-of-repository {label}: {path}")
+        snapshot_hash = hashlib.sha256(results_snapshot.read_bytes()).hexdigest()
+        if snapshot_hash != row["sha256"]:
+            raise ValueError(f"results snapshot hash mismatch for {row['year']}")
+        competitions_hash = hashlib.sha256(competitions_snapshot.read_bytes()).hexdigest()
+        if competitions_hash != row["competitions_sha256"]:
+            raise ValueError(f"competitions snapshot hash mismatch for {row['year']}")
     missing = set(BENCHMARK_YEARS) - seen
     if missing:
         raise ValueError(
@@ -418,17 +435,22 @@ def corpus_index(
             "",
             "## Official machine-source snapshots",
             "",
-            "| Year | Official endpoint | Retrieved | SHA-256 |",
-            "|---:|---|---|---|",
+            "| Year | Official endpoint | Preserved input | Retrieved | SHA-256 |",
+            "|---:|---|---|---|---|",
         ]
     )
     for row in sorted(sources, key=lambda item: -int(item["year"])):
         lines.append(
             f"| {row['year']} | [award results]({row['awards_endpoint']}) | "
+            f"`{row['results_snapshot']}` | "
             f"{row['retrieved_on']} | `{row['sha256']}` |"
         )
+    competition_source = sources[0]
     lines.extend(
         [
+            "",
+            f"Competition UUID resolution input: `{competition_source['competitions_snapshot']}` "
+            f"(`{competition_source['competitions_sha256']}`).",
             "",
             "## Expansion rule",
             "",
@@ -492,7 +514,16 @@ def main() -> int:
     validate_reviews(reviews, awards)
     sources = read_csv(
         "source_manifest.csv",
-        ("year", "competition_uuid", "awards_endpoint", "retrieved_on", "sha256"),
+        (
+            "year",
+            "competition_uuid",
+            "awards_endpoint",
+            "retrieved_on",
+            "sha256",
+            "competitions_sha256",
+            "results_snapshot",
+            "competitions_snapshot",
+        ),
     )
     validate_sources(sources)
     stale: list[str] = []

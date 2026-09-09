@@ -118,9 +118,15 @@ def validate_release_resources(failures: list[str]) -> None:
         "corpus/award_records.csv",
         "corpus/page_reviews.csv",
         "corpus/source_manifest.csv",
+        "corpus/snapshots/igem-competitions.json",
         "scripts/build_corpus.py",
         "scripts/import_annual_results.py",
         "scripts/query_corpus.py",
+        "scripts/validate_evals.py",
+        "scripts/validate_version.py",
+        "tests/test_tools.py",
+        "evals/README.md",
+        "RELEASING.md",
     )
     for relative in required:
         if not (ROOT / relative).is_file():
@@ -148,6 +154,23 @@ def validate_corpus(failures: list[str]) -> None:
         fail(f"corpus validation failed: {detail}", failures)
 
 
+def validate_auxiliary_checks(failures: list[str]) -> None:
+    for script, label in (
+        ("validate_version.py", "version metadata"),
+        ("validate_evals.py", "evaluation contracts"),
+    ):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / script)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode:
+            detail = (result.stdout + result.stderr).strip()
+            fail(f"{label} validation failed: {detail}", failures)
+
+
 def validate_placeholders(failures: list[str]) -> None:
     marker = re.compile(r"\[TODO:|\bPLACEHOLDER\b|\bTBD\b")
     for path in ROOT.rglob("*"):
@@ -167,6 +190,7 @@ def main() -> int:
     validate_installed_layout(failures)
     validate_release_resources(failures)
     validate_corpus(failures)
+    validate_auxiliary_checks(failures)
     validate_placeholders(failures)
 
     if failures:

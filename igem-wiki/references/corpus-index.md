@@ -20,8 +20,8 @@ An award record does not prove that a page was reviewed or that every claim is e
 | [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 19 | 2025, 2024, 2023, 2022, 2021 |
 | [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 302 | 68 | 234 | 21 | 2025, 2024, 2023, 2022, 2021 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 84 | 15 | 69 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 263 | 54 | 209 | 19 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 209 | 58 | 151 | 21 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 297 | 60 | 237 | 19 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 217 | 62 | 155 | 21 | 2025, 2024, 2023, 2022, 2021 |
 
 Counts are award-category records; a team may appear in multiple categories. Review coverage follows the portable [sampling policy](sampling-policy.md).
 
@@ -34,8 +34,8 @@ Each cell reports `official award records / inspected pages`. The policy enforce
 | [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 4 | 31 / 3 | 30 / 4 | 30 / 3 | 33 / 5 |
 | [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 73 / 3 | 52 / 2 | 56 / 5 | 60 / 6 | 61 / 5 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 22 / 2 | 16 / 2 | 15 / 2 | 15 / 2 | 16 / 6 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 46 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 53 / 9 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 42 / 2 | 51 / 2 | 31 / 3 | 39 / 3 | 46 / 11 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 80 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 53 / 9 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 50 / 2 | 51 / 2 | 31 / 3 | 39 / 3 | 46 / 11 |
 
 ## Page-function coverage
 
@@ -80,13 +80,15 @@ Counts use each review's structured primary award relationship; additional relat
 
 ## Official machine-source snapshots
 
-| Year | Official endpoint | Retrieved | SHA-256 |
-|---:|---|---|---|
-| 2025 | [award results](https://api.igem.org/v1/competitions/d615db72-738d-47c0-a929-fbdeb4882fc0/awards/results) | 2026-09-08 | `bb59685321d027a2e50c68eef4fe553e301d2ca3509f14d1d711ed23d58f621a` |
-| 2024 | [award results](https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results) | 2026-09-08 | `bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336` |
-| 2023 | [award results](https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results) | 2026-09-08 | `8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984` |
-| 2022 | [award results](https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results) | 2026-09-08 | `0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91` |
-| 2021 | [award results](https://api.igem.org/v1/competitions/9700650d-5b53-4003-affa-61f2bf096632/awards/results) | 2026-09-08 | `aadca335f8de65e6809e8152e40135a109f16fe819f2c1dbc5891a75b5058f4c` |
+| Year | Official endpoint | Preserved input | Retrieved | SHA-256 |
+|---:|---|---|---|---|
+| 2025 | [award results](https://api.igem.org/v1/competitions/d615db72-738d-47c0-a929-fbdeb4882fc0/awards/results) | `corpus/snapshots/igem-results-2025.json` | 2026-09-09 | `bb59685321d027a2e50c68eef4fe553e301d2ca3509f14d1d711ed23d58f621a` |
+| 2024 | [award results](https://api.igem.org/v1/competitions/5198bd74-a6bc-482d-bf02-d0f7dc5f33c7/awards/results) | `corpus/snapshots/igem-results-2024.json` | 2026-09-09 | `bb45f68026aa25729c23f1af29061edf07ec7f1e5bfb5ed4d0242693ba828336` |
+| 2023 | [award results](https://api.igem.org/v1/competitions/d7dab5d6-eedb-40ed-8b50-ffbcb2053851/awards/results) | `corpus/snapshots/igem-results-2023.json` | 2026-09-09 | `8bca21ae2b411cf5ef4a924195994a2d57492090ab77b752567a54fe4be58984` |
+| 2022 | [award results](https://api.igem.org/v1/competitions/3a8e556f-e347-4b47-8d0e-9b697f49fba5/awards/results) | `corpus/snapshots/igem-results-2022.json` | 2026-09-09 | `0cf068b4feb4d38146c5a7023ddc7aed31123a9873ba2f94683aec02fc0faa91` |
+| 2021 | [award results](https://api.igem.org/v1/competitions/9700650d-5b53-4003-affa-61f2bf096632/awards/results) | `corpus/snapshots/igem-results-2021.json` | 2026-09-09 | `aadca335f8de65e6809e8152e40135a109f16fe819f2c1dbc5891a75b5058f4c` |
+
+Competition UUID resolution input: `corpus/snapshots/igem-competitions.json` (`96eb8afc45238c73891a0079c97d2a4e8a7e4c25c02c68f1cb0aaecc974d206c`).
 
 ## Expansion rule
 

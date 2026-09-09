@@ -17,5 +17,11 @@ jobs:
           python-version: "3.x"
       - name: Check generated corpus indexes
         run: python3 scripts/build_corpus.py --check
+      - name: Check release metadata
+        run: python3 scripts/validate_version.py
+      - name: Check evaluation contracts
+        run: python3 scripts/validate_evals.py
+      - name: Run deterministic tool tests
+        run: python3 -m unittest discover -s tests
       - name: Validate repository
         run: python3 scripts/validate_repository.py

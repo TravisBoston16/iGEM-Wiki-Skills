@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **263 award records** (54 winners, 209 nominees) and **19 reviewed pages**.
+Coverage: **297 award records** (60 winners, 237 nominees) and **19 reviewed pages**.
 
 ## Load only what the task needs
 

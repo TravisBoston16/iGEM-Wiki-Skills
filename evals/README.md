@@ -1,0 +1,15 @@
+# Evaluation tiers
+
+This repository separates deterministic program tests from model-behavior evaluation.
+
+## Automated in CI
+
+- corpus schema, provenance, coverage, and generated-output checks;
+- release metadata consistency;
+- behavioral-scenario contract structure;
+- unit tests for importer failure conditions and static-audit scope boundaries;
+- skill frontmatter, resources, links, and installed-layout checks.
+
+## Behavioral forward tests
+
+`scenarios.md` defines prompts and observable invariants for running the skills with a capable Codex model in an isolated task. The dependency-free CI validates that these contracts remain complete, but it does **not** claim to run or score a model. Before a release that materially changes routing, evidence rules, or permissions, run the affected scenarios independently and record the model, date, result, and any corrective change in the release notes.

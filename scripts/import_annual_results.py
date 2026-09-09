@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import datetime as dt
 import hashlib
 import json
 import re
@@ -26,12 +27,62 @@ AWARDS = {
     "Best Integrated Human Practices": ("hp", "best-integrated-human-practices"),
     "Best Education": ("hp", "best-education"),
     "Best Sustainable Development Impact": ("hp", "best-sustainable-development-impact"),
+    "Best Sustainability": ("hp", "best-sustainable-development-impact"),
     "Inclusivity Award": ("hp", "best-inclusivity"),
+    "Best Inclusivity": ("hp", "best-inclusivity"),
     "Best Hardware": ("implementation", "best-hardware"),
     "Best Software Tool": ("implementation", "best-software"),
     "Best Supporting Entrepreneurship": ("implementation", "best-entrepreneurship"),
     "Best Entrepreneurship": ("implementation", "best-entrepreneurship"),
     "Safety and Security Award": ("implementation", "best-safety"),
+    "Best Safety & Security": ("implementation", "best-safety"),
+}
+BASE_EXPECTED_TITLES = {
+    "Best Wiki",
+    "Best Model",
+    "Best Measurement",
+    "Best New Basic Part",
+    "Best New Composite Part",
+    "Best Part Collection",
+    "Best Integrated Human Practices",
+    "Best Education",
+    "Best Hardware",
+    "Best Software Tool",
+}
+EXPECTED_TITLES_BY_YEAR = {
+    2021: BASE_EXPECTED_TITLES
+    | {"Best Sustainability", "Best Inclusivity", "Best Supporting Entrepreneurship", "Best Safety & Security"},
+    2022: BASE_EXPECTED_TITLES
+    | {
+        "Best Sustainable Development Impact",
+        "Inclusivity Award",
+        "Best Supporting Entrepreneurship",
+        "Safety and Security Award",
+    },
+    2023: BASE_EXPECTED_TITLES
+    | {
+        "Best New Improved Part",
+        "Best Sustainable Development Impact",
+        "Inclusivity Award",
+        "Best Entrepreneurship",
+        "Safety and Security Award",
+    },
+    2024: BASE_EXPECTED_TITLES
+    | {
+        "Best New Improved Part",
+        "Best Sustainable Development Impact",
+        "Inclusivity Award",
+        "Best Entrepreneurship",
+        "Safety and Security Award",
+    },
+    2025: BASE_EXPECTED_TITLES
+    | {
+        "Best New Improved Part",
+        "Best Sustainable Development Impact",
+        "Inclusivity Award",
+        "Best Entrepreneurship",
+        "Safety and Security Award",
+    },
 }
 AWARD_FIELDS = (
     "domain",
@@ -43,7 +94,16 @@ AWARD_FIELDS = (
     "team_slug",
     "verified_on",
 )
-SOURCE_FIELDS = ("year", "competition_uuid", "awards_endpoint", "retrieved_on", "sha256")
+SOURCE_FIELDS = (
+    "year",
+    "competition_uuid",
+    "awards_endpoint",
+    "retrieved_on",
+    "sha256",
+    "competitions_sha256",
+    "results_snapshot",
+    "competitions_snapshot",
+)
 
 
 def fetch_json(url: str) -> bytes:
@@ -52,12 +112,15 @@ def fetch_json(url: str) -> bytes:
         return response.read()
 
 
-def read_competitions(source_dir: Path | None) -> list[dict]:
+def read_competitions(source_dir: Path | None) -> tuple[list[dict], bytes]:
     if source_dir:
         path = source_dir / "igem-competitions.json"
-        if path.is_file():
-            return json.loads(path.read_text(encoding="utf-8"))["data"]
-    return json.loads(fetch_json(f"{API_ROOT}/competitions"))["data"]
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        raw = path.read_bytes()
+    else:
+        raw = fetch_json(f"{API_ROOT}/competitions")
+    return json.loads(raw)["data"], raw
 
 
 def read_results(year: int, uuid: str, source_dir: Path | None) -> tuple[bytes, str]:
@@ -96,23 +159,69 @@ def write_rows(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) 
     temporary.replace(path)
 
 
+def write_bytes(path: Path, content: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile("wb", dir=path.parent, delete=False) as handle:
+        handle.write(content)
+        temporary = Path(handle.name)
+    temporary.replace(path)
+
+
+def validate_date(value: str) -> None:
+    try:
+        parsed = dt.date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError("--verified-on must use YYYY-MM-DD") from exc
+    if parsed.isoformat() != value:
+        raise ValueError("--verified-on must use YYYY-MM-DD")
+
+
+def validate_award_titles(year: int, data: list[dict]) -> None:
+    expected = EXPECTED_TITLES_BY_YEAR.get(year)
+    if expected is None:
+        raise ValueError(
+            f"no expected award-title contract for {year}; review the official categories before importing"
+        )
+    available = {award.get("title") for award in data}
+    missing = sorted(expected - available)
+    if missing:
+        raise ValueError(
+            f"official results for {year} are missing expected mapped titles: {', '.join(missing)}"
+        )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--years", nargs="+", type=int, required=True)
     parser.add_argument("--verified-on", required=True)
     parser.add_argument("--source-dir", type=Path, help="directory containing igem-results-YEAR.json snapshots")
+    parser.add_argument(
+        "--snapshot-dir",
+        type=Path,
+        default=ROOT / "corpus" / "snapshots",
+        help="directory in which --write preserves the exact JSON inputs",
+    )
     parser.add_argument("--write", action="store_true", help="update CSV files; otherwise report only")
     args = parser.parse_args()
 
-    competitions = {item["year"]: item for item in read_competitions(args.source_dir) if item.get("type") == "igem"}
+    validate_date(args.verified_on)
+    snapshot_dir = args.snapshot_dir.resolve()
+    if not snapshot_dir.is_relative_to(ROOT):
+        raise ValueError("--snapshot-dir must remain inside the repository")
+    snapshot_relative = snapshot_dir.relative_to(ROOT)
+    competition_items, competition_raw = read_competitions(args.source_dir)
+    competitions = {item["year"]: item for item in competition_items if item.get("type") == "igem"}
     imported: list[dict[str, str]] = []
     sources: list[dict[str, str]] = []
+    result_snapshots: dict[int, bytes] = {}
     for year in sorted(set(args.years)):
         competition = competitions.get(year)
         if not competition:
             raise ValueError(f"official API has no iGEM competition for {year}")
         raw, endpoint = read_results(year, competition["uuid"], args.source_dir)
+        result_snapshots[year] = raw
         data = json.loads(raw)
+        validate_award_titles(year, data)
         for award in data:
             mapped = AWARDS.get(award.get("title"))
             if not mapped:
@@ -139,6 +248,9 @@ def main() -> int:
                 "awards_endpoint": endpoint,
                 "retrieved_on": args.verified_on,
                 "sha256": hashlib.sha256(raw).hexdigest(),
+                "competitions_sha256": hashlib.sha256(competition_raw).hexdigest(),
+                "results_snapshot": str(snapshot_relative / f"igem-results-{year}.json"),
+                "competitions_snapshot": str(snapshot_relative / "igem-competitions.json"),
             }
         )
 
@@ -151,6 +263,10 @@ def main() -> int:
     print(f"Prepared {len(imported)} records for years {', '.join(map(str, sorted(set(args.years))))}.")
     if not args.write:
         return 0
+
+    write_bytes(snapshot_dir / "igem-competitions.json", competition_raw)
+    for year, raw in result_snapshots.items():
+        write_bytes(snapshot_dir / f"igem-results-{year}.json", raw)
 
     award_path = ROOT / "corpus" / "award_records.csv"
     existing = read_rows(award_path)
