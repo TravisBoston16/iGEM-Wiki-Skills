@@ -64,7 +64,7 @@ This table prevents a large sample of one page type from masquerading as domain 
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | entrepreneurship | 2 | covered |
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | contribution | 3 | covered |
 
-Model reviews share one Standard URL, so Model diversity is assessed through the generated [Model taxonomy](../../igem-model-wiki/references/generated/model-taxonomy.md), which labels archetype, validation, data source, and project decision.
+Model reviews share one Standard URL, so diversity is assessed through both the generated [Model taxonomy](../../igem-model-wiki/references/generated/model-taxonomy.md) and **34** inspected entries in the [module evidence index](../../igem-model-wiki/references/generated/model-modules.md). The module layer records biological question, method, parameter provenance, validation, project decision, reproduction path, evidence scope, and limitations.
 
 ## Reviewed-page sample balance
 

@@ -1,6 +1,6 @@
 # Model winner and nominee corpus
 
-Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use `benchmark-patterns.md` for cross-year principles and this file for curated interpretation. Start precedent retrieval with the generated [Model taxonomy](generated/model-taxonomy.md), use the [reviewed-page index](generated/reviewed-pages.md) for inspected strengths and limitations, and open the [award ledger](generated/award-ledger.md) only for official lookup.
+Award status was verified from <https://competition.igem.org/results/> on 2026-09-08. Use `benchmark-patterns.md` for cross-year principles and this file for curated interpretation. Start scientific-method retrieval with the generated [module evidence index](generated/model-modules.md), fall back to the page-level [Model taxonomy](generated/model-taxonomy.md) for architecture or uncovered methods, use the [reviewed-page index](generated/reviewed-pages.md) for page-wide strengths and limitations, and open the [award ledger](generated/award-ledger.md) only for official lookup.
 
 ## Award pool
 

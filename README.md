@@ -2,7 +2,7 @@
 
 A modular Codex skill collection for researching, planning, writing, implementing, and auditing evidence-led iGEM team wikis.
 
-Current release: **v0.7.1**
+Current release: **v0.8.0**
 
 ## Skills
 
@@ -15,12 +15,13 @@ Current release: **v0.7.1**
 | `igem-hp-wiki` | Human Practices, Education, Inclusivity, Sustainability, ethics, and stakeholder integration |
 | `igem-implementation-wiki` | Implementation, Safety, Entrepreneurship, Hardware, Software, and Contribution |
 
-## What v0.7.0 adds
+## What v0.8.0 adds
 
-Patch release v0.7.1 refreshes three client-rendered 2025 Model classifications, pins CI actions, and adds configurable exclusions, Markdown reports, and optional allowlisted evidence-link checks to the static auditor.
+Release v0.8.0 adds a module-level Model evidence corpus, while retaining the v0.7.1 rendered-page refresh, pinned CI actions, and expanded static auditor.
 
 - a machine-readable benchmark corpus with **1,054 official award records** and **101 domain-scoped page-review records**;
 - controlled taxonomy for all 14 reviewed Model pages across archetype, validation type, data source, and project decision;
+- **34 inspected Model modules across every year from 2021 through 2025**, recording biological question, method, parameter provenance, evidence scope, reproduction path, project decision, and a concrete limitation;
 - evidence-fit Model precedent queries, so scientific relevance comes before recency or award prestige;
 - at least two reviewed examples for every maintained core page function, including Awards, Experiments, Parts, Notebook, Sustainability, Implementation, and Entrepreneurship;
 - expanded static-site checks for local assets, heading hierarchy, machine-local paths, figure captions, and caller-supplied required routes;
@@ -45,13 +46,14 @@ The reference corpus distinguishes:
 
 Award-winning pages are precedents to analyze, not templates to copy. Historical patterns are not judging rules. Current criteria, eligibility, policies, Standard URLs, and deadlines must be refreshed from official iGEM sources when they affect a decision.
 
-Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, `corpus/model_review_metadata.csv`, and `corpus/source_manifest.csv`; exact official inputs live in `corpus/snapshots/`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. Use `scripts/query_corpus.py` to select only relevant records. The generated compact reviewed-page indexes, Model taxonomy, and separate full award ledgers are committed so a skill can use them without running code.
+Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, `corpus/model_review_metadata.csv`, `corpus/model_modules.csv`, and `corpus/source_manifest.csv`; exact official inputs live in `corpus/snapshots/`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. Use `scripts/query_corpus.py` to select only relevant records. The generated compact reviewed-page indexes, Model page taxonomy, Model module evidence index, and separate full award ledgers are committed so a skill can use them without running code.
 
 For example, select Model precedents by scientific role rather than year alone:
 
 ```bash
-python3 scripts/query_corpus.py model-metadata \
-  --model-archetype stochastic --project-decision stopping-policy
+python3 scripts/query_corpus.py model-modules \
+  --model-archetype stochastic --project-decision stopping-policy \
+  --evidence-scope validated-with-team-data
 ```
 
 ## Installation
@@ -152,4 +154,4 @@ Released under the MIT License. See [LICENSE](LICENSE). Citation metadata is pro
 
 ## 中文简介
 
-这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.7.1 收录 1,054 条官方奖项记录与 101 条页面审阅，并加入 Model 分类检索、完整核心页面功能覆盖、可配置静态检查、原始来源快照、结构化奖项关联和一致的语义化版本发布流程。
+这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.8.0 收录 1,054 条官方奖项记录、101 条页面审阅与覆盖 2021–2025 全区间的 34 条 Model 模块证据记录，并加入按科学问题、模型类型、验证方式、参数来源、项目决策和证据边界检索先例的能力。

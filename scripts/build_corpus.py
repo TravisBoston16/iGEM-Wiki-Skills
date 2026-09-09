@@ -82,6 +82,32 @@ MODEL_PROJECT_DECISIONS = {
     "future-work",
     "no-demonstrated-decision",
 }
+MODEL_PARAMETER_PROVENANCE = {
+    "team-fitted",
+    "team-measured",
+    "literature-derived",
+    "assumed",
+    "tool-default",
+    "derived",
+    "unclear",
+    "not-applicable",
+}
+MODEL_EVIDENCE_SCOPES = {
+    "validated-with-team-data",
+    "partially-validated",
+    "literature-benchmarked",
+    "internally-checked",
+    "illustrative",
+    "proposed",
+    "unclear",
+}
+MODEL_REPRODUCTION_PATHS = {
+    "code-linked",
+    "method-described",
+    "interactive-tool",
+    "data-linked",
+    "page-only",
+}
 
 
 def read_csv(name: str, required: tuple[str, ...]) -> list[dict[str, str]]:
@@ -92,6 +118,8 @@ def read_csv(name: str, required: tuple[str, ...]) -> list[dict[str, str]]:
             raise ValueError(f"{name}: expected columns {required}, got {reader.fieldnames}")
         rows = []
         for line_number, row in enumerate(reader, start=2):
+            if None in row:
+                raise ValueError(f"{name}:{line_number}: too many CSV fields")
             cleaned = {key: (value or "").strip() for key, value in row.items()}
             missing = [key for key, value in cleaned.items() if not value]
             if missing:
@@ -301,6 +329,95 @@ def validate_model_metadata(
         raise ValueError(f"Model metadata is missing reviewed pages: {sorted(missing)}")
 
 
+def validate_model_modules(
+    rows: list[dict[str, str]],
+    reviews: list[dict[str, str]],
+    model_metadata: list[dict[str, str]],
+) -> None:
+    model_reviews = {
+        (row["year"], row["team_slug"], row["page_url"]): row["team"]
+        for row in reviews
+        if row["domain"] == "model"
+    }
+    parent_metadata = {
+        (row["year"], row["team_slug"], row["page_url"]): row
+        for row in model_metadata
+    }
+    token_vocabularies = {
+        "model_archetype": MODEL_ARCHETYPES,
+        "validation_type": MODEL_VALIDATION_TYPES,
+        "data_source": MODEL_DATA_SOURCES,
+        "project_decision": MODEL_PROJECT_DECISIONS,
+        "parameter_provenance": MODEL_PARAMETER_PROVENANCE,
+        "reproduction_path": MODEL_REPRODUCTION_PATHS,
+    }
+    parent_fields = (
+        "model_archetype",
+        "validation_type",
+        "data_source",
+        "project_decision",
+    )
+    seen: set[tuple[str, str, str, str]] = set()
+    for row in rows:
+        page_key = (row["year"], row["team_slug"], row["page_url"])
+        module_key = (*page_key, row["module_id"])
+        if module_key in seen:
+            raise ValueError(f"duplicate Model module row: {module_key}")
+        seen.add(module_key)
+        if page_key not in model_reviews:
+            raise ValueError(f"Model module has no matching reviewed page: {page_key}")
+        if row["team"] != model_reviews[page_key]:
+            raise ValueError(
+                f"Model module team does not match reviewed page for {page_key}: {row['team']}"
+            )
+        if not AWARD.fullmatch(row["module_id"]):
+            raise ValueError(f"invalid Model module identifier: {row['module_id']}")
+        if row["page_anchor"] != "page-root" and not re.fullmatch(r"#[^\s#]+", row["page_anchor"]):
+            raise ValueError(
+                f"invalid Model module anchor for {row['team']} {row['module_id']}: {row['page_anchor']}"
+            )
+        if not ISO_DATE.fullmatch(row["last_checked"]):
+            raise ValueError(f"invalid Model module review date: {row['last_checked']}")
+        if row["evidence_scope"] not in MODEL_EVIDENCE_SCOPES:
+            raise ValueError(
+                f"unknown evidence_scope for {row['team']} {row['module_id']}: {row['evidence_scope']}"
+            )
+        for field, allowed in token_vocabularies.items():
+            tokens = split_tokens(row[field])
+            if len(tokens) != len(set(tokens)):
+                raise ValueError(
+                    f"duplicate {field} token for {row['team']} {row['module_id']}: {row[field]}"
+                )
+            unknown = set(tokens) - allowed
+            if unknown:
+                raise ValueError(
+                    f"unknown {field} token for {row['team']} {row['module_id']}: "
+                    f"{', '.join(sorted(unknown))}"
+                )
+        if "page-only" in split_tokens(row["reproduction_path"]) and len(
+            split_tokens(row["reproduction_path"])
+        ) > 1:
+            raise ValueError(
+                f"page-only cannot be combined with another reproduction path for "
+                f"{row['team']} {row['module_id']}"
+            )
+        parent = parent_metadata[page_key]
+        for field in parent_fields:
+            child_tokens = set(split_tokens(row[field]))
+            parent_tokens = set(split_tokens(parent[field]))
+            if not child_tokens <= parent_tokens:
+                raise ValueError(
+                    f"Model module {field} exceeds its page taxonomy for "
+                    f"{row['team']} {row['module_id']}: {', '.join(sorted(child_tokens - parent_tokens))}"
+                )
+    missing_years = set(BENCHMARK_YEARS) - {row["year"] for row in rows}
+    if missing_years:
+        raise ValueError(
+            "Model module corpus is missing benchmark years "
+            f"{', '.join(sorted(missing_years))}"
+        )
+
+
 def md(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ")
 
@@ -452,11 +569,67 @@ def model_taxonomy_index(rows: list[dict[str, str]]) -> str:
     return "\n".join(lines)
 
 
+def model_modules_index(rows: list[dict[str, str]]) -> str:
+    ordered = sorted(
+        rows,
+        key=lambda row: (-int(row["year"]), row["team"].casefold(), row["module_id"]),
+    )
+    archetypes = Counter(
+        token for row in rows for token in split_tokens(row["model_archetype"])
+    )
+    scopes = Counter(row["evidence_scope"] for row in rows)
+    years = Counter(row["year"] for row in rows)
+    lines = [
+        "# Model module evidence index",
+        "",
+        "> Generated by `scripts/build_corpus.py` from module-level exact-page inspections.",
+        "",
+        "Use this index to retrieve a comparable model module by biological question, method, evidence scope, and project decision. A module row is a bounded research annotation, not an endorsement of correctness or an official iGEM category.",
+        "",
+        "## Coverage summary",
+        "",
+        f"Inspected modules: **{len(rows)}** across **{len({(row['year'], row['team_slug'], row['page_url']) for row in rows})} Model pages**.",
+        "",
+        f"Modules by year: {', '.join(f'{year}: {years[year]}' for year in BENCHMARK_YEARS)}.",
+        "",
+        f"Archetypes: {', '.join(f'`{name}`: {count}' for name, count in sorted(archetypes.items()))}.",
+        "",
+        f"Evidence scope: {', '.join(f'`{name}`: {count}' for name, count in sorted(scopes.items()))}.",
+        "",
+        "## Module-level evidence",
+        "",
+        "| Year | Team/module | Biological question | Archetype | Validation and evidence scope | Project decision | Reproduction path | Limitation |",
+        "|---:|---|---|---|---|---|---|---|",
+    ]
+    for row in ordered:
+        target = row["page_url"]
+        if row["page_anchor"] != "page-root":
+            target += row["page_anchor"]
+        lines.append(
+            f"| {row['year']} | [{md(row['team'])} — {md(row['module_name'])}]({target}) | "
+            f"{md(row['biological_question'])} | {md(row['model_archetype'])} | "
+            f"{md(row['validation_type'])}; **{md(row['evidence_scope'])}** | "
+            f"{md(row['project_decision'])} | {md(row['reproduction_path'])} | "
+            f"{md(row['limitations'])} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Interpretation boundary",
+            "",
+            "Read the method summary, parameter provenance, and data source in `corpus/model_modules.csv` or query them with `scripts/query_corpus.py`. Verify the live page before relying on a consequential detail. `page-root` means a stable module anchor was not established; do not invent one.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def corpus_index(
     awards: list[dict[str, str]],
     reviews: list[dict[str, str]],
     sources: list[dict[str, str]],
     model_metadata: list[dict[str, str]],
+    model_modules: list[dict[str, str]],
 ) -> str:
     lines = [
         "# Benchmark corpus index",
@@ -539,7 +712,7 @@ def corpus_index(
     lines.extend(
         [
             "",
-            "Model reviews share one Standard URL, so Model diversity is assessed through the generated [Model taxonomy](../../igem-model-wiki/references/generated/model-taxonomy.md), which labels archetype, validation, data source, and project decision.",
+            f"Model reviews share one Standard URL, so diversity is assessed through both the generated [Model taxonomy](../../igem-model-wiki/references/generated/model-taxonomy.md) and **{len(model_modules)}** inspected entries in the [module evidence index](../../igem-model-wiki/references/generated/model-modules.md). The module layer records biological question, method, parameter provenance, validation, project decision, reproduction path, evidence scope, and limitations.",
             "",
             "## Reviewed-page sample balance",
             "",
@@ -597,13 +770,17 @@ def outputs(
     reviews: list[dict[str, str]],
     sources: list[dict[str, str]],
     model_metadata: list[dict[str, str]],
+    model_modules: list[dict[str, str]],
 ) -> dict[Path, str]:
     generated = {
         ROOT / "igem-wiki" / "references" / "corpus-index.md": corpus_index(
-            awards, reviews, sources, model_metadata
+            awards, reviews, sources, model_metadata, model_modules
         ),
         ROOT / "igem-model-wiki" / "references" / "generated" / "model-taxonomy.md": (
             model_taxonomy_index(model_metadata)
+        ),
+        ROOT / "igem-model-wiki" / "references" / "generated" / "model-modules.md": (
+            model_modules_index(model_modules)
         ),
     }
     for domain, (skill, _) in DOMAINS.items():
@@ -663,6 +840,30 @@ def main() -> int:
         ),
     )
     validate_model_metadata(model_metadata, reviews)
+    model_modules = read_csv(
+        "model_modules.csv",
+        (
+            "year",
+            "team",
+            "team_slug",
+            "page_url",
+            "module_id",
+            "module_name",
+            "page_anchor",
+            "biological_question",
+            "model_archetype",
+            "method_summary",
+            "data_source",
+            "parameter_provenance",
+            "validation_type",
+            "project_decision",
+            "evidence_scope",
+            "reproduction_path",
+            "limitations",
+            "last_checked",
+        ),
+    )
+    validate_model_modules(model_modules, reviews, model_metadata)
     sources = read_csv(
         "source_manifest.csv",
         (
@@ -678,7 +879,7 @@ def main() -> int:
     )
     validate_sources(sources)
     stale: list[str] = []
-    generated = outputs(awards, reviews, sources, model_metadata)
+    generated = outputs(awards, reviews, sources, model_metadata, model_modules)
     for path, content in generated.items():
         expected = content.rstrip() + "\n"
         if args.check:
@@ -696,7 +897,7 @@ def main() -> int:
     print(
         f"{action} {len(generated)} indexes from {len(awards)} award records, "
         f"{len(reviews)} page-review records, {len(model_metadata)} Model taxonomy records, "
-        f"and {len(sources)} official source snapshots."
+        f"{len(model_modules)} Model module records, and {len(sources)} official source snapshots."
     )
     return 0
 

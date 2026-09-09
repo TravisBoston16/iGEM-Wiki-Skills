@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import importlib.util
 import json
 import subprocess
@@ -187,6 +188,10 @@ class StaticAuditTests(unittest.TestCase):
 
 
 class CorpusQueryTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.builder = load_module("build_corpus", ROOT / "scripts" / "build_corpus.py")
+
     def test_model_metadata_token_filter(self) -> None:
         result = subprocess.run(
             [
@@ -208,6 +213,65 @@ class CorpusQueryTests(unittest.TestCase):
         self.assertTrue(
             all("stochastic" in row["model_archetype"].split(";") for row in rows)
         )
+
+    def test_model_module_evidence_filter(self) -> None:
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "query_corpus.py"),
+                "model-modules",
+                "--project-decision",
+                "stopping-policy",
+                "--evidence-scope",
+                "validated-with-team-data",
+                "--format",
+                "json",
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        rows = json.loads(result.stdout)
+        self.assertEqual(result.returncode, 0)
+        self.assertEqual([row["module_id"] for row in rows], ["flocculation-timing"])
+        self.assertEqual(rows[0]["team"], "NUS-Singapore")
+
+    def test_model_module_cannot_exceed_page_taxonomy(self) -> None:
+        def rows(name: str) -> list[dict[str, str]]:
+            with (ROOT / "corpus" / name).open(newline="", encoding="utf-8") as handle:
+                return list(csv.DictReader(handle))
+
+        reviews = rows("page_reviews.csv")
+        metadata = rows("model_review_metadata.csv")
+        modules = rows("model_modules.csv")
+        changed = [dict(row) for row in modules]
+        changed[0]["model_archetype"] = "data-driven-ml"
+        with self.assertRaisesRegex(ValueError, "exceeds its page taxonomy"):
+            self.builder.validate_model_modules(changed, reviews, metadata)
+
+    def test_model_module_corpus_requires_each_benchmark_year(self) -> None:
+        def rows(name: str) -> list[dict[str, str]]:
+            with (ROOT / "corpus" / name).open(newline="", encoding="utf-8") as handle:
+                return list(csv.DictReader(handle))
+
+        reviews = rows("page_reviews.csv")
+        metadata = rows("model_review_metadata.csv")
+        modules = [row for row in rows("model_modules.csv") if row["year"] != "2022"]
+        with self.assertRaisesRegex(ValueError, "missing benchmark years 2022"):
+            self.builder.validate_model_modules(modules, reviews, metadata)
+
+    def test_corpus_reader_rejects_extra_csv_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            original = self.builder.CORPUS
+            try:
+                self.builder.CORPUS = Path(temporary)
+                (Path(temporary) / "broken.csv").write_text(
+                    "first,second\none,two,unexpected\n", encoding="utf-8"
+                )
+                with self.assertRaisesRegex(ValueError, "too many CSV fields"):
+                    self.builder.read_csv("broken.csv", ("first", "second"))
+            finally:
+                self.builder.CORPUS = original
 
 
 if __name__ == "__main__":

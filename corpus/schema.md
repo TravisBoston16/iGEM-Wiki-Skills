@@ -55,6 +55,30 @@ One row adds controlled, multi-value labels to every reviewed Model page. Values
 
 The build enforces exactly one metadata row per reviewed Model page, no extras, and controlled vocabulary. A label means the inspected page visibly uses that role; it does not certify that the method is correct or independently validated.
 
+## `model_modules.csv`
+
+One row is one independently identifiable model or computational method inside an inspected Model page. This layer supports evidence-fit precedent retrieval without treating a multi-model page as one homogeneous method. It is intentionally selective rather than exhaustive.
+
+| Field | Meaning |
+|---|---|
+| `year`, `team`, `team_slug`, `page_url` | Exact key of the parent Model page in `page_reviews.csv` and `model_review_metadata.csv` |
+| `module_id` | Stable lowercase identifier unique within the parent page |
+| `module_name` | Short human-readable method or model name |
+| `page_anchor` | Verified fragment beginning with `#`, or `page-root` when no stable module anchor was established |
+| `biological_question` | The biological uncertainty or design question addressed |
+| `model_archetype` | One or more controlled Model archetypes already present in the parent page taxonomy |
+| `method_summary` | Compact description of the computational or mathematical approach |
+| `data_source` | One or more controlled input-source labels already present in the parent page taxonomy |
+| `parameter_provenance` | One or more of `team-fitted`, `team-measured`, `literature-derived`, `assumed`, `tool-default`, `derived`, `unclear`, or `not-applicable` |
+| `validation_type` | One or more controlled validation roles already present in the parent page taxonomy |
+| `project_decision` | One or more controlled project uses already present in the parent page taxonomy |
+| `evidence_scope` | One bounded status: `validated-with-team-data`, `partially-validated`, `literature-benchmarked`, `internally-checked`, `illustrative`, `proposed`, or `unclear` |
+| `reproduction_path` | One or more of `code-linked`, `method-described`, `interactive-tool`, `data-linked`, or `page-only` |
+| `limitations` | A specific boundary on interpretation or generalization |
+| `last_checked` | Most recent exact-page inspection date |
+
+The build requires every module to match a reviewed Model page, rejects module labels that exceed the parent page taxonomy, and requires at least one module record in every maintained benchmark year. This prevents a detailed row from silently contradicting the page-level retrieval index or regressing to endpoint-only year sampling. `page-root` is an explicit uncertainty marker; it must not be replaced with a guessed fragment.
+
 ## `source_manifest.csv`
 
 One row records the official machine-readable award-results snapshot used for a competition year. The manifest makes bulk imports auditable without treating an API response as a page review.
@@ -79,8 +103,9 @@ One row records the official machine-readable award-results snapshot used for a 
 5. Treat the sampling floors as minima, not equal-count quotas or a requirement to fill every year-by-function combination; publish year-by-year and function-by-function counts so imbalances remain visible.
 6. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Live writes preserve the exact official JSON inputs in `corpus/snapshots/`; use that directory with `--source-dir` for an auditable offline import.
 7. Give every reviewed Model page one controlled taxonomy row and use `unclear` rather than guessing when a role cannot be established from the inspected page.
-8. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
-9. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, response hash, and exact raw inputs.
-10. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
+8. Add module rows only after inspecting the exact method; record a concrete limitation and use `page-root` when a stable anchor was not verified.
+9. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
+10. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, response hash, and exact raw inputs.
+11. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
 
 The corpus is a research seed, not an exhaustive leaderboard. Recheck unstable current-season requirements separately.

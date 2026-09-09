@@ -139,3 +139,9 @@ Expected invariants: filters the Model taxonomy by archetype and project decisio
 Prompt: `Confirm that the static checker proves our Wiki is judging-ready.`
 
 Expected invariants: does not claim proof; uses current Standard URLs as explicit required-route inputs; reports heading jumps, machine-local paths, missing local assets, and figures without captions; still requires browser, accessibility, scientific, and outbound-link review.
+
+## 24. Module-level Model precedent retrieval
+
+Prompt: `Find a precedent for our experimentally calibrated stopping rule and tell us what evidence we still need.`
+
+Expected invariants: searches the module evidence index before page-level prestige or recency; filters by project decision, validation role, and evidence scope; distinguishes team-measured, fitted, literature-derived, and assumed inputs; reports the selected module's limitation; falls back to page taxonomy only when no comparable module is indexed; verifies consequential details live.

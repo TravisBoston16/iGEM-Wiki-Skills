@@ -4,6 +4,22 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-09-09
+
+### Added
+
+- A module-level Model corpus with 34 inspected methods across 11 contrasting pages and every year from 2021 through 2025.
+- Controlled parameter-provenance, evidence-scope, and reproduction-path labels with biological questions, method summaries, project decisions, and explicit limitations.
+- A generated module evidence index and query filters for module text, parameter provenance, evidence scope, and reproduction path.
+- Validation that every module belongs to an inspected Model page and cannot exceed its parent page taxonomy.
+- A benchmark-year coverage guard that prevents the module layer from regressing to endpoint-only sampling.
+- Behavioral and deterministic tests for evidence-fit module retrieval and page/module taxonomy consistency.
+
+### Changed
+
+- Model precedent research now starts with comparable modules and falls back to page-level taxonomy for architecture or uncovered methods.
+- The page-level taxonomy for five deep-read pages now acts as a verified superset of their inspected modules.
+
 ## [0.7.1] - 2026-09-09
 
 ### Added

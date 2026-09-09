@@ -14,6 +14,7 @@ FILES = {
     "awards": ROOT / "corpus" / "award_records.csv",
     "reviews": ROOT / "corpus" / "page_reviews.csv",
     "model-metadata": ROOT / "corpus" / "model_review_metadata.csv",
+    "model-modules": ROOT / "corpus" / "model_modules.csv",
 }
 
 
@@ -32,6 +33,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--validation-type")
     parser.add_argument("--data-source")
     parser.add_argument("--project-decision")
+    parser.add_argument(
+        "--module",
+        help="case-insensitive module identifier, name, question, or method substring",
+    )
+    parser.add_argument("--parameter-provenance", "--parameter-source")
+    parser.add_argument("--evidence-scope")
+    parser.add_argument("--reproduction-path")
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--format", choices=("markdown", "json", "csv"), default="markdown")
     return parser.parse_args()
@@ -55,11 +63,22 @@ def matches(row: dict[str, str], args: argparse.Namespace) -> bool:
         haystack = f"{row.get('team', '')} {row.get('team_slug', '')}".casefold()
         if needle not in haystack:
             return False
+    if args.module:
+        needle = args.module.casefold()
+        haystack = " ".join(
+            row.get(field, "")
+            for field in ("module_id", "module_name", "biological_question", "method_summary")
+        ).casefold()
+        if needle not in haystack:
+            return False
     token_filters = {
         "model_archetype": args.model_archetype,
         "validation_type": args.validation_type,
         "data_source": args.data_source,
         "project_decision": args.project_decision,
+        "parameter_provenance": args.parameter_provenance,
+        "evidence_scope": args.evidence_scope,
+        "reproduction_path": args.reproduction_path,
     }
     for field, wanted in token_filters.items():
         if wanted and wanted not in {token.strip() for token in row.get(field, "").split(";")}:
@@ -83,7 +102,7 @@ def markdown(rows: list[dict[str, str]], kind: str) -> str:
             "page_url",
             "last_checked",
         )
-    else:
+    elif kind == "model-metadata":
         fields = (
             "year",
             "team",
@@ -92,6 +111,21 @@ def markdown(rows: list[dict[str, str]], kind: str) -> str:
             "data_source",
             "project_decision",
             "page_url",
+        )
+    else:
+        fields = (
+            "year",
+            "team",
+            "module_name",
+            "biological_question",
+            "model_archetype",
+            "validation_type",
+            "evidence_scope",
+            "project_decision",
+            "parameter_provenance",
+            "reproduction_path",
+            "page_url",
+            "page_anchor",
         )
     escape = lambda value: value.replace("|", "\\|").replace("\n", " ")
     lines = ["| " + " | ".join(fields) + " |", "|" + "---|" * len(fields)]
