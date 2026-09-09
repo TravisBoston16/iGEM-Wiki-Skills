@@ -38,6 +38,12 @@ class ImporterTests(unittest.TestCase):
 
 
 class StaticAuditTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.audit = load_module(
+            "audit_static_wiki", ROOT / "igem-wiki" / "scripts" / "audit_static_wiki.py"
+        )
+
     def run_audit(self, root: Path, *extra: str) -> tuple[subprocess.CompletedProcess[str], dict]:
         result = subprocess.run(
             [
@@ -126,6 +132,58 @@ class StaticAuditTests(unittest.TestCase):
             self.assertTrue(
                 any("required route not found: model" in item["message"] for item in report["findings"])
             )
+
+    def test_excluded_relative_directory_is_not_scanned(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            drafts = root / "drafts"
+            drafts.mkdir()
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1></html>',
+                encoding="utf-8",
+            )
+            (drafts / "broken.html").write_text(
+                '<html><a href="missing.html">broken</a></html>', encoding="utf-8"
+            )
+            result, report = self.run_audit(root, "--exclude", "drafts")
+            self.assertEqual(result.returncode, 0)
+            self.assertEqual(report["html_files"], 1)
+
+    def test_markdown_report_mode(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1></html>',
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "igem-wiki" / "scripts" / "audit_static_wiki.py"),
+                    str(root),
+                    "--markdown",
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(result.returncode, 0)
+            self.assertIn("# Static Wiki audit", result.stdout)
+            self.assertIn("No findings", result.stdout)
+
+    def test_external_evidence_allowlist(self) -> None:
+        self.assertTrue(
+            self.audit.allowed_external_evidence_url("https://2025.igem.wiki/example/model")
+        )
+        self.assertTrue(
+            self.audit.allowed_external_evidence_url("https://github.com/example/repository")
+        )
+        self.assertFalse(
+            self.audit.allowed_external_evidence_url("http://github.com/example/repository")
+        )
+        self.assertFalse(
+            self.audit.allowed_external_evidence_url("https://example.com/private")
+        )
 
 
 class CorpusQueryTests(unittest.TestCase):

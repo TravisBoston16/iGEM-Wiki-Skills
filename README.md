@@ -2,7 +2,7 @@
 
 A modular Codex skill collection for researching, planning, writing, implementing, and auditing evidence-led iGEM team wikis.
 
-Current release: **v0.7.0**
+Current release: **v0.7.1**
 
 ## Skills
 
@@ -16,6 +16,8 @@ Current release: **v0.7.0**
 | `igem-implementation-wiki` | Implementation, Safety, Entrepreneurship, Hardware, Software, and Contribution |
 
 ## What v0.7.0 adds
+
+Patch release v0.7.1 refreshes three client-rendered 2025 Model classifications, pins CI actions, and adds configurable exclusions, Markdown reports, and optional allowlisted evidence-link checks to the static auditor.
 
 - a machine-readable benchmark corpus with **1,054 official award records** and **101 domain-scoped page-review records**;
 - controlled taxonomy for all 14 reviewed Model pages across archetype, validation type, data source, and project decision;
@@ -125,6 +127,17 @@ python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki --no-fail \
   --required-route model --required-route human-practices
 ```
 
+For a shareable report or an explicitly requested network-assisted pass:
+
+```bash
+python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki \
+  --exclude drafts --markdown
+python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki \
+  --check-external --external-timeout 8 --no-fail
+```
+
+External checking is optional and allowlisted; keep it out of deterministic CI and interpret connection failures as review prompts.
+
 The checks validate corpus schema and raw-source hashes, duplicate records, official award relationships, domain-year sampling floors, winner/nominee and competition-class coverage, generated-index freshness, release metadata, evaluation contracts, deterministic tool behavior, skill entrypoints, UI metadata, installed-layout references, required resources, and unfinished placeholders. GitHub Actions runs these checks on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; CI checks their structure but does not claim to run a model. See [RELEASING.md](RELEASING.md) for the version and release policy.
 
 ## Scope and attribution
@@ -139,4 +152,4 @@ Released under the MIT License. See [LICENSE](LICENSE). Citation metadata is pro
 
 ## 中文简介
 
-这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.7.0 收录 1,054 条官方奖项记录与 101 条页面审阅，并加入 Model 分类检索、完整核心页面功能覆盖、扩展静态检查、原始来源快照、结构化奖项关联和一致的语义化版本发布流程。
+这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.7.1 收录 1,054 条官方奖项记录与 101 条页面审阅，并加入 Model 分类检索、完整核心页面功能覆盖、可配置静态检查、原始来源快照、结构化奖项关联和一致的语义化版本发布流程。

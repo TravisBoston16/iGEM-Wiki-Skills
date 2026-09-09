@@ -22,6 +22,7 @@ SKILLS = (
 )
 LOCAL_LINK = re.compile(r"\[[^\]]*\]\((?!https?://|mailto:|#)([^)]+)\)")
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
+ACTION_USE = re.compile(r"^\s*-\s+uses:\s+([^@\s]+)@([^\s#]+)", re.MULTILINE)
 
 
 def fail(message: str, failures: list[str]) -> None:
@@ -184,6 +185,20 @@ def validate_placeholders(failures: list[str]) -> None:
             fail(f"{path.relative_to(ROOT)}: unfinished placeholder", failures)
 
 
+def validate_action_pins(failures: list[str]) -> None:
+    workflow_root = ROOT / ".github" / "workflows"
+    for path in workflow_root.glob("*.y*ml"):
+        text = path.read_text(encoding="utf-8")
+        for action, reference in ACTION_USE.findall(text):
+            if action.startswith("./"):
+                continue
+            if not re.fullmatch(r"[0-9a-f]{40}", reference):
+                fail(
+                    f"{path.relative_to(ROOT)}: action {action} is not pinned to a full commit hash",
+                    failures,
+                )
+
+
 def main() -> int:
     failures: list[str] = []
     for skill in SKILLS:
@@ -194,6 +209,7 @@ def main() -> int:
     validate_corpus(failures)
     validate_auxiliary_checks(failures)
     validate_placeholders(failures)
+    validate_action_pins(failures)
 
     if failures:
         print("Repository validation failed:")

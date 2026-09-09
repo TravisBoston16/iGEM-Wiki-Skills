@@ -8,20 +8,20 @@ Use these labels to select scientifically relevant precedents rather than defaul
 
 Reviewed Model pages: **14**.
 
-Archetypes: `data-driven-ml`: 3, `hybrid`: 4, `mechanistic-kinetic`: 10, `spatial-multiscale`: 5, `stochastic`: 1, `structural-sequence`: 4, `unclear`: 1.
+Archetypes: `data-driven-ml`: 3, `hybrid`: 6, `mechanistic-kinetic`: 13, `spatial-multiscale`: 7, `stochastic`: 2, `structural-sequence`: 6.
 
-Validation types: `experimental-comparison`: 8, `illustrative-only`: 2, `internal-consistency`: 2, `literature-benchmark`: 8, `none-or-unclear`: 3, `sensitivity-analysis`: 3.
+Validation types: `cross-validation`: 1, `experimental-comparison`: 11, `illustrative-only`: 2, `internal-consistency`: 4, `literature-benchmark`: 10, `sensitivity-analysis`: 4.
 
 ## Page-level labels
 
 | Year | Team | Model archetype | Validation | Data source | Project decision |
 |---:|---|---|---|---|---|
 | 2025 | [GEMS-Taiwan](https://2025.igem.wiki/gems-taiwan/model) | mechanistic-kinetic;structural-sequence;data-driven-ml | experimental-comparison;literature-benchmark | team-experiment;literature | construct-selection;experimental-prioritization |
-| 2025 | [Heidelberg](https://2025.igem.wiki/heidelberg/model) | hybrid | none-or-unclear | unclear | design-selection;experimental-prioritization |
+| 2025 | [Heidelberg](https://2025.igem.wiki/heidelberg/model) | mechanistic-kinetic;structural-sequence;data-driven-ml;spatial-multiscale;hybrid | experimental-comparison;internal-consistency;sensitivity-analysis | team-experiment;public-database;literature;simulated;assumed | design-selection;construct-selection;experimental-prioritization;interpretation |
 | 2025 | [Lambert-GA](https://2025.igem.wiki/lambert-ga/model/) | mechanistic-kinetic;spatial-multiscale | sensitivity-analysis;literature-benchmark | literature;public-database;assumed | design-selection;interpretation;future-work |
-| 2025 | [Munich](https://2025.igem.wiki/munich/model) | unclear | none-or-unclear | unclear | design-selection;interpretation |
+| 2025 | [Munich](https://2025.igem.wiki/munich/model) | mechanistic-kinetic;structural-sequence;hybrid | experimental-comparison;internal-consistency;literature-benchmark | team-experiment;public-database;literature;simulated;assumed | design-selection;construct-selection;experimental-prioritization;interpretation |
 | 2025 | [Peking](https://2025.igem.wiki/peking/model/) | mechanistic-kinetic;stochastic;structural-sequence;spatial-multiscale | experimental-comparison;literature-benchmark;illustrative-only | team-experiment;literature;simulated;assumed | design-selection;interpretation |
-| 2025 | [SUSTech-BIO](https://2025.igem.wiki/sustech-bio/model) | data-driven-ml | none-or-unclear | team-experiment | design-selection;experimental-prioritization |
+| 2025 | [SUSTech-BIO](https://2025.igem.wiki/sustech-bio/model) | mechanistic-kinetic;stochastic;spatial-multiscale;hybrid | experimental-comparison;cross-validation;literature-benchmark | team-experiment;literature;simulated;assumed | design-selection;parameter-estimation;experimental-prioritization;interpretation |
 | 2024 | [Heidelberg](https://2024.igem.wiki/heidelberg/model) | structural-sequence;spatial-multiscale | internal-consistency;literature-benchmark | public-database;literature;simulated | construct-selection;experimental-prioritization |
 | 2024 | [Tsinghua](https://2024.igem.wiki/tsinghua/model) | mechanistic-kinetic;hybrid | illustrative-only;literature-benchmark | literature;simulated;assumed;manually-constructed | interpretation;future-work |
 | 2023 | [Heidelberg](https://2023.igem.wiki/heidelberg/model) | mechanistic-kinetic;data-driven-ml;hybrid | experimental-comparison;internal-consistency | team-experiment;public-database;simulated | construct-selection;experimental-prioritization;future-work |

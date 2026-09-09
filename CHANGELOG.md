@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-09-09
+
+### Added
+
+- Repeatable `--exclude` paths and Markdown output for the static Wiki auditor.
+- Optional allowlisted external evidence-link checks with bounded timeouts and redirect controls.
+- Tests for exclusions, Markdown reports, evidence-link allowlisting, and HTTPS path handling.
+
+### Changed
+
+- Reclassified the rendered 2025 Heidelberg, Munich, and SUSTech-BIO Model pages using visible method, data, validation, and decision evidence instead of conservative unknown labels.
+- Expanded the corresponding exact-page review notes with model-specific strengths and limitations.
+- Pinned GitHub Actions dependencies to full commit hashes.
+
 ## [0.7.0] - 2026-09-09
 
 ### Added

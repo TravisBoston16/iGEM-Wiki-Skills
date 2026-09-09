@@ -9,12 +9,24 @@ import re
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 
 SKIP_DIRS = {".git", "node_modules", "dist", "build", ".cache", "templates"}
 VISUAL_TAGS = {"img", "svg", "canvas", "table", "video"}
-MACHINE_PATH = re.compile(r"^(?:file://|/Users/|/home/|[A-Za-z]:[\\/])")
+MACHINE_PATH = re.compile(r"^(?:file://|~/|/Users/|/home/|/Volumes/|[A-Za-z]:[\\/])")
+EXTERNAL_EVIDENCE_HOSTS = {
+    "competition.igem.org",
+    "github.com",
+    "gitlab.igem.org",
+    "parts.igem.org",
+    "registry.igem.org",
+    "static.igem.org",
+    "static.igem.wiki",
+    "video.igem.org",
+}
 
 
 class PageParser(HTMLParser):
@@ -85,7 +97,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", type=Path, help="directory containing static HTML files")
     parser.add_argument("--no-fail", action="store_true", help="always return success after reporting")
-    parser.add_argument("--json", action="store_true", help="emit machine-readable JSON")
+    output = parser.add_mutually_exclusive_group()
+    output.add_argument("--json", action="store_true", help="emit machine-readable JSON")
+    output.add_argument("--markdown", action="store_true", help="emit a Markdown audit report")
+    parser.add_argument(
+        "--exclude",
+        action="append",
+        default=[],
+        metavar="RELATIVE_PATH",
+        help="exclude a relative file or directory; repeat as needed",
+    )
     parser.add_argument(
         "--required-route",
         action="append",
@@ -93,14 +114,39 @@ def parse_args() -> argparse.Namespace:
         metavar="ROUTE",
         help="warn when a required Standard URL route is absent; repeat as needed",
     )
+    parser.add_argument(
+        "--check-external",
+        action="store_true",
+        help="optionally check allowlisted public evidence links; not intended for deterministic CI",
+    )
+    parser.add_argument(
+        "--external-timeout",
+        type=float,
+        default=8.0,
+        metavar="SECONDS",
+        help="timeout per unique external evidence link (default: 8)",
+    )
     return parser.parse_args()
 
 
-def html_files(root: Path) -> list[Path]:
+def exclusion_prefixes(values: list[str]) -> tuple[tuple[str, ...], ...]:
+    prefixes = []
+    for value in values:
+        path = Path(value)
+        if path.is_absolute() or ".." in path.parts or not path.parts:
+            raise ValueError(f"exclude path must be a safe relative path: {value}")
+        prefixes.append(path.parts)
+    return tuple(prefixes)
+
+
+def html_files(root: Path, excluded: tuple[tuple[str, ...], ...]) -> list[Path]:
     return sorted(
         path
         for path in root.rglob("*.html")
         if not any(part in SKIP_DIRS for part in path.relative_to(root).parts)
+        and not any(
+            path.relative_to(root).parts[: len(prefix)] == prefix for prefix in excluded
+        )
         and path.resolve().is_relative_to(root)
     )
 
@@ -123,6 +169,71 @@ def finding(level: str, path: Path, line: int | None, message: str) -> dict[str,
     return {"level": level, "file": str(path), "line": line, "message": message}
 
 
+def allowed_external_evidence_url(url: str) -> bool:
+    split = urlsplit(url)
+    hostname = (split.hostname or "").casefold()
+    return (
+        split.scheme == "https"
+        and not split.username
+        and not split.password
+        and (
+            hostname in EXTERNAL_EVIDENCE_HOSTS
+            or hostname.endswith(".igem.wiki")
+            or hostname.endswith(".igem.org")
+        )
+    )
+
+
+class EvidenceRedirectHandler(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # noqa: ANN001
+        if not allowed_external_evidence_url(newurl):
+            raise HTTPError(newurl, code, "redirect left the evidence-link allowlist", headers, fp)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def external_link_problem(url: str, timeout: float) -> str | None:
+    request = Request(
+        url,
+        headers={"User-Agent": "igem-wiki-static-audit/0.7", "Range": "bytes=0-0"},
+    )
+    try:
+        with build_opener(EvidenceRedirectHandler()).open(request, timeout=timeout) as response:
+            if 200 <= response.status < 400:
+                return None
+            return f"HTTP {response.status}"
+    except HTTPError as exc:
+        return f"HTTP {exc.code}: {exc.reason}"
+    except (URLError, TimeoutError, OSError) as exc:
+        return str(getattr(exc, "reason", exc))
+
+
+def markdown_report(report: dict[str, object]) -> str:
+    lines = [
+        "# Static Wiki audit",
+        "",
+        f"Root: `{report['root']}`",
+        "",
+        f"Checked **{report['html_files']}** HTML files: **{report['errors']} errors** and **{report['warnings']} warnings**.",
+        "",
+        "| Level | Location | Finding |",
+        "|---|---|---|",
+    ]
+    for item in report["findings"]:
+        location = f"{item['file']}:{item['line']}" if item["line"] else item["file"]
+        message = str(item["message"]).replace("|", "\\|").replace("\n", " ")
+        lines.append(f"| {str(item['level']).upper()} | `{location}` | {message} |")
+    if not report["findings"]:
+        lines.append("| — | — | No findings |")
+    lines.extend(
+        [
+            "",
+            "> This static report does not replace browser, accessibility, scientific-evidence, or current-season judging review.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def route_exists(root: Path, route: str) -> bool:
     normalized = unquote(urlsplit(route).path).strip("/")
     if not normalized:
@@ -141,7 +252,13 @@ def main() -> int:
     root = args.root.resolve()
     if not root.is_dir():
         raise SystemExit(f"not a directory: {root}")
-    files = html_files(root)
+    if args.external_timeout <= 0:
+        raise SystemExit("--external-timeout must be greater than zero")
+    try:
+        excluded = exclusion_prefixes(args.exclude)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+    files = html_files(root, excluded)
     if not files:
         raise SystemExit(f"no HTML files found under {root}")
 
@@ -248,6 +365,25 @@ def main() -> int:
                 finding("warning", Path("."), None, f"required route not found: {route}")
             )
 
+    if args.check_external:
+        checked_urls: set[str] = set()
+        for source, parser in parsed.items():
+            relative = source.relative_to(root)
+            for href, line in parser.links:
+                if href in checked_urls or not allowed_external_evidence_url(href):
+                    continue
+                checked_urls.add(href)
+                problem = external_link_problem(href, args.external_timeout)
+                if problem:
+                    findings.append(
+                        finding(
+                            "warning",
+                            relative,
+                            line,
+                            f"external evidence link could not be verified: {href} ({problem})",
+                        )
+                    )
+
     counts = Counter(item["level"] for item in findings)
     report = {
         "root": str(root),
@@ -258,6 +394,8 @@ def main() -> int:
     }
     if args.json:
         print(json.dumps(report, indent=2, ensure_ascii=False))
+    elif args.markdown:
+        print(markdown_report(report), end="")
     else:
         print(f"Checked {len(files)} HTML files: {counts['error']} errors; {counts['warning']} warnings.")
         for item in findings:
