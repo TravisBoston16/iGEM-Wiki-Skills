@@ -4,7 +4,7 @@
 
 Award records are official Results-page facts. Page-review notes are independent observations. Do not infer page quality from award status alone.
 
-Coverage: **302 award records** (68 winners, 234 nominees) and **21 reviewed pages**.
+Coverage: **302 award records** (68 winners, 234 nominees) and **24 reviewed pages**.
 
 ## Load only what the task needs
 
@@ -16,8 +16,8 @@ Coverage: **302 award records** (68 winners, 234 nominees) and **21 reviewed pag
 
 | Dimension | Coverage |
 |---|---|
-| Years | 2021: 3, 2022: 2, 2023: 5, 2024: 6, 2025: 5 |
-| Page functions | engineering: 4, experiments: 1, measurement: 12, notebook: 1, parts: 1, results: 2 |
+| Years | 2021: 6, 2022: 2, 2023: 5, 2024: 6, 2025: 5 |
+| Page functions | engineering: 4, experiments: 2, measurement: 12, notebook: 2, parts: 2, results: 2 |
 
 ## Use rule
 

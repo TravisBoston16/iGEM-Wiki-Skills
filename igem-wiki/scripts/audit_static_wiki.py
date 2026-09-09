@@ -5,13 +5,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
-SKIP_DIRS = {".git", "node_modules", "dist", "build", ".cache"}
+SKIP_DIRS = {".git", "node_modules", "dist", "build", ".cache", "templates"}
+VISUAL_TAGS = {"img", "svg", "canvas", "table", "video"}
+MACHINE_PATH = re.compile(r"^(?:file://|/Users/|/home/|[A-Za-z]:[\\/])")
 
 
 class PageParser(HTMLParser):
@@ -19,8 +22,12 @@ class PageParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.ids: list[tuple[str, int]] = []
         self.links: list[tuple[str, int]] = []
+        self.references: list[tuple[str, str, str, int]] = []
         self.images_without_alt: list[int] = []
         self.images_with_empty_alt: list[int] = []
+        self.headings: list[tuple[int, int]] = []
+        self.figures: list[dict[str, object]] = []
+        self.figures_without_caption: list[int] = []
         self.html_lang = False
         self.title_depth = 0
         self.title_text: list[str] = []
@@ -33,14 +40,29 @@ class PageParser(HTMLParser):
             self.html_lang = True
         if tag == "title":
             self.title_depth += 1
-        if tag == "h1":
-            self.h1_count += 1
+        if len(tag) == 2 and tag.startswith("h") and tag[1].isdigit():
+            level = int(tag[1])
+            if 1 <= level <= 6:
+                self.headings.append((level, line))
+                if level == 1:
+                    self.h1_count += 1
         identifier = data.get("id")
         if identifier:
             self.ids.append((identifier, line))
         href = data.get("href")
         if tag in {"a", "area"} and href:
             self.links.append((href, line))
+        if href:
+            self.references.append((tag, "href", href, line))
+        src = data.get("src")
+        if src:
+            self.references.append((tag, "src", src, line))
+        if tag == "figure":
+            self.figures.append({"line": line, "visual": False, "caption": False})
+        elif self.figures and tag in VISUAL_TAGS:
+            self.figures[-1]["visual"] = True
+        elif self.figures and tag == "figcaption":
+            self.figures[-1]["caption"] = True
         if tag == "img" and "alt" not in data:
             self.images_without_alt.append(line)
         elif tag == "img" and not (data.get("alt") or "").strip():
@@ -49,6 +71,10 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         if tag == "title" and self.title_depth:
             self.title_depth -= 1
+        if tag == "figure" and self.figures:
+            figure = self.figures.pop()
+            if figure["visual"] and not figure["caption"]:
+                self.figures_without_caption.append(int(figure["line"]))
 
     def handle_data(self, data: str) -> None:
         if self.title_depth:
@@ -60,6 +86,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("root", type=Path, help="directory containing static HTML files")
     parser.add_argument("--no-fail", action="store_true", help="always return success after reporting")
     parser.add_argument("--json", action="store_true", help="emit machine-readable JSON")
+    parser.add_argument(
+        "--required-route",
+        action="append",
+        default=[],
+        metavar="ROUTE",
+        help="warn when a required Standard URL route is absent; repeat as needed",
+    )
     return parser.parse_args()
 
 
@@ -90,6 +123,19 @@ def finding(level: str, path: Path, line: int | None, message: str) -> dict[str,
     return {"level": level, "file": str(path), "line": line, "message": message}
 
 
+def route_exists(root: Path, route: str) -> bool:
+    normalized = unquote(urlsplit(route).path).strip("/")
+    if not normalized:
+        return (root / "index.html").is_file()
+    candidate = (root / normalized).resolve()
+    if not candidate.is_relative_to(root):
+        return False
+    return any(
+        path.is_file()
+        for path in (candidate, candidate.with_suffix(".html"), candidate / "index.html")
+    )
+
+
 def main() -> int:
     args = parse_args()
     root = args.root.resolve()
@@ -116,6 +162,16 @@ def main() -> int:
             findings.append(finding("warning", relative, None, "missing non-empty title"))
         if parser.h1_count != 1:
             findings.append(finding("warning", relative, None, f"expected one h1; found {parser.h1_count}"))
+        for (previous_level, _), (level, line) in zip(parser.headings, parser.headings[1:]):
+            if level > previous_level + 1:
+                findings.append(
+                    finding(
+                        "warning",
+                        relative,
+                        line,
+                        f"heading level jumps from h{previous_level} to h{level}",
+                    )
+                )
         counts = Counter(value for value, _ in parser.ids)
         duplicate_ids = {value for value, count in counts.items() if count > 1}
         for value in sorted(duplicate_ids):
@@ -129,6 +185,20 @@ def main() -> int:
             findings.append(
                 finding("warning", relative, line, "empty alt text; confirm that the image is decorative")
             )
+        for line in parser.figures_without_caption:
+            findings.append(
+                finding("warning", relative, line, "figure contains a visual but no figcaption")
+            )
+        for tag, attribute, value, line in parser.references:
+            if MACHINE_PATH.search(unquote(value)):
+                findings.append(
+                    finding(
+                        "error",
+                        relative,
+                        line,
+                        f"{tag} {attribute} contains a machine-local path: {value}",
+                    )
+                )
 
     for source, parser in parsed.items():
         relative = source.relative_to(root)
@@ -152,6 +222,31 @@ def main() -> int:
                 identifiers = {value for value, _ in target_parser.ids}
                 if unquote(split.fragment) not in identifiers:
                     findings.append(finding("error", relative, line, f"missing fragment target: {href}"))
+
+        anchor_references = {(href, line) for href, line in parser.links}
+        for tag, attribute, value, line in parser.references:
+            if attribute == "href" and (value, line) in anchor_references:
+                continue
+            split = urlsplit(value)
+            if split.scheme or split.netloc or value.startswith(("data:", "javascript:")):
+                continue
+            if not split.path:
+                continue
+            try:
+                target = resolve_page(root, source, split.path)
+            except ValueError as exc:
+                findings.append(finding("error", relative, line, str(exc)))
+                continue
+            if target is None:
+                findings.append(
+                    finding("error", relative, line, f"missing local {tag} {attribute} target: {value}")
+                )
+
+    for route in args.required_route:
+        if not route_exists(root, route):
+            findings.append(
+                finding("warning", Path("."), None, f"required route not found: {route}")
+            )
 
     counts = Counter(item["level"] for item in findings)
     report = {

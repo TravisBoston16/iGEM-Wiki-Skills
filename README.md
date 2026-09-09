@@ -2,7 +2,7 @@
 
 A modular Codex skill collection for researching, planning, writing, implementing, and auditing evidence-led iGEM team wikis.
 
-Current release: **v0.6.0**
+Current release: **v0.7.0**
 
 ## Skills
 
@@ -15,9 +15,13 @@ Current release: **v0.6.0**
 | `igem-hp-wiki` | Human Practices, Education, Inclusivity, Sustainability, ethics, and stakeholder integration |
 | `igem-implementation-wiki` | Implementation, Safety, Entrepreneurship, Hardware, Software, and Contribution |
 
-## What v0.6.0 adds
+## What v0.7.0 adds
 
-- a machine-readable benchmark corpus with **1,054 official award records** and **94 domain-scoped page-review records**;
+- a machine-readable benchmark corpus with **1,054 official award records** and **101 domain-scoped page-review records**;
+- controlled taxonomy for all 14 reviewed Model pages across archetype, validation type, data source, and project decision;
+- evidence-fit Model precedent queries, so scientific relevance comes before recency or award prestige;
+- at least two reviewed examples for every maintained core page function, including Awards, Experiments, Parts, Notebook, Sustainability, Implementation, and Entrepreneurship;
+- expanded static-site checks for local assets, heading hierarchy, machine-local paths, figure captions, and caller-supplied required routes;
 - complete mapped 2021–2025 award-family imports with explicit historical-title contracts, including 42 recovered 2021 records;
 - exact official API JSON snapshots verified against the source manifest hashes;
 - structured primary award links for page reviews and visible year, class, status, and page-function coverage;
@@ -39,7 +43,14 @@ The reference corpus distinguishes:
 
 Award-winning pages are precedents to analyze, not templates to copy. Historical patterns are not judging rules. Current criteria, eligibility, policies, Standard URLs, and deadlines must be refreshed from official iGEM sources when they affect a decision.
 
-Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, and `corpus/source_manifest.csv`; exact official inputs live in `corpus/snapshots/`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. Use `scripts/query_corpus.py` to select only relevant records. The generated compact reviewed-page indexes and separate full award ledgers are committed so a skill can use them without running code.
+Machine-readable sources live in `corpus/award_records.csv`, `corpus/page_reviews.csv`, `corpus/model_review_metadata.csv`, and `corpus/source_manifest.csv`; exact official inputs live in `corpus/snapshots/`. The maintained sample follows `igem-wiki/references/sampling-policy.md`. Use `scripts/import_annual_results.py` for reproducible annual imports, then run `python3 scripts/build_corpus.py`. Use `scripts/query_corpus.py` to select only relevant records. The generated compact reviewed-page indexes, Model taxonomy, and separate full award ledgers are committed so a skill can use them without running code.
+
+For example, select Model precedents by scientific role rather than year alone:
+
+```bash
+python3 scripts/query_corpus.py model-metadata \
+  --model-archetype stochastic --project-decision stopping-policy
+```
 
 ## Installation
 
@@ -107,6 +118,13 @@ For a read-only first pass over static HTML:
 python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki --no-fail
 ```
 
+Pass current-season Standard URLs explicitly when needed, for example:
+
+```bash
+python3 igem-wiki/scripts/audit_static_wiki.py /path/to/wiki --no-fail \
+  --required-route model --required-route human-practices
+```
+
 The checks validate corpus schema and raw-source hashes, duplicate records, official award relationships, domain-year sampling floors, winner/nominee and competition-class coverage, generated-index freshness, release metadata, evaluation contracts, deterministic tool behavior, skill entrypoints, UI metadata, installed-layout references, required resources, and unfinished placeholders. GitHub Actions runs these checks on pushes and pull requests. Behavioral scenarios live in `evals/scenarios.md`; CI checks their structure but does not claim to run a model. See [RELEASING.md](RELEASING.md) for the version and release policy.
 
 ## Scope and attribution
@@ -121,4 +139,4 @@ Released under the MIT License. See [LICENSE](LICENSE). Citation metadata is pro
 
 ## 中文简介
 
-这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.6.0 收录 1,054 条官方奖项记录与 94 条页面审阅，并加入原始来源快照、页面功能覆盖、结构化奖项关联、可执行审核工具和一致的语义化版本发布流程。
+这是一组模块化的 iGEM Wiki Codex skills。`igem-wiki` 负责全站证据、赛季合规与跨页面协调，其余五个 skill 分别处理项目叙事、湿实验、建模、Human Practices 和落地实施。v0.7.0 收录 1,054 条官方奖项记录与 101 条页面审阅，并加入 Model 分类检索、完整核心页面功能覆盖、扩展静态检查、原始来源快照、结构化奖项关联和一致的语义化版本发布流程。

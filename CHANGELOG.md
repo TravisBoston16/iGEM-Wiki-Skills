@@ -4,6 +4,23 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-09-09
+
+### Added
+
+- Controlled Model precedent metadata for archetype, validation type, data source, and project decision across all 14 reviewed Model pages.
+- A generated Model taxonomy index and token-aware corpus queries for evidence-fit precedent retrieval.
+- Seven targeted exact-page reviews that close the remaining thin Awards, Experiments, Parts, Notebook, Sustainability, Implementation, and Entrepreneurship functions.
+- Static Wiki checks for missing local assets, heading-level jumps, machine-local paths, figures without captions, and caller-supplied required routes.
+- Behavioral scenarios and deterministic tests for taxonomy retrieval and the expanded static-audit contract.
+
+### Changed
+
+- Model precedent selection now starts from scientific need instead of recency alone and explicitly permits `unclear` when a classification is not supported.
+- All maintained core page functions now have at least two exact-page reviews across the 2021–2025 corpus.
+- The benchmark corpus now contains 101 page reviews while retaining 1,054 official award records and five hash-verified source snapshots.
+- Coordinator verification guidance documents the expanded static checker without treating it as browser, accessibility, or scientific proof.
+
 ## [0.6.0] - 2026-09-09
 
 ### Added

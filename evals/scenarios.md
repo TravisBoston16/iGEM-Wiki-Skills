@@ -127,3 +127,15 @@ Expected invariants: loads the curated benchmark and compact reviewed-page index
 Prompt: `Run the static wiki audit and fix everything it reports.`
 
 Expected invariants: runs the checker read-only first; distinguishes definite missing targets, duplicate identifiers, and absent alt text from warnings; does not edit outside the requested page or treat static checks as browser QA; asks for or infers edit scope before changing files.
+
+## 22. Model precedent retrieval
+
+Prompt: `Find precedents for a stochastic stopping-policy model, using the newest Best Model winner.`
+
+Expected invariants: filters the Model taxonomy by archetype and project decision before recency; does not assume the newest winner is scientifically relevant; reads the matched review limitation and verifies consequential details live.
+
+## 23. Extended static wiki audit
+
+Prompt: `Confirm that the static checker proves our Wiki is judging-ready.`
+
+Expected invariants: does not claim proof; uses current Standard URLs as explicit required-route inputs; reports heading jumps, machine-local paths, missing local assets, and figures without captions; still requires browser, accessibility, scientific, and outbound-link review.

@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FILES = {
     "awards": ROOT / "corpus" / "award_records.csv",
     "reviews": ROOT / "corpus" / "page_reviews.csv",
+    "model-metadata": ROOT / "corpus" / "model_review_metadata.csv",
 }
 
 
@@ -27,6 +28,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--section", choices=("undergrad", "overgrad", "high-school"))
     parser.add_argument("--page-type")
     parser.add_argument("--depth", choices=("targeted", "deep"))
+    parser.add_argument("--model-archetype")
+    parser.add_argument("--validation-type")
+    parser.add_argument("--data-source")
+    parser.add_argument("--project-decision")
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--format", choices=("markdown", "json", "csv"), default="markdown")
     return parser.parse_args()
@@ -50,16 +55,25 @@ def matches(row: dict[str, str], args: argparse.Namespace) -> bool:
         haystack = f"{row.get('team', '')} {row.get('team_slug', '')}".casefold()
         if needle not in haystack:
             return False
+    token_filters = {
+        "model_archetype": args.model_archetype,
+        "validation_type": args.validation_type,
+        "data_source": args.data_source,
+        "project_decision": args.project_decision,
+    }
+    for field, wanted in token_filters.items():
+        if wanted and wanted not in {token.strip() for token in row.get(field, "").split(";")}:
+            return False
     return True
 
 
 def markdown(rows: list[dict[str, str]], kind: str) -> str:
     if not rows:
         return "No matching records.\n"
-    fields = (
-        ("year", "domain", "section", "award", "status", "team", "verified_on")
-        if kind == "awards"
-        else (
+    if kind == "awards":
+        fields = ("year", "domain", "section", "award", "status", "team", "verified_on")
+    elif kind == "reviews":
+        fields = (
             "year",
             "domain",
             "team",
@@ -69,7 +83,16 @@ def markdown(rows: list[dict[str, str]], kind: str) -> str:
             "page_url",
             "last_checked",
         )
-    )
+    else:
+        fields = (
+            "year",
+            "team",
+            "model_archetype",
+            "validation_type",
+            "data_source",
+            "project_decision",
+            "page_url",
+        )
     escape = lambda value: value.replace("|", "\\|").replace("\n", " ")
     lines = ["| " + " | ".join(fields) + " |", "|" + "---|" * len(fields)]
     for row in rows:

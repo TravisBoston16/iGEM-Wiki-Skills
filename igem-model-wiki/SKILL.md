@@ -14,7 +14,7 @@ Build a Model page that lets a judge trace each important conclusion from biolog
 - **Write or implement:** create or revise only the requested Model-page content and assets.
 - **Audit:** report evidence, narrative, usability, and reproducibility gaps before proposing changes.
 
-If the user asks to research winners or compare exemplars, read [references/benchmark-patterns.md](references/benchmark-patterns.md), the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md), and the compact [reviewed-page index](references/generated/reviewed-pages.md). Read the full [official award ledger](references/generated/award-ledger.md) only when verifying or listing winners and nominees. Verify consequential details live. For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
+If the user asks to research winners or compare exemplars, first use the compact [Model taxonomy](references/generated/model-taxonomy.md) to select pages by archetype, validation type, data source, and project decision. Then read [references/benchmark-patterns.md](references/benchmark-patterns.md), the curated findings in [references/benchmark-corpus.md](references/benchmark-corpus.md), and only the relevant rows in the [reviewed-page index](references/generated/reviewed-pages.md). Read the full [official award ledger](references/generated/award-ledger.md) only when verifying or listing winners and nominees. Verify consequential details live. For planning, writing, implementation, or review, also read [references/review-checklist.md](references/review-checklist.md).
 
 For a new model module, model handoff, or reproducibility record, adapt [assets/templates/model-card.md](assets/templates/model-card.md). When one sequence or parameter set is only used to demonstrate that a workflow runs, label it an illustrative example and state what additional coverage is needed before generalization.
 
@@ -29,7 +29,7 @@ For machine-learning or AI-assisted analysis, also document dataset provenance a
 
 ## Refresh unstable facts
 
-When award status, judging criteria, or competition rules matter, verify them on the current official iGEM Competition site. Start from the official Results page and current Judging pages. Record year, competition class, prize, winner versus nominee, team, and exact page URL. Prefer recent winners relevant to the team's class, then add an older or structurally different example to avoid copying one fashion.
+When award status, judging criteria, or competition rules matter, verify them on the current official iGEM Competition site. Start from the official Results page and current Judging pages. Record year, competition class, prize, winner versus nominee, team, and exact page URL. Select precedents by the team's actual modeling need first; use recency and class as secondary filters, then add an older or structurally different example to avoid copying one fashion.
 
 ## Build the scientific story
 

@@ -27,11 +27,11 @@ Use page function as a separate sampling axis. Do not demand every function in e
 
 - **Story:** Home; Description or Project Description; Awards or Judging; site-level navigation and accessibility.
 - **Wet lab:** Engineering; Results; Measurement; Experiments or Protocols; Parts and Registry handoff; Notebook.
-- **Model:** vary model archetype and decision role rather than page slug—for example mechanistic or kinetic; stochastic; structural or sequence; data-driven or machine-learning; spatial or multiscale when relevant.
+- **Model:** vary model archetype and decision role rather than page slug—for example mechanistic or kinetic; stochastic; structural or sequence; data-driven or machine-learning; spatial or multiscale when relevant. Use the controlled Model metadata rather than inferring diversity from team names or years.
 - **Human Practices:** Human Practices or IHP; Education; Inclusivity; Sustainability.
 - **Implementation:** Implementation; Safety and Security; Hardware; Software; Entrepreneurship; Contribution.
 
-Record page type in the corpus. For Model reviews, state the archetype in the review observation until a dedicated taxonomy field is added. A missing function is a research backlog item, not permission to generalize from a different page type.
+Record page type in the corpus. For Model reviews, maintain the dedicated archetype, validation, data-source, and project-decision metadata. A missing function is a research backlog item, not permission to generalize from a different page type.
 
 ## Cross-year inference rule
 

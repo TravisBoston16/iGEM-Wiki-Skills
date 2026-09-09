@@ -17,11 +17,11 @@ An award record does not prove that a page was reviewed or that every claim is e
 
 | Domain skill | Award records | Winners | Nominees | Reviewed pages | Years represented |
 |---|---:|---:|---:|---:|---|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 19 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 302 | 68 | 234 | 21 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 154 | 22 | 132 | 20 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 302 | 68 | 234 | 24 | 2025, 2024, 2023, 2022, 2021 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 84 | 15 | 69 | 14 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 297 | 60 | 237 | 19 | 2025, 2024, 2023, 2022, 2021 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 217 | 62 | 155 | 21 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 297 | 60 | 237 | 20 | 2025, 2024, 2023, 2022, 2021 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 217 | 62 | 155 | 23 | 2025, 2024, 2023, 2022, 2021 |
 
 Counts are award-category records; a team may appear in multiple categories. Review coverage follows the portable [sampling policy](sampling-policy.md).
 
@@ -31,11 +31,11 @@ Each cell reports `official award records / inspected pages`. The policy enforce
 
 | Domain | 2021 | 2022 | 2023 | 2024 | 2025 |
 |---|---:|---:|---:|---:|---:|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 4 | 31 / 3 | 30 / 4 | 30 / 3 | 33 / 5 |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 73 / 3 | 52 / 2 | 56 / 5 | 60 / 6 | 61 / 5 |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 30 / 5 | 31 / 3 | 30 / 4 | 30 / 3 | 33 / 5 |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 73 / 6 | 52 / 2 | 56 / 5 | 60 / 6 | 61 / 5 |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 22 / 2 | 16 / 2 | 15 / 2 | 15 / 2 | 16 / 6 |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 80 / 2 | 61 / 2 | 52 / 3 | 51 / 3 | 53 / 9 |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 50 / 2 | 51 / 2 | 31 / 3 | 39 / 3 | 46 / 11 |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 80 / 2 | 61 / 2 | 52 / 3 | 51 / 4 | 53 / 9 |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 50 / 3 | 51 / 2 | 31 / 3 | 39 / 4 | 46 / 11 |
 
 ## Page-function coverage
 
@@ -45,26 +45,26 @@ This table prevents a large sample of one page type from masquerading as domain 
 |---|---|---:|---|
 | [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | home | 14 | covered |
 | [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | description | 4 | covered |
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | awards | 1 | thin |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | awards | 2 | covered |
 | [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | engineering | 4 | covered |
 | [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | results | 2 | covered |
 | [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | measurement | 12 | covered |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | experiments | 1 | thin |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | parts | 1 | thin |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | notebook | 1 | thin |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | experiments | 2 | covered |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | parts | 2 | covered |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | notebook | 2 | covered |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | model | 14 | covered |
 | [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | human-practices | 14 | covered |
 | [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | education | 2 | covered |
 | [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | inclusivity | 2 | covered |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | sustainability | 1 | thin |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | implementation | 1 | thin |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | sustainability | 2 | covered |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | implementation | 2 | covered |
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | safety | 2 | covered |
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | hardware | 8 | covered |
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | software | 5 | covered |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | entrepreneurship | 1 | thin |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | entrepreneurship | 2 | covered |
 | [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | contribution | 3 | covered |
 
-Model reviews share one Standard URL, so Model diversity is assessed by archetype and evidence role during precedent selection rather than by page slug alone.
+Model reviews share one Standard URL, so Model diversity is assessed through the generated [Model taxonomy](../../igem-model-wiki/references/generated/model-taxonomy.md), which labels archetype, validation, data source, and project decision.
 
 ## Reviewed-page sample balance
 
@@ -72,11 +72,11 @@ Counts use each review's structured primary award relationship; additional relat
 
 | Domain | Winner-linked | Nominee-linked | Classes represented |
 |---|---:|---:|---|
-| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 14 | 5 | undergrad, overgrad, high-school |
-| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 15 | 6 | undergrad, overgrad, high-school |
+| [`igem-wiki-story`](../../igem-wiki-story/references/generated/award-index.md) | 15 | 5 | undergrad, overgrad, high-school |
+| [`igem-wetlab-wiki`](../../igem-wetlab-wiki/references/generated/award-index.md) | 18 | 6 | undergrad, overgrad, high-school |
 | [`igem-model-wiki`](../../igem-model-wiki/references/generated/award-index.md) | 6 | 8 | undergrad, overgrad, high-school |
-| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 13 | 6 | undergrad, overgrad, high-school |
-| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 15 | 6 | undergrad, overgrad, high-school |
+| [`igem-hp-wiki`](../../igem-hp-wiki/references/generated/award-index.md) | 14 | 6 | undergrad, overgrad, high-school |
+| [`igem-implementation-wiki`](../../igem-implementation-wiki/references/generated/award-index.md) | 17 | 6 | undergrad, overgrad, high-school |
 
 ## Official machine-source snapshots
 

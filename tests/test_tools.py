@@ -38,6 +38,21 @@ class ImporterTests(unittest.TestCase):
 
 
 class StaticAuditTests(unittest.TestCase):
+    def run_audit(self, root: Path, *extra: str) -> tuple[subprocess.CompletedProcess[str], dict]:
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "igem-wiki" / "scripts" / "audit_static_wiki.py"),
+                str(root),
+                "--json",
+                *extra,
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        return result, json.loads(result.stdout)
+
     def test_local_link_cannot_escape_audit_root(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             parent = Path(temporary)
@@ -51,21 +66,90 @@ class StaticAuditTests(unittest.TestCase):
                 '<html lang="en"><title>Outside</title><h1 id="private">Outside</h1></html>',
                 encoding="utf-8",
             )
-            result = subprocess.run(
-                [
-                    sys.executable,
-                    str(ROOT / "igem-wiki" / "scripts" / "audit_static_wiki.py"),
-                    str(root),
-                    "--json",
-                ],
-                capture_output=True,
-                text=True,
-                check=False,
-            )
-            report = json.loads(result.stdout)
+            result, report = self.run_audit(root)
             self.assertEqual(result.returncode, 1)
             self.assertEqual(report["errors"], 1)
             self.assertIn("escapes audit root", report["findings"][0]["message"])
+
+    def test_heading_jump_and_missing_figure_caption_are_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "plot.png").write_bytes(b"png")
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1><h3>Results</h3>'
+                '<figure><img src="plot.png" alt="response curve"></figure></html>',
+                encoding="utf-8",
+            )
+            result, report = self.run_audit(root)
+            self.assertEqual(result.returncode, 0)
+            messages = [item["message"] for item in report["findings"]]
+            self.assertIn("heading level jumps from h1 to h3", messages)
+            self.assertIn("figure contains a visual but no figcaption", messages)
+
+    def test_machine_local_path_is_an_error(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1>'
+                '<img src="/Users/example/Desktop/private.png" alt="private"></html>',
+                encoding="utf-8",
+            )
+            result, report = self.run_audit(root)
+            self.assertEqual(result.returncode, 1)
+            self.assertTrue(
+                any("machine-local path" in item["message"] for item in report["findings"])
+            )
+
+    def test_https_url_is_not_treated_as_a_windows_path(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1>'
+                '<script src="https://cdn.example.org/app.js"></script></html>',
+                encoding="utf-8",
+            )
+            result, report = self.run_audit(root)
+            self.assertEqual(result.returncode, 0)
+            self.assertFalse(
+                any("machine-local path" in item["message"] for item in report["findings"])
+            )
+
+    def test_required_route_missing_is_a_warning(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "index.html").write_text(
+                '<html lang="en"><title>Home</title><h1>Home</h1></html>',
+                encoding="utf-8",
+            )
+            result, report = self.run_audit(root, "--required-route", "model")
+            self.assertEqual(result.returncode, 0)
+            self.assertTrue(
+                any("required route not found: model" in item["message"] for item in report["findings"])
+            )
+
+
+class CorpusQueryTests(unittest.TestCase):
+    def test_model_metadata_token_filter(self) -> None:
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "query_corpus.py"),
+                "model-metadata",
+                "--model-archetype",
+                "stochastic",
+                "--format",
+                "json",
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        rows = json.loads(result.stdout)
+        self.assertEqual(result.returncode, 0)
+        self.assertTrue(rows)
+        self.assertTrue(
+            all("stochastic" in row["model_archetype"].split(";") for row in rows)
+        )
 
 
 if __name__ == "__main__":

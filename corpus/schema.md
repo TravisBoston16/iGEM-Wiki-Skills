@@ -41,6 +41,20 @@ One row is one domain-scoped inspection of an exact page. The same page may have
 
 The four structured award fields act as a foreign-key-like link to `award_records.csv`. The build rejects a page review when its year, normalized team, award domain, award identifier, status, and section do not match an official record. This does not imply that the award was given for the exact page being reviewed; it makes the sampling relationship auditable.
 
+## `model_review_metadata.csv`
+
+One row adds controlled, multi-value labels to every reviewed Model page. Values separated by semicolons are independently validated. These are research annotations for precedent retrieval, not official iGEM categories or scientific endorsements.
+
+| Field | Meaning |
+|---|---|
+| `year`, `team`, `team_slug`, `page_url` | Exact key of the matching Model row in `page_reviews.csv` |
+| `model_archetype` | One or more of `mechanistic-kinetic`, `stochastic`, `structural-sequence`, `data-driven-ml`, `spatial-multiscale`, `hybrid`, or `unclear` |
+| `validation_type` | Visible validation role such as `experimental-comparison`, `literature-benchmark`, `internal-consistency`, `sensitivity-analysis`, `cross-validation`, `illustrative-only`, or `none-or-unclear` |
+| `data_source` | Inputs such as `team-experiment`, `public-database`, `literature`, `simulated`, `assumed`, `manually-constructed`, or `unclear` |
+| `project_decision` | Visible project use such as design or construct selection, parameter estimation, stopping policy, experimental prioritization, hardware design, interpretation, future work, or no demonstrated decision |
+
+The build enforces exactly one metadata row per reviewed Model page, no extras, and controlled vocabulary. A label means the inspected page visibly uses that role; it does not certify that the method is correct or independently validated.
+
 ## `source_manifest.csv`
 
 One row records the official machine-readable award-results snapshot used for a competition year. The manifest makes bulk imports auditable without treating an API response as a page review.
@@ -64,8 +78,9 @@ One row records the official machine-readable award-results snapshot used for a 
 4. Follow the portable [benchmark sampling policy](../igem-wiki/references/sampling-policy.md): for 2021–2025, maintain at least two inspected pages per domain-year, winner and nominee coverage where available, all three competition classes across each domain, and explicit coverage of the domain's core page functions.
 5. Treat the sampling floors as minima, not equal-count quotas or a requirement to fill every year-by-function combination; publish year-by-year and function-by-function counts so imbalances remain visible.
 6. For a bulk annual-results update, run `python3 scripts/import_annual_results.py --years YEAR ... --verified-on YYYY-MM-DD` first as a dry run, then repeat with `--write`. Live writes preserve the exact official JSON inputs in `corpus/snapshots/`; use that directory with `--source-dir` for an auditable offline import.
-7. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
-8. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, response hash, and exact raw inputs.
-9. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
+7. Give every reviewed Model page one controlled taxonomy row and use `unclear` rather than guessing when a role cannot be established from the inspected page.
+8. Run `python3 scripts/build_corpus.py` after editing a corpus CSV.
+9. Keep a source-manifest row for every maintained benchmark year and preserve its official endpoint, retrieval date, response hash, and exact raw inputs.
+10. Run `python3 scripts/build_corpus.py --check` and `python3 scripts/validate_repository.py` before release.
 
 The corpus is a research seed, not an exhaustive leaderboard. Recheck unstable current-season requirements separately.
